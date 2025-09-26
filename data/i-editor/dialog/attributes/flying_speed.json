@@ -1,0 +1,160 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.attribute",
+      "fallback": "Attribute: "
+    },
+    {
+      "translate": "attribute.name.flying_speed",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "attribute.name.flying_speed"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.attribute_info",
+      "fallback": "- Move the slider to the desired attribute value. \n- Select the slot where the attribute will work. \n- Select the operation to add an attribute value.",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:number_range",
+      "key": "amount",
+      "label": {
+        "translate": "text.i-editor.amount",
+        "fallback": "amount"
+      },
+      "start": 0,
+      "end": 1024,
+      "step": 0.01,
+      "initial": 0.4
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "slot",
+      "label": {
+        "translate": "text.i-editor.slot",
+        "fallback": "Slot"
+      },
+      "options": [
+        {
+          "id": "any",
+          "display": {
+            "text": "any"
+          }
+        },
+        {
+          "id": "armor",
+          "display": {
+            "text": "armor"
+          }
+        },
+        {
+          "id": "chest",
+          "display": {
+            "text": "chest"
+          }
+        },
+        {
+          "id": "feet",
+          "display": {
+            "text": "feet"
+          }
+        },
+        {
+          "id": "hand",
+          "display": {
+            "text": "hand"
+          }
+        },
+        {
+          "id": "head",
+          "display": {
+            "text": "head"
+          }
+        },
+        {
+          "id": "legs",
+          "display": {
+            "text": "legs"
+          }
+        },
+        {
+          "id": "mainhand",
+          "display": {
+            "text": "mainhand"
+          }
+        },
+        {
+          "id": "offhand",
+          "display": {
+            "text": "offhand"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "operation",
+      "label": {
+        "translate": "text.i-edtior.operation",
+        "fallback": "Operation",
+        "hover_event": {
+          "action": "show_text",
+          "value": {
+            "translate": "text.i-edtior.operation_info"
+          }
+        }
+      },
+      "options": [
+        {
+          "id": "add_value",
+          "display": {
+            "text": "add_value"
+          }
+        },
+        {
+          "id": "add_multiplied_base",
+          "display": {
+            "text": "add_multiplied_base"
+          }
+        },
+        {
+          "id": "add_multiplied_total",
+          "display": {
+            "text": "add_multiplied_total"
+          }
+        }
+      ]
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_attributes\",\"modifiers\":[{\"attribute\":\"minecraft:flying_speed\",\"id\":\"minecraft:\",\"amount\":$(amount),\"operation\":\"$(operation)\",\"slot\":\"$(slot)\"}]}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_attribute"
+    }
+  }
+}

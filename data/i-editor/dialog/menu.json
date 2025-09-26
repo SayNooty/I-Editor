@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:dialog_list",
+  "title": {
+    "translate": "menu.i-editor.title",
+    "fallback": "I Editor",
+    "color": "green"
+  },
+  "external_title": {
+    "translate": "menu.i-editor",
+    "fallback": "I Editor"
+  },
+  "can_close_with_escape": true,
+  "pause": false,
+  "exit_action": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "width": 200
+  },
+  "columns": 1,
+  "button_width": 200,
+  "dialogs": [
+    "i-editor:set_name",
+    "i-editor:set_lore",
+    "i-editor:set_model",
+    "i-editor:set_attribute",
+    "i-editor:set_enchantment",
+    "i-editor:set_count"
+  ]
+}

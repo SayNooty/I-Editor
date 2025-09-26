@@ -1,0 +1,59 @@
+{
+  "type": "minecraft:dialog_list",
+  "title": {
+    "translate": "title.i-editor.set_attribute",
+    "fallback": "Set Attribute"
+  },
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "exit_action": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "i-editor:menu"
+    }
+  },
+  "columns": 2,
+  "button_width": 185,
+  "dialogs": [
+    "i-editor:attributes/armor",
+    "i-editor:attributes/armor_toughness",
+    "i-editor:attributes/attack_damage",
+    "i-editor:attributes/attack_knockback",
+    "i-editor:attributes/attack_speed",
+    "i-editor:attributes/block_break_speed",
+    "i-editor:attributes/block_interaction_range",
+    "i-editor:attributes/burning_time",
+    "i-editor:attributes/camera_distance",
+    "i-editor:attributes/entity_interaction_range",
+    "i-editor:attributes/explosion_knockback_resistance",
+    "i-editor:attributes/fall_damage_multiplier",
+    "i-editor:attributes/flying_speed",
+    "i-editor:attributes/follow_range",
+    "i-editor:attributes/gravity",
+    "i-editor:attributes/jump_strength",
+    "i-editor:attributes/knockback_resistance",
+    "i-editor:attributes/luck",
+    "i-editor:attributes/max_absorption",
+    "i-editor:attributes/max_health",
+    "i-editor:attributes/mining_efficiency",
+    "i-editor:attributes/movement_efficiency",
+    "i-editor:attributes/movement_speed",
+    "i-editor:attributes/oxygen_bonus",
+    "i-editor:attributes/safe_fall_distance",
+    "i-editor:attributes/scale",
+    "i-editor:attributes/sneaking_speed",
+    "i-editor:attributes/spawn_reinforcements",
+    "i-editor:attributes/step_height",
+    "i-editor:attributes/submerged_mining_speed",
+    "i-editor:attributes/sweeping_damage_ratio",
+    "i-editor:attributes/tempt_range",
+    "i-editor:attributes/water_movement_efficiency",
+    "i-editor:attributes/waypoint_receive_range",
+    "i-editor:attributes/waypoint_transmit_range"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "type": "minecraft:dialog_list",
+  "title": {
+    "translate": "title.i-editor.set_enchantment",
+    "fallback": "Set Enchantment"
+  },
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "exit_action": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "i-editor:menu"
+    }
+  },
+  "columns": 3,
+  "button_width": 125,
+  "dialogs": [
+    "i-editor:enchantments/aqua_affinity",
+    "i-editor:enchantments/bane_of_arthropods",
+    "i-editor:enchantments/binding_curse",
+    "i-editor:enchantments/blast_protection",
+    "i-editor:enchantments/breach",
+    "i-editor:enchantments/channeling",
+    "i-editor:enchantments/density",
+    "i-editor:enchantments/depth_strider",
+    "i-editor:enchantments/efficiency",
+    "i-editor:enchantments/feather_falling",
+    "i-editor:enchantments/fire_aspect",
+    "i-editor:enchantments/fire_protection",
+    "i-editor:enchantments/flame",
+    "i-editor:enchantments/fortune",
+    "i-editor:enchantments/frost_walker",
+    "i-editor:enchantments/impaling",
+    "i-editor:enchantments/infinity",
+    "i-editor:enchantments/knockback",
+    "i-editor:enchantments/looting",
+    "i-editor:enchantments/loyalty",
+    "i-editor:enchantments/luck_of_the_sea",
+    "i-editor:enchantments/lure",
+    "i-editor:enchantments/mending",
+    "i-editor:enchantments/multishot",
+    "i-editor:enchantments/piercing",
+    "i-editor:enchantments/power",
+    "i-editor:enchantments/projectile_protection",
+    "i-editor:enchantments/protection",
+    "i-editor:enchantments/punch",
+    "i-editor:enchantments/quick_charge",
+    "i-editor:enchantments/respiration",
+    "i-editor:enchantments/riptide",
+    "i-editor:enchantments/sharpness",
+    "i-editor:enchantments/silk_touch",
+    "i-editor:enchantments/smite",
+    "i-editor:enchantments/soul_speed",
+    "i-editor:enchantments/sweeping_edge",
+    "i-editor:enchantments/swift_sneak",
+    "i-editor:enchantments/thorns",
+    "i-editor:enchantments/unbreaking",
+    "i-editor:enchantments/vanishing_curse",
+    "i-editor:enchantments/wind_burst"
+  ]
+}

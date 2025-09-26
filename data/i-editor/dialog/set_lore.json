@@ -1,0 +1,241 @@
+{
+  "type": "minecraft:confirmation",
+  "title": {
+    "translate": "title.i-editor.set_lore",
+    "fallback": "Set Lore"
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "lore",
+      "label": {
+        "translate": "text.i-editor.lore",
+        "fallback": "Lore"
+      },
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "mode",
+      "label": {
+        "translate": "text.i-editor.mode",
+        "fallback": "Mode"
+      },
+      "options": [
+        {
+          "id": "append",
+          "display": "append",
+          "initial": true
+        },
+        {
+          "id": "insert",
+          "display": "insert"
+        },
+        {
+          "id": "replace_all",
+          "display": "replace_all"
+        },
+        {
+          "id": "replace_section",
+          "display": "replace_section"
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "color",
+      "label": {
+        "translate": "text.i-editor.color",
+        "fallback": "Color"
+      },
+      "options": [
+        {
+          "id": "white",
+          "display": {
+            "translate": "color.minecraft.white",
+            "color": "white"
+          }
+        },
+        {
+          "id": "gray",
+          "display": {
+            "translate": "color.minecraft.light_gray",
+            "color": "gray"
+          }
+        },
+        {
+          "id": "dark_gray",
+          "display": {
+            "translate": "color.minecraft.gray",
+            "color": "dark_gray"
+          }
+        },
+        {
+          "id": "black",
+          "display": {
+            "translate": "color.minecraft.black",
+            "color": "black"
+          }
+        },
+        {
+          "id": "dark_red",
+          "display": {
+            "translate": "text.i-editor.dark_red",
+            "fallback": "Dark Red",
+            "color": "dark_red"
+          }
+        },
+        {
+          "id": "red",
+          "display": {
+            "translate": "color.minecraft.red",
+            "color": "red"
+          }
+        },
+        {
+          "id": "gold",
+          "display": {
+            "translate": "text.i-editor.gold",
+            "fallback": "Gold",
+            "color": "gold"
+          }
+        },
+        {
+          "id": "yellow",
+          "display": {
+            "translate": "color.minecraft.yellow",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "green",
+          "display": {
+            "translate": "color.minecraft.green",
+            "color": "green"
+          }
+        },
+        {
+          "id": "dark_green",
+          "display": {
+            "translate": "text.i-editor.dark_green",
+            "fallback": "Dark Green",
+            "color": "dark_green"
+          }
+        },
+        {
+          "id": "dark_aqua",
+          "display": {
+            "translate": "color.minecraft.cyan",
+            "color": "dark_aqua"
+          }
+        },
+        {
+          "id": "aqua",
+          "display": {
+            "translate": "color.minecraft.light_blue",
+            "color": "aqua"
+          }
+        },
+        {
+          "id": "blue",
+          "display": {
+            "translate": "color.minecraft.blue",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "dark_blue",
+          "display": {
+            "translate": "text.i-editor.dark_blue",
+            "fallback": "Dark Blue",
+            "color": "dark_blue"
+          }
+        },
+        {
+          "id": "dark_purple",
+          "display": {
+            "translate": "text.i-editor.dark_purple",
+            "fallback": "Dark Purple",
+            "color": "dark_purple"
+          }
+        },
+        {
+          "id": "light_purple",
+          "display": {
+            "translate": "text.i-editor.light_purple",
+            "fallback": "Light Purple",
+            "color": "light_purple"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "bold",
+      "label": {
+        "text": "B",
+        "bold": true
+      },
+      "initial": false
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "italic",
+      "label": {
+        "text": "I",
+        "italic": true
+      },
+      "initial": false
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "underlined",
+      "label": {
+        "text": "U",
+        "underlined": true
+      },
+      "initial": false
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "strikethrough",
+      "label": {
+        "text": "S",
+        "strikethrough": true
+      },
+      "initial": false
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "obfuscated",
+      "label": {
+        "text": "O",
+        "obfuscated": true
+      },
+      "initial": false
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_lore\",\"lore\":[{\"text\":\"$(lore)\",\"color\":\"$(color)\",\"bold\":$(bold),\"italic\":$(italic),\"underlined\":$(underlined),\"strikethrough\":$(strikethrough),\"obfuscated\":$(obfuscated)}],\"mode\":\"$(mode)\"}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "i-editor:menu"
+    }
+  }
+}
