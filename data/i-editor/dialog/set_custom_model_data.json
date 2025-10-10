@@ -1,0 +1,207 @@
+{
+  "type": "minecraft:confirmation",
+  "title": {
+    "translate": "title.i-editor.set_custom_model_data",
+    "fallback": "Set Custom Model Data"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.custom_model_data_info",
+      "fallback": "Enter the data in the value lists to select the model and color of the item:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "floats_values",
+      "width": 150,
+      "label": [
+        {
+          "translate": "text.i-editor.floats",
+          "fallback": "Floats "
+        },
+        {
+          "translate": "text.i-editor.values",
+          "fallback": "(values)",
+          "color": "gray"
+        }
+      ],
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "mode",
+      "width": 150,
+      "label": {
+        "translate": "text.i-editor.mode",
+        "fallback": "Mode"
+      },
+      "options": [
+        {
+          "id": "append"
+        },
+        {
+          "id": "insert"
+        },
+        {
+          "id": "replace_all"
+        },
+        {
+          "id": "replace_section"
+        }
+      ]
+    },
+    {
+      "type": "minecraft:text",
+      "key": "flags_values",
+      "width": 150,
+      "label": [
+        {
+          "translate": "text.i-editor.flags",
+          "fallback": "Flags "
+        },
+        {
+          "translate": "text.i-editor.values",
+          "fallback": "(values) ",
+          "color": "gray"
+        },
+        {
+          "translate": "text.i-editor.false_and_true",
+          "fallback": "(false & true)",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "false",
+      "max_length": 5
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "mode",
+      "width": 150,
+      "label": {
+        "translate": "text.i-editor.mode",
+        "fallback": "Mode"
+      },
+      "options": [
+        {
+          "id": "append"
+        },
+        {
+          "id": "insert"
+        },
+        {
+          "id": "replace_all"
+        },
+        {
+          "id": "replace_section"
+        }
+      ]
+    },
+    {
+      "type": "minecraft:text",
+      "key": "strings_values",
+      "width": 150,
+      "label": [
+        {
+          "translate": "text.i-editor.strings",
+          "fallback": "Strings "
+        },
+        {
+          "translate": "text.i-editor.values",
+          "fallback": "(values)",
+          "color": "gray"
+        }
+      ],
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "mode",
+      "width": 150,
+      "label": {
+        "translate": "text.i-editor.mode",
+        "fallback": "Mode"
+      },
+      "options": [
+        {
+          "id": "append"
+        },
+        {
+          "id": "insert"
+        },
+        {
+          "id": "replace_all"
+        },
+        {
+          "id": "replace_section"
+        }
+      ]
+    },
+    {
+      "type": "minecraft:text",
+      "key": "colors_values",
+      "width": 150,
+      "label": [
+        {
+          "translate": "text.i-editor.colors",
+          "fallback": "Colors "
+        },
+        {
+          "translate": "text.i-editor.values",
+          "fallback": "(values)",
+          "color": "gray"
+        }
+      ],
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "mode",
+      "width": 150,
+      "label": {
+        "translate": "text.i-editor.mode",
+        "fallback": "Mode"
+      },
+      "options": [
+        {
+          "id": "append"
+        },
+        {
+          "id": "insert"
+        },
+        {
+          "id": "replace_all"
+        },
+        {
+          "id": "replace_section"
+        }
+      ]
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity SayNooty weapon.mainhand [{\"function\":\"minecraft:set_custom_model_data\",\"floats\":{\"values\":[$(floats_values)],\"mode\":\"$(mode)\"},\"flags\":{\"values\":[$(flags_values)],\"mode\":\"$(mode)\"},\"strings\":{\"values\":[\"$(strings)\"],\"mode\":\"$(mode)\"},\"colors\":{\"values\":[$(colors_values)],\"mode\":\"$(mode)\"}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "i-editor:menu"
+    }
+  }
+}

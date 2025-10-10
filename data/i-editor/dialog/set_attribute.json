@@ -4,6 +4,15 @@
     "translate": "title.i-editor.set_attribute",
     "fallback": "Set Attribute"
   },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.set_attribute_info",
+      "fallback": "Select the attribute that will act on the item (cannot be summed up):",
+      "color": "gray"
+    },
+    "width": 300
+  },
   "inputs": [],
   "can_close_with_escape": true,
   "pause": false,

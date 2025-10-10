@@ -1,0 +1,136 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.set_potion",
+      "fallback": "Potion: "
+    },
+    {
+      "translate": "effect.minecraft.strength",
+      "color": "#FFC700"
+    }
+  ],
+  "external_title": {
+    "translate": "effect.minecraft.strength",
+    "color": "#FFC700"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.set_potion_info",
+      "fallback": "Adjust the parameters of this effect to apply it to an item:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:number_range",
+      "key": "amplifier",
+      "width": 150,
+      "label": {
+        "translate": "text.i-editor.amplifier",
+        "fallback": "Amplifier"
+      },
+      "start": 0,
+      "end": 255,
+      "step": 1,
+      "initial": 0
+    },
+    {
+      "type": "minecraft:text",
+      "key": "duration",
+      "width": 150,
+      "label": [
+        {
+          "translate": "text.i-editor.duration",
+          "fallback": "Duration "
+        },
+        {
+          "translate": "text.i-editor.tick_info",
+          "fallback": "(in ticks)",
+          "color": "gray"
+        }
+      ],
+      "initial": "20",
+      "max_length": 10
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "ambient",
+      "width": 150,
+      "label": {
+        "translate": "text.i-editor.ambient",
+        "fallback": "Ambient"
+      },
+      "options": [
+        {
+          "id": "true",
+          "initial": true
+        },
+        {
+          "id": "false"
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "show_particles",
+      "width": 150,
+      "label": {
+        "translate": "text.i-editor.show_particles",
+        "fallback": "Show particles"
+      },
+      "options": [
+        {
+          "id": "true",
+          "initial": true
+        },
+        {
+          "id": "false"
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "show_icon",
+      "width": 150,
+      "label": {
+        "translate": "text.i-editor.show_icon",
+        "fallback": "Show icon"
+      },
+      "options": [
+        {
+          "id": "true",
+          "initial": true
+        },
+        {
+          "id": "false"
+        }
+      ]
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:potion_contents\":{\"custom_effects\":[{\"id\":\"minecraft:strength\",\"amplifier\":$(amplifier),\"duration\":$(duration),\"ambient\":$(ambient),\"show_particles\":$(show_particles),\"show_icon\":$(show_icon)}]}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "i-editor:set_potion"
+    }
+  }
+}
