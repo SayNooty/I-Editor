@@ -17,7 +17,7 @@
     "type": "minecraft:plain_message",
     "contents": {
       "translate": "text.i-editor.attribute_info",
-      "fallback": "- Move the slider to the desired attribute value. \n- Select the slot where the attribute will work. \n- Select the operation to add an attribute value.",
+      "fallback": "Select the amount, slot, and summation method of the attribute:",
       "color": "gray"
     },
     "width": 300

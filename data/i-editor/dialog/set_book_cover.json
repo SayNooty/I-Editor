@@ -1,0 +1,71 @@
+{
+  "type": "minecraft:confirmation",
+  "title": {
+    "translate": "title.i-editor.set_book_cover",
+    "fallback": "Set Book Cover"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.set_book_cover_info",
+      "fallback": "Enter the title and author of the book, and then the generation:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "title",
+      "label": {
+        "translate": "text.i-editor.title",
+        "fallback": "Title"
+      },
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "author",
+      "label": {
+        "translate": "text.i-editor.author",
+        "fallback": "Author"
+      },
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:number_range",
+      "key": "generation",
+      "label": {
+        "translate": "text.i-editor.generation",
+        "fallback": "Generation"
+      },
+      "start": 0,
+      "end": 3,
+      "step": 1,
+      "initial": 0
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_book_cover\",\"title\":\"$(title)\",\"author\":\"$(author)\",\"generation\":$(generation)}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "i-editor:menu"
+    }
+  }
+}

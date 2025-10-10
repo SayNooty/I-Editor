@@ -4,6 +4,15 @@
     "translate": "title.i-editor.set_count",
     "fallback": "Set Count"
   },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.set_count_info",
+      "fallback": "Select the count of the item:",
+      "color": "gray"
+    },
+    "width": 300
+  },
   "inputs": [
     {
       "type": "minecraft:number_range",

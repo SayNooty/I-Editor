@@ -1,0 +1,72 @@
+{
+  "type": "minecraft:dialog_list",
+  "title": {
+    "translate": "title.i-editor.set_potion",
+    "fallback": "Set Potion"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.set_potion_info",
+      "fallback": "Choose the type of potion that will be applied to the item:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "exit_action": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "i-editor:menu"
+    }
+  },
+  "columns": 3,
+  "button_width": 125,
+  "dialogs": [
+    "i-editor:potions/absorption",
+    "i-editor:potions/bad_omen",
+    "i-editor:potions/blindness",
+    "i-editor:potions/conduit_power",
+    "i-editor:potions/darkness",
+    "i-editor:potions/dolphins_grace",
+    "i-editor:potions/fire_resistance",
+    "i-editor:potions/glowing",
+    "i-editor:potions/haste",
+    "i-editor:potions/health_boost",
+    "i-editor:potions/hero_of_the_village",
+    "i-editor:potions/hunger",
+    "i-editor:potions/infested",
+    "i-editor:potions/instant_damage",
+    "i-editor:potions/instant_health",
+    "i-editor:potions/invisibility",
+    "i-editor:potions/jump_boost",
+    "i-editor:potions/levitation",
+    "i-editor:potions/luck",
+    "i-editor:potions/mining_fatigue",
+    "i-editor:potions/nausea",
+    "i-editor:potions/night_vision",
+    "i-editor:potions/oozing",
+    "i-editor:potions/poison",
+    "i-editor:potions/raid_omen",
+    "i-editor:potions/regeneration",
+    "i-editor:potions/resistance",
+    "i-editor:potions/saturation",
+    "i-editor:potions/slow_falling",
+    "i-editor:potions/slowness",
+    "i-editor:potions/speed",
+    "i-editor:potions/strength",
+    "i-editor:potions/trial_omen",
+    "i-editor:potions/unluck",
+    "i-editor:potions/water_breathing",
+    "i-editor:potions/weakness",
+    "i-editor:potions/weaving",
+    "i-editor:potions/wind_charged",
+    "i-editor:potions/wither"
+  ]
+}

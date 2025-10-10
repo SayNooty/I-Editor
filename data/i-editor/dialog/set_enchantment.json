@@ -4,6 +4,15 @@
     "translate": "title.i-editor.set_enchantment",
     "fallback": "Set Enchantment"
   },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.set_enchantment_info",
+      "fallback": "Select an enchantment to apply to the item:",
+      "color": "gray"
+    },
+    "width": 300
+  },
   "inputs": [],
   "can_close_with_escape": true,
   "pause": false,
