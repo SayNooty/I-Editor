@@ -1,0 +1,62 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.can_place_on",
+      "fallback": "Can Place On",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.can_place_on",
+    "fallback": "Can Place On"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_can_place_on_info",
+      "fallback": "Enter the block ID so that the block is placed only on it in adventure mode:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "block_id",
+      "label": {
+        "translate": "text.i-editor.block_id",
+        "fallback": "Block ID"
+      },
+      "initial": "minecraft:stone",
+      "max_length": 9999
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:can_place_on\":{\"blocks\":\"$(block_id)\"}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

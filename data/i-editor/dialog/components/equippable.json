@@ -1,0 +1,178 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.equippable",
+      "fallback": "Equippable",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.equippable",
+    "fallback": "Equippable"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_equippable_info",
+      "fallback": "Select and configure certain parameters that will be applied to the item as an element of equipment:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:single_option",
+      "key": "slot",
+      "label": {
+        "translate": "text.i-editor.slot",
+        "fallback": "Slot"
+      },
+      "options": [
+        {
+          "id": "mainhand"
+        },
+        {
+          "id": "offhand"
+        },
+        {
+          "id": "head"
+        },
+        {
+          "id": "chest"
+        },
+        {
+          "id": "legs"
+        },
+        {
+          "id": "feet"
+        },
+        {
+          "id": "body"
+        },
+        {
+          "id": "saddle"
+        }
+      ]
+    },
+    {
+      "type": "minecraft:text",
+      "key": "equip_sound",
+      "label": {
+        "translate": "text.i-editor.equip_sound",
+        "fallback": "Equip sound"
+      },
+      "initial": "minecraft:item.armor.equip_generic",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "shearing_sound",
+      "label": {
+        "translate": "text.i-editor.shearing_sound",
+        "fallback": "Shearing sound"
+      },
+      "initial": "minecraft:item.shears.snip",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "asset_id",
+      "label": {
+        "translate": "text.i-editor.asset_id",
+        "fallback": "Asset ID"
+      },
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "camera_overlay",
+      "label": {
+        "translate": "text.i-editor.camera_overlay",
+        "fallback": "Camera overlay"
+      },
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "allowed_entities",
+      "label": {
+        "translate": "text.i-editor.allowed_entities",
+        "fallback": "Allowed entities"
+      },
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "dispensable",
+      "label": {
+        "translate": "text.i-editor.dispensable",
+        "fallback": "Dispensable"
+      },
+      "initial": true
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "swappable",
+      "label": {
+        "translate": "text.i-editor.swappable",
+        "fallback": "Swappable"
+      },
+      "initial": true
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "damage_on_hurt",
+      "label": {
+        "translate": "text.i-editor.damage_on_hurt",
+        "fallback": "Damage on hurt"
+      },
+      "initial": true
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "equip_on_interact",
+      "label": {
+        "translate": "text.i-editor.equip_on_interact",
+        "fallback": "Equip on interact"
+      },
+      "initial": false
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "can_be_sheared",
+      "label": {
+        "translate": "text.i-editor.can_be_sheared",
+        "fallback": "Can be sheared"
+      },
+      "initial": false
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:equippable\":{\"slot\":\"$(slot)\",\"equip_sound\":\"$(equip_sound)\",\"asset_id\":\"$(asset_id)\",\"camera_entities\":\"$(camera_entities)\",\"dispensable\":$(dispensable),\"swappable\":$(swappable),\"damage_on_hurt\":$(damage_on_hurt),\"equip_on_interact\":$(equip_on_interact),\"can_be_sheared\":$(can_be_sheared),\"shearing_sound\":\"$(shearing_sound)\"}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

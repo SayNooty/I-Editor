@@ -8,7 +8,7 @@
     "type": "minecraft:plain_message",
     "contents": {
       "translate": "text.i-editor.set_book_cover_info",
-      "fallback": "Enter the title and author of the book, and then the generation:",
+      "fallback": "Enter the title and author of the book, and then the type:",
       "color": "gray"
     },
     "width": 300
@@ -33,16 +33,38 @@
       "max_length": 9999
     },
     {
-      "type": "minecraft:number_range",
-      "key": "generation",
+      "type": "minecraft:single_option",
+      "key": "type",
       "label": {
-        "translate": "text.i-editor.generation",
-        "fallback": "Generation"
+        "translate": "text.i-editor.type",
+        "fallback": "Type"
       },
-      "start": 0,
-      "end": 3,
-      "step": 1,
-      "initial": 0
+      "options": [
+        {
+          "id": "0",
+          "display": {
+            "translate": "book.generation.0"
+          }
+        },
+        {
+          "id": "1",
+          "display": {
+            "translate": "book.generation.1"
+          }
+        },
+        {
+          "id": "2",
+          "display": {
+            "translate": "book.generation.2"
+          }
+        },
+        {
+          "id": "3",
+          "display": {
+            "translate": "book.generation.3"
+          }
+        }
+      ]
     }
   ],
   "can_close_with_escape": true,
@@ -55,7 +77,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_book_cover\",\"title\":\"$(title)\",\"author\":\"$(author)\",\"generation\":$(generation)}]"
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_book_cover\",\"title\":\"$(title)\",\"author\":\"$(author)\",\"generation\":$(type)}]"
     }
   },
   "no": {

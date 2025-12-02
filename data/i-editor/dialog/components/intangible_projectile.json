@@ -1,0 +1,51 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.intangible_projectile",
+      "fallback": "Intangible Projectile",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.intangible_projectile",
+    "fallback": "Intangible Projectile"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_intangible_projectile_info",
+      "fallback": "You don't need to configure anything here, just click done to remove the ability to pick up a projectile (it will become intangible), and if you don't want to, then click back:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:intangible_projectile\":{$(intangible_projectile)}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

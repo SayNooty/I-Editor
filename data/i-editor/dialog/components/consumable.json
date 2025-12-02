@@ -1,0 +1,160 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.consumable",
+      "fallback": "Consumable",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.consumable",
+    "fallback": "Consumable"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_consumable_info",
+      "fallback": "Enter the values and configure the consumption configuration like a food:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "consume_seconds",
+      "label": {
+        "translate": "text.i-editor.consume_seconds",
+        "fallback": "Consume seconds"
+      },
+      "initial": "1.6",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "animation",
+      "label": {
+        "translate": "text.i-editor.animation",
+        "fallback": "Animation"
+      },
+      "options": [
+        {
+          "id": "none",
+          "display": {
+            "translate": "gui.no"
+          }
+        },
+        {
+          "id": "eat",
+          "display": {
+            "translate": "text.i-editor.eat",
+            "fallback": "Eat"
+          }
+        },
+        {
+          "id": "drink",
+          "display": {
+            "translate": "text.i-editor.drink",
+            "fallback": "Drink"
+          }
+        },
+        {
+          "id": "block",
+          "display": {
+            "translate": "text.i-editor.block",
+            "fallback": "Block"
+          }
+        },
+        {
+          "id": "bow",
+          "display": {
+            "translate": "item.minecraft.bow"
+          }
+        },
+        {
+          "id": "trident",
+          "display": {
+            "translate": "item.minecraft.trident"
+          }
+        },
+        {
+          "id": "crossbow",
+          "display": {
+            "translate": "item.minecraft.crossbow"
+          }
+        },
+        {
+          "id": "spyglass",
+          "display": {
+            "translate": "item.minecraft.spyglass"
+          }
+        },
+        {
+          "id": "toot_horn",
+          "display": {
+            "translate": "item.minecraft.goat_horn"
+          }
+        },
+        {
+          "id": "brush",
+          "display": {
+            "translate": "item.minecraft.brush"
+          }
+        },
+        {
+          "id": "bundle",
+          "display": {
+            "translate": "item.minecraft.bundle"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:text",
+      "key": "sound_id",
+      "label": {
+        "translate": "text.i-editor.sound_id",
+        "fallback": "Sound ID"
+      },
+      "initial": "minecraft:entity.generic.eat",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "has_consume_particles",
+      "label": {
+        "translate": "text.i-editor.has_consume_particles",
+        "fallback": "Has consume particles"
+      },
+      "initial": true
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:consumable\":{\"consume_seconds\":$(consume_seconds),\"animation\":\"$(animation)\",\"sound\":\"$(sound_id)\",\"has_consume_particles\":$(has_consume_particles)}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

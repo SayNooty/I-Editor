@@ -1,0 +1,139 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.provides_banner_patterns",
+      "fallback": "Provides Banner Patterns",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.provides_banner_patterns",
+    "fallback": "Provides Banner Patterns"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_provides_banner_patterns_info",
+      "fallback": "Select the pattern that will be applied when using the item in the loom:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:single_option",
+      "key": "pattern",
+      "label": {
+        "translate": "text.i-editor.pattern",
+        "fallback": "Pattern"
+      },
+      "options": [
+        {
+          "id": "no_item_required",
+          "display": {
+            "translate": "text.i-editor.no_item_required",
+            "fallback": "No Item Required"
+          }
+        },
+        {
+          "id": "bordure_indented",
+          "display": {
+            "translate": "text.i-editor.banner_pattern_bordure_indeted",
+            "fallback": "Bordure Indented"
+          }
+        },
+        {
+          "id": "creeper",
+          "display": {
+            "translate": "text.i-editor.banner_pattern_creeper",
+            "fallback": "Creeper"
+          }
+        },
+        {
+          "id": "field_masoned",
+          "display": {
+            "translate": "text.i-editor.banner_pattern_fleid_masoned",
+            "fallback": "Field Masoned"
+          }
+        },
+        {
+          "id": "flow",
+          "display": {
+            "translate": "text.i-editor.banner_pattern_flow",
+            "fallback": "Flow"
+          }
+        },
+        {
+          "id": "flower",
+          "display": {
+            "translate": "text.i-editor.banner_pattern_flower",
+            "fallback": "Flower"
+          }
+        },
+        {
+          "id": "globe",
+          "display": {
+            "translate": "text.i-editor.banner_pattern_globe",
+            "fallback": "Globe"
+          }
+        },
+        {
+          "id": "guster",
+          "display": {
+            "translate": "text.i-editor.banner_pattern_guster",
+            "fallback": "Guster"
+          }
+        },
+        {
+          "id": "mojang",
+          "display": {
+            "translate": "text.i-editor.banner_pattern_mojang",
+            "fallback": "Mojang"
+          }
+        },
+        {
+          "id": "piglin",
+          "display": {
+            "translate": "text.i-editor.banner_pattern_piglin",
+            "fallback": "Piglin"
+          }
+        },
+        {
+          "id": "skull",
+          "display": {
+            "translate": "text.i-editor.banner_pattern_skull",
+            "fallback": "Skull"
+          }
+        }
+      ]
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:provides_banner_patterns\":\"#minecraft:pattern_item/$(pattern)\"}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

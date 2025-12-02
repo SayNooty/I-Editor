@@ -1,0 +1,104 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.lodestone_tracker",
+      "fallback": "Lodestone Tracker",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.lodestone_tracker",
+    "fallback": "Lodestone Tracker"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_lodestone_tracker_info",
+      "fallback": "Enter the coordinates and dimension to which the compass will point:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "pos_xyz",
+      "width": 150,
+      "label": [
+        {
+          "translate": "text.i-editor.target",
+          "fallback": "Target "
+        },
+        {
+          "translate": "text.i-editor.pos",
+          "fallback": "(pos) ",
+          "color": "gray"
+        },
+        {
+          "translate": "text.i-editor.x",
+          "fallback": "<x, y, z>",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "0, 0, 0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "dimension",
+      "width": 150,
+      "label": {
+        "translate": "text.i-editor.dimension",
+        "fallback": "Dimension"
+      },
+      "options": [
+        {
+          "id": "overworld"
+        },
+        {
+          "id": "the_nether"
+        },
+        {
+          "id": "the_end"
+        }
+      ]
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "tracked",
+      "label": {
+        "translate": "text.i-editor.tracked",
+        "fallback": "Tracked"
+      },
+      "initial": true
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:lodestone_tracker\":{target:{pos:[$(pos_xyz)],dimension:\"$(dimension)\"},tracked:$(tracked)}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

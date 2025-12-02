@@ -1,0 +1,62 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.jukebox_playable",
+      "fallback": "Jukebox Playable",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.jukebox_playable",
+    "fallback": "Jukebox Playable"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_jukebox_playable_info",
+      "fallback": "Enter the music ID record so that the item plays music in the jokebox:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "music",
+      "label": {
+        "translate": "text.i-editor.music",
+        "fallback": "Music"
+      },
+      "initial": "minecraft:pigstep",
+      "max_length": 9999
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:jukebox_playable\":\"$(music)\"}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

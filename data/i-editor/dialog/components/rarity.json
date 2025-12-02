@@ -1,0 +1,93 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.rarity",
+      "fallback": "Rarity",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.rarity",
+    "fallback": "Rarity"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_rarity_info",
+      "fallback": "Select the rarity that will be applied to the item:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:single_option",
+      "key": "rarity",
+      "label": {
+        "translate": "text.i-editor.rarity",
+        "fallback": "Rarity"
+      },
+      "options": [
+        {
+          "id": "common",
+          "display": {
+            "translate": "text.i-editor.rarity_common",
+            "fallback": "Common"
+          }
+        },
+        {
+          "id": "uncommon",
+          "display": {
+            "translate": "text.i-editor.rarity_uncommon",
+            "fallback": "Uncommon",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "rare",
+          "display": {
+            "translate": "text.i-editor.rarity_rare",
+            "fallback": "Rare",
+            "color": "aqua"
+          }
+        },
+        {
+          "id": "epic",
+          "display": {
+            "translate": "text.i-editor.rarity_epic",
+            "fallback": "Epic",
+            "color": "light_purple"
+          }
+        }
+      ]
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:rarity\":\"$(rarity)\"}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

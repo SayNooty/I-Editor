@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:confirmation",
+  "type": "minecraft:dialog_list",
   "title": {
     "translate": "title.i-editor.set_banner_pattern",
     "fallback": "Set Banner Pattern"
@@ -7,298 +7,17 @@
   "body": {
     "type": "minecraft:plain_message",
     "contents": {
-      "translate": "text.i-editor.banner_pattern_info",
-      "fallback": "Select a pattern, color, and overlay mode for the flag:",
+      "translate": "text.i-editor.set_banner_pattern_info",
+      "fallback": "Select the banner pattern, and then adjust it:",
       "color": "gray"
     },
     "width": 300
   },
-  "inputs": [
-    {
-      "type": "minecraft:single_option",
-      "key": "pattern",
-      "label": {
-        "translate": "text.i-editor.banner_pattern",
-        "fallback": "Banner Pattern"
-      },
-      "options": [
-        {
-          "id": "base"
-        },
-        {
-          "id": "border"
-        },
-        {
-          "id": "bricks"
-        },
-        {
-          "id": "circle"
-        },
-        {
-          "id": "creeper"
-        },
-        {
-          "id": "cross"
-        },
-        {
-          "id": "curly_border"
-        },
-        {
-          "id": "diagonal_left"
-        },
-        {
-          "id": "diagonal_right"
-        },
-        {
-          "id": "diagonal_up_left"
-        },
-        {
-          "id": "diagonal_up_right"
-        },
-        {
-          "id": "flow"
-        },
-        {
-          "id": "flower"
-        },
-        {
-          "id": "globe"
-        },
-        {
-          "id": "gradient"
-        },
-        {
-          "id": "gradient_up"
-        },
-        {
-          "id": "guster"
-        },
-        {
-          "id": "half_horizontal"
-        },
-        {
-          "id": "half_horizontal_bottom"
-        },
-        {
-          "id": "half_vertical"
-        },
-        {
-          "id": "half_vertical_right"
-        },
-        {
-          "id": "mojang"
-        },
-        {
-          "id": "piglin"
-        },
-        {
-          "id": "rhombus"
-        },
-        {
-          "id": "skull"
-        },
-        {
-          "id": "small_stripes"
-        },
-        {
-          "id": "square_bottom_left"
-        },
-        {
-          "id": "square_bottom_right"
-        },
-        {
-          "id": "square_top_left"
-        },
-        {
-          "id": "square_top_right"
-        },
-        {
-          "id": "straight_cross"
-        },
-        {
-          "id": "stripe_bottom"
-        },
-        {
-          "id": "stripe_center"
-        },
-        {
-          "id": "stripe_downleft"
-        },
-        {
-          "id": "stripe_downright"
-        },
-        {
-          "id": "stripe_left"
-        },
-        {
-          "id": "stripe_middle"
-        },
-        {
-          "id": "stripe_right"
-        },
-        {
-          "id": "stripe_top"
-        },
-        {
-          "id": "triangle_bottom"
-        },
-        {
-          "id": "triangle_top"
-        },
-        {
-          "id": "triangles_bottom"
-        },
-        {
-          "id": "triangles_top"
-        }
-      ]
-    },
-    {
-      "type": "minecraft:single_option",
-      "key": "color",
-      "label": {
-        "translate": "text.i-editor.color",
-        "fallback": "Color"
-      },
-      "options": [
-        {
-          "id": "white",
-          "display": {
-            "translate": "color.minecraft.white",
-            "color": "#ffffff"
-          }
-        },
-        {
-          "id": "light_gray",
-          "display": {
-            "translate": "color.minecraft.light_gray",
-            "color": "#9D9D97"
-          }
-        },
-        {
-          "id": "gray",
-          "display": {
-            "translate": "color.minecraft.gray",
-            "color": "#555555"
-          }
-        },
-        {
-          "id": "black",
-          "display": {
-            "translate": "color.minecraft.black",
-            "color": "#000000"
-          }
-        },
-        {
-          "id": "brown",
-          "display": {
-            "translate": "color.minecraft.brown",
-            "color": "#835432"
-          }
-        },
-        {
-          "id": "red",
-          "display": {
-            "translate": "color.minecraft.red",
-            "color": "#B02E26"
-          }
-        },
-        {
-          "id": "orange",
-          "display": {
-            "translate": "color.minecraft.orange",
-            "color": "#F9801D"
-          }
-        },
-        {
-          "id": "yellow",
-          "display": {
-            "translate": "color.minecraft.yellow",
-            "color": "#FED83D"
-          }
-        },
-        {
-          "id": "lime",
-          "display": {
-            "translate": "color.minecraft.lime",
-            "color": "#80C71F"
-          }
-        },
-        {
-          "id": "green",
-          "display": {
-            "translate": "color.minecraft.green",
-            "color": "#5E7C16"
-          }
-        },
-        {
-          "id": "cyan",
-          "display": {
-            "translate": "color.minecraft.cyan",
-            "color": "#169C9C"
-          }
-        },
-        {
-          "id": "light_blue",
-          "display": {
-            "translate": "color.minecraft.light_blue",
-            "color": "#3AB3DA"
-          }
-        },
-        {
-          "id": "blue",
-          "display": {
-            "translate": "color.minecraft.blue",
-            "color": "#3C44AA"
-          }
-        },
-        {
-          "id": "purple",
-          "display": {
-            "translate": "color.minecraft.purple",
-            "color": "#8932B8"
-          }
-        },
-        {
-          "id": "magenta",
-          "display": {
-            "translate": "color.minecraft.magenta",
-            "color": "#C74EBD"
-          }
-        },
-        {
-          "id": "pink",
-          "display": {
-            "translate": "color.minecraft.pink",
-            "color": "#F38BAA"
-          }
-        }
-      ]
-    },
-    {
-      "type": "minecraft:boolean",
-      "key": "append",
-      "label": {
-        "translate": "text.i-editor.append",
-        "fallback": "Append"
-      },
-      "initial": false
-    }
-  ],
+  "inputs": [],
   "can_close_with_escape": true,
   "pause": false,
   "after_action": "none",
-  "yes": {
-    "label": {
-      "translate": "gui.done",
-      "color": "green"
-    },
-    "action": {
-      "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_banner_pattern\",\"patterns\":[{\"pattern\":\"$(pattern)\",\"color\":\"$(color)\"}],\"append\":$(append)}]"
-    }
-  },
-  "no": {
+  "exit_action": {
     "label": {
       "translate": "gui.back",
       "color": "red"
@@ -307,5 +26,52 @@
       "type": "minecraft:show_dialog",
       "dialog": "i-editor:menu"
     }
-  }
+  },
+  "columns": 3,
+  "button_width": 125,
+  "dialogs": [
+    "i-editor:banner_patterns/base",
+    "i-editor:banner_patterns/border",
+    "i-editor:banner_patterns/bricks",
+    "i-editor:banner_patterns/circle",
+    "i-editor:banner_patterns/creeper",
+    "i-editor:banner_patterns/cross",
+    "i-editor:banner_patterns/curly_border",
+    "i-editor:banner_patterns/diagonal_left",
+    "i-editor:banner_patterns/diagonal_right",
+    "i-editor:banner_patterns/diagonal_up_left",
+    "i-editor:banner_patterns/diagonal_up_right",
+    "i-editor:banner_patterns/flow",
+    "i-editor:banner_patterns/flower",
+    "i-editor:banner_patterns/globe",
+    "i-editor:banner_patterns/gradient",
+    "i-editor:banner_patterns/gradient_up",
+    "i-editor:banner_patterns/guster",
+    "i-editor:banner_patterns/half_horizontal",
+    "i-editor:banner_patterns/half_horizontal_bottom",
+    "i-editor:banner_patterns/half_vertical",
+    "i-editor:banner_patterns/half_vertical_right",
+    "i-editor:banner_patterns/mojang",
+    "i-editor:banner_patterns/piglin",
+    "i-editor:banner_patterns/rhombus",
+    "i-editor:banner_patterns/skull",
+    "i-editor:banner_patterns/skull_stripes",
+    "i-editor:banner_patterns/square_bottom_left",
+    "i-editor:banner_patterns/square_bottom_right",
+    "i-editor:banner_patterns/square_top_left",
+    "i-editor:banner_patterns/square_top_right",
+    "i-editor:banner_patterns/straight_cross",
+    "i-editor:banner_patterns/stripe_bottom",
+    "i-editor:banner_patterns/stripe_center",
+    "i-editor:banner_patterns/stripe_downleft",
+    "i-editor:banner_patterns/stripe_downright",
+    "i-editor:banner_patterns/stripe_left",
+    "i-editor:banner_patterns/stripe_middle",
+    "i-editor:banner_patterns/stripe_right",
+    "i-editor:banner_patterns/stripe_top",
+    "i-editor:banner_patterns/triangle_bottom",
+    "i-editor:banner_patterns/triangle_top",
+    "i-editor:banner_patterns/triangles_bottom",
+    "i-editor:banner_patterns/triangles_top"
+  ]
 }

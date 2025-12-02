@@ -70,7 +70,7 @@
         },
         {
           "translate": "text.i-editor.false_and_true",
-          "fallback": "(false & true)",
+          "fallback": "<false & true>",
           "color": "dark_gray"
         }
       ],

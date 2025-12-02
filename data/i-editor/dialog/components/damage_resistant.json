@@ -1,0 +1,62 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.damage_resistant",
+      "fallback": "Damage Resistant",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.damage_resistant",
+    "fallback": "Damage Resistant"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_damage_resistant_info",
+      "fallback": "Enter the specified damage type that the item will be invulnerable to:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "type",
+      "label": {
+        "translate": "text.i-editor.type",
+        "fallback": "Type"
+      },
+      "initial": "#minecraft:is_fire",
+      "max_length": 9999
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:damage_resistant\":{\"types\":\"$(type)\"}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.dyed_color",
+      "fallback": "Dyed Color",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.dyed_color",
+    "fallback": "Dyed Color"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_dyed_color_info",
+      "fallback": "Enter the color code for coloring leather and wolf armor:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "color_code",
+      "label": [
+        {
+          "translate": "text.i-editor.color_code",
+          "fallback": "Color code "
+        },
+        {
+          "translate": "text.i-editor.color_code_decimal",
+          "fallback": "[decimal]",
+          "color": "gray"
+        }
+      ],
+      "max_length": 9999
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:dyed_color\":$(color_code)}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

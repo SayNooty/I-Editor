@@ -1,0 +1,183 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.blocks_attacks",
+      "fallback": "Blocks Attacks",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.blocks_attacks",
+    "fallback": "Blocks Attacks"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_blocks_attacks_info",
+      "fallback": "Enter the value of the lock like a shield:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "block_delay_seconds",
+      "width": 175,
+      "label": [
+        {
+          "translate": "text.i-editor.block_delay_seconds",
+          "fallback": "Block delay seconds "
+        },
+        {
+          "translate": "text.i-editor.min",
+          "fallback": "<min: 0>",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "disable_cooldown_scale",
+      "width": 175,
+      "label": [
+        {
+          "translate": "text.i-editor.disable_cooldown_scale",
+          "fallback": "Disable cooldown scale "
+        },
+        {
+          "translate": "text.i-editor.min",
+          "fallback": "<min: 0>",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "1",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "damage_reductions_base",
+      "width": 175,
+      "label": [
+        {
+          "translate": "text.i-editor.damage_reductions",
+          "fallback": "Damage reductions "
+        },
+        {
+          "translate": "text.i-editor.base",
+          "fallback": "(base)",
+          "color": "gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "damage_reductions_factor",
+      "width": 175,
+      "label": [
+        {
+          "translate": "text.i-editor.damage_reductions",
+          "fallback": "Damage reductions "
+        },
+        {
+          "translate": "text.i-editor.factor",
+          "fallback": "(factor)",
+          "color": "gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "item_damage_threshold",
+      "width": 175,
+      "label": [
+        {
+          "translate": "text.i-editor.item_damage",
+          "fallback": "Item damage "
+        },
+        {
+          "translate": "text.i-editor.item_damage_threshold",
+          "fallback": "(threshold) ",
+          "color": "gray"
+        },
+        {
+          "translate": "text.i-editor.min",
+          "fallback": "<min: 0>",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "item_damage_base",
+      "width": 175,
+      "label": [
+        {
+          "translate": "text.i-editor.item_damage",
+          "fallback": "Item damage "
+        },
+        {
+          "translate": "text.i-editor.base",
+          "fallback": "(base) ",
+          "color": "gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "item_damage_factor",
+      "width": 175,
+      "label": [
+        {
+          "translate": "text.i-editor.item_damage",
+          "fallback": "Item damage "
+        },
+        {
+          "translate": "text.i-editor.factor",
+          "fallback": "(factor)",
+          "color": "gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:blocks_attacks\":{\"block_delay_seconds\":$(block_delay_seconds),\"disable_cooldown_scale\":$(disable_cooldown_scale),\"damage_reductions\":[{\"base\":$(damage_reductions_base),\"factor\":$(damage_reductions_factor)}],\"item_damage\":{\"threshold\":$(item_damage_threshold),\"base\":$(item_damage_base),\"factor\":$(item_damage_factor)}}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

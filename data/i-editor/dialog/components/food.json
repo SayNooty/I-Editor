@@ -1,0 +1,89 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.food",
+      "fallback": "Food",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.food",
+    "fallback": "Food"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_food_info",
+      "fallback": "Enter the amount of saturation and nutritional value, and checkbox whether this item can always be eaten:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "nutrition",
+      "width": 125,
+      "label": [
+        {
+          "translate": "text.i-editor.nutrition",
+          "fallback": "Nutrition "
+        },
+        {
+          "translate": "text.i-editor.min_0",
+          "fallback": "<min: 0>",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "saturation",
+      "width": 125,
+      "label": {
+        "translate": "text.i-editor.saturation",
+        "fallback": "Saturation"
+      },
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "can_always_eat",
+      "label": {
+        "translate": "text.i-editor.can_always_eat",
+        "fallback": "Can always eat"
+      },
+      "initial": false
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:food\":{\"nutrition\":$(nutrition),\"saturation\":$(saturation),\"can_always_eat\":$(can_always_eat)}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

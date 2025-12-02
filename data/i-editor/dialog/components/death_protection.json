@@ -1,0 +1,62 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.death_protection",
+      "fallback": "Death Protection",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.death_protection",
+    "fallback": "Death Protection"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_death_protection_info",
+      "fallback": "By default, the item protects the owner from death. Enter the sound ID of the item being lost at death:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "sound_id",
+      "label": {
+        "translate": "text.i-editor.sound_id",
+        "fallback": "Sound ID"
+      },
+      "initial": "minecraft:item.totem.use",
+      "max_length": 9999
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:death_protection\":{\"death_effects\":[{\"type\":\"minecraft:play_sound\",\"sound\":\"$(sound_id)\"}]}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

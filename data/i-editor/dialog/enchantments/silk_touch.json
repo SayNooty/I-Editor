@@ -2,7 +2,7 @@
   "type": "minecraft:confirmation",
   "title": [
     {
-      "translate": "text.i-editor.enchantment",
+      "translate": "title.i-editor.enchantment",
       "fallback": "Enchantment: "
     },
     {
@@ -16,7 +16,7 @@
   "body": {
     "type": "minecraft:plain_message",
     "contents": {
-      "translate": "text.i-editor.enchantment_info",
+      "translate": "title.i-editor.enchantment_info",
       "fallback": "Drag the slider to the desired enchantment level:",
       "color": "gray"
     },

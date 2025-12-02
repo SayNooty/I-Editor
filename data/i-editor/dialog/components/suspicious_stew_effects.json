@@ -1,0 +1,78 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.suspicious_stew_effects",
+      "fallback": "Suspicious Stew Effects",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.suspicious_stew_effects",
+    "fallback": "Suspicious Stew Effects"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_suspicious_stew_effects_info",
+      "fallback": "Enter the effect ID and the duration of the effect applied to the player or mob when using this item (similar to a suspicious stew):",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "effect",
+      "label": {
+        "translate": "text.i-editor.effect",
+        "fallback": "Effect"
+      },
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "duration",
+      "label": [
+        {
+          "translate": "text.i-editor.duration",
+          "fallback": "Duration "
+        },
+        {
+          "translate": "text.i-editor.tick_info",
+          "fallback": "(in ticks)",
+          "color": "gray"
+        }
+      ],
+      "initial": "160",
+      "max_length": 9999
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:suspicious_stew_effects\":[{\"id\":\"$(effect)\",\"duration\":$(duration)}]}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.container",
+      "fallback": "Container",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.container",
+    "fallback": "Container"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_container_info",
+      "fallback": "Enter the item ID contained in the container and assigned to the slot:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "slot",
+      "label": [
+        {
+          "translate": "text.i-editor.slot",
+          "fallback": "Slot "
+        },
+        {
+          "translate": "text.i-editor.slot_min",
+          "fallback": "<min: 0> ",
+          "color": "dark_gray"
+        },
+        {
+          "translate": "text.i-editor.slot_max",
+          "fallback": "<max: 255>",
+          "color": "dark_gray"
+        }
+      ],
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "item_id",
+      "label": {
+        "translate": "text.i-editor.item_id",
+        "fallback": "Item ID"
+      },
+      "initial": "minecraft:diamond",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:number_range",
+      "key": "count",
+      "label": {
+        "translate": "text.i-editor.count",
+        "fallback": "Count"
+      },
+      "start": 1,
+      "end": 99,
+      "step": 1,
+      "initial": 1
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:container\":[{\"slot\":$(slot),\"item\":{\"id\":\"$(item_id)\",\"count\":$(count)}}]}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

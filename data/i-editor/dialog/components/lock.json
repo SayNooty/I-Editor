@@ -1,0 +1,81 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.lock",
+      "fallback": "Lock",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.lock",
+    "fallback": "Lock"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_lock_info",
+      "fallback": "Enter the item ID and its count that is required to open the container for which you are using this component:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "item",
+      "width": 150,
+      "label": [
+        {
+          "translate": "text.i-editor.item",
+          "fallback": "Item "
+        },
+        {
+          "translate": "text.i-editor.to_chest",
+          "fallback": "[to container]",
+          "color": "gray"
+        }
+      ],
+      "initial": "minecraft:stick",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "count",
+      "width": 150,
+      "label": {
+        "translate": "text.i-editor.count",
+        "fallback": "Count"
+      },
+      "initial": "1",
+      "max_length": 9999
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:lock\":{items:\"$(item)\",count:$(count)}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.ominous_bottle_amplifier",
+      "fallback": "Ominous Bottle Amplifier",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.ominous_bottle_amplifier",
+    "fallback": "Ominous Bottle Amplifier"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_ominous_bottle_amplifier_info",
+      "fallback": "Set the amplifier value given to the player or mob when using this item:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:number_range",
+      "key": "amplifier",
+      "width": 150,
+      "label": {
+        "translate": "text.i-editor.amplifier",
+        "fallback": "Amplifier"
+      },
+      "max_length": 9999,
+      "start": 0,
+      "end": 4,
+      "step": 1,
+      "initial": 0
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:ominous_bottle_amplifier\":$(amplifier)}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

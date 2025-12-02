@@ -1,0 +1,61 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.tooltip_display",
+      "fallback": "Tooltip Display",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.tooltip_display",
+    "fallback": "Tooltip Display"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_tooltip_display_info",
+      "fallback": "Select whether to display tip about an item when hovering over it with the cursor:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:boolean",
+      "key": "hide_tooltip",
+      "label": {
+        "translate": "text.i-editor.hide_tooltip",
+        "fallback": "Hide Tooltip"
+      },
+      "initial": false
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:tooltip_display\":{\"hide_tooltip\":$(hide_tooltip)}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

@@ -1,0 +1,183 @@
+{
+    "type": "minecraft:confirmation",
+    "title": [
+        {
+            "translate": "title.i-editor.banner_pattern",
+            "fallback": "Banner Pattern: "
+        },
+        {
+            "translate": "text.i-editor.banner_pattern_half_horizontal_bottom",
+            "fallback": "Half Horizontal Bottom",
+            "color": "yellow"
+        }
+    ],
+    "external_title": {
+        "translate": "text.i-editor.banner_pattern_half_horizontal_bottom",
+        "fallback": "Half Horizontal Bottom"
+    },
+    "body": {
+        "type": "minecraft:plain_message",
+        "contents": {
+            "translate": "text.i-editor.banner_pattern_info",
+            "fallback": "Select color, and overlay mode for the flag:",
+            "color": "gray"
+        },
+        "width": 300
+    },
+    "inputs": [
+        {
+            "type": "minecraft:single_option",
+            "key": "color",
+            "label": {
+                "translate": "text.i-editor.color",
+                "fallback": "Color"
+            },
+            "options": [
+                {
+                    "id": "white",
+                    "display": {
+                        "translate": "color.minecraft.white",
+                        "color": "#ffffff"
+                    }
+                },
+                {
+                    "id": "light_gray",
+                    "display": {
+                        "translate": "color.minecraft.light_gray",
+                        "color": "#9D9D97"
+                    }
+                },
+                {
+                    "id": "gray",
+                    "display": {
+                        "translate": "color.minecraft.gray",
+                        "color": "#555555"
+                    }
+                },
+                {
+                    "id": "black",
+                    "display": {
+                        "translate": "color.minecraft.black",
+                        "color": "#000000"
+                    }
+                },
+                {
+                    "id": "brown",
+                    "display": {
+                        "translate": "color.minecraft.brown",
+                        "color": "#835432"
+                    }
+                },
+                {
+                    "id": "red",
+                    "display": {
+                        "translate": "color.minecraft.red",
+                        "color": "#B02E26"
+                    }
+                },
+                {
+                    "id": "orange",
+                    "display": {
+                        "translate": "color.minecraft.orange",
+                        "color": "#F9801D"
+                    }
+                },
+                {
+                    "id": "yellow",
+                    "display": {
+                        "translate": "color.minecraft.yellow",
+                        "color": "#FED83D"
+                    }
+                },
+                {
+                    "id": "lime",
+                    "display": {
+                        "translate": "color.minecraft.lime",
+                        "color": "#80C71F"
+                    }
+                },
+                {
+                    "id": "green",
+                    "display": {
+                        "translate": "color.minecraft.green",
+                        "color": "#5E7C16"
+                    }
+                },
+                {
+                    "id": "cyan",
+                    "display": {
+                        "translate": "color.minecraft.cyan",
+                        "color": "#169C9C"
+                    }
+                },
+                {
+                    "id": "light_blue",
+                    "display": {
+                        "translate": "color.minecraft.light_blue",
+                        "color": "#3AB3DA"
+                    }
+                },
+                {
+                    "id": "blue",
+                    "display": {
+                        "translate": "color.minecraft.blue",
+                        "color": "#3C44AA"
+                    }
+                },
+                {
+                    "id": "purple",
+                    "display": {
+                        "translate": "color.minecraft.purple",
+                        "color": "#8932B8"
+                    }
+                },
+                {
+                    "id": "magenta",
+                    "display": {
+                        "translate": "color.minecraft.magenta",
+                        "color": "#C74EBD"
+                    }
+                },
+                {
+                    "id": "pink",
+                    "display": {
+                        "translate": "color.minecraft.pink",
+                        "color": "#F38BAA"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "minecraft:boolean",
+            "key": "append",
+            "label": {
+                "translate": "text.i-editor.append",
+                "fallback": "Append"
+            },
+            "initial": false
+        }
+    ],
+    "can_close_with_escape": true,
+    "pause": false,
+    "after_action": "none",
+    "yes": {
+        "label": {
+            "translate": "gui.done",
+            "color": "green"
+        },
+        "action": {
+            "type": "dynamic/run_command",
+            "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_banner_pattern\",\"patterns\":[{\"pattern\":\"minecraft:half_horizontal_bottom\",\"color\":\"$(color)\"}],\"append\":$(append)}]"
+        }
+    },
+    "no": {
+        "label": {
+            "translate": "gui.back",
+            "color": "red"
+        },
+        "action": {
+            "type": "minecraft:show_dialog",
+            "dialog": "i-editor:set_banner_pattern"
+        }
+    }
+}
