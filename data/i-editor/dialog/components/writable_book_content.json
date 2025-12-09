@@ -1,0 +1,74 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.writable_book_content",
+      "fallback": "Writable Book Content",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.writable_book_content",
+    "fallback": "Writable Book Content"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_writable_book_content_info",
+      "fallback": "Write the text that you want to see on the page in the book, and also enter a filter if necessary:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "raw",
+      "width": 175,
+      "label": {
+        "translate": "text.i-editor.raw",
+        "fallback": "Raw"
+      },
+      "max_length": 9999,
+      "multiline": {
+        "max_lines": 14
+      }
+    },
+    {
+      "type": "minecraft:text",
+      "key": "filtered",
+      "width": 175,
+      "label": {
+        "translate": "text.i-editor.filtered",
+        "fallback": "Filtered"
+      }
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:writable_book_content\":{\"pages\":[{\"raw\":\"$(raw)\",\"filtered\":\"$(filtered)\"}]}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

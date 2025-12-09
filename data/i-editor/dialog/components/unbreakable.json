@@ -1,0 +1,51 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.unbreakable",
+      "fallback": "Unbreakable",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.unbreakable",
+    "fallback": "Unbreakable"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_unbreakable_info",
+      "fallback": "You don't need to configure anything here, just click done to make the item invulnerable to damage, and if you don't want to do this, then click back:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:unbreakable\":{$(unbreakable)}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

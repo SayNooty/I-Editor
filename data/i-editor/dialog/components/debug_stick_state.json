@@ -1,0 +1,70 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.debug_stick_state",
+      "fallback": "Debug Stick State",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.debug_stick_state",
+    "fallback": "Debug Stick State"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_debug_stick_state_info",
+      "fallback": "First, enter the block, followed by its state, which will be applied to the debug stick:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "block_id",
+      "label": {
+        "translate": "text.i-editor.block_id",
+        "fallback": "Block ID"
+      },
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "state",
+      "label": {
+        "translate": "text.i-editor.state",
+        "fallback": "State"
+      },
+      "max_length": 9999
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:debug_stick_state\":{\"$(block_id)\":\"$(state)\"}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "type": "minecraft:dialog_list",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "title.i-editor.component.map_decorations",
+      "fallback": "Map Decorations",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.map_decorations",
+    "fallback": "Map Decorations"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component.map_decorations_info",
+      "fallback": "Select the icon to display on the map:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "exit_action": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "width": 200,
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  },
+  "columns": 3,
+  "button_width": 125,
+  "dialogs": [
+    "i-editor:components/map_decorations/banner_black",
+    "i-editor:components/map_decorations/banner_blue",
+    "i-editor:components/map_decorations/banner_brown",
+    "i-editor:components/map_decorations/banner_cyan",
+    "i-editor:components/map_decorations/banner_gray",
+    "i-editor:components/map_decorations/banner_green",
+    "i-editor:components/map_decorations/banner_light_blue",
+    "i-editor:components/map_decorations/banner_light_gray",
+    "i-editor:components/map_decorations/banner_lime",
+    "i-editor:components/map_decorations/banner_magenta",
+    "i-editor:components/map_decorations/banner_orange",
+    "i-editor:components/map_decorations/banner_pink",
+    "i-editor:components/map_decorations/banner_purple",
+    "i-editor:components/map_decorations/banner_red",
+    "i-editor:components/map_decorations/banner_white",
+    "i-editor:components/map_decorations/banner_yellow",
+    "i-editor:components/map_decorations/blue_marker",
+    "i-editor:components/map_decorations/frame",
+    "i-editor:components/map_decorations/jungle_temple",
+    "i-editor:components/map_decorations/mansion",
+    "i-editor:components/map_decorations/monument",
+    "i-editor:components/map_decorations/player",
+    "i-editor:components/map_decorations/player_off_limits",
+    "i-editor:components/map_decorations/player_off_maps",
+    "i-editor:components/map_decorations/red_marker",
+    "i-editor:components/map_decorations/red_x",
+    "i-editor:components/map_decorations/swamp_hut",
+    "i-editor:components/map_decorations/target_point",
+    "i-editor:components/map_decorations/target_x",
+    "i-editor:components/map_decorations/trial_chambers",
+    "i-editor:components/map_decorations/village_desert",
+    "i-editor:components/map_decorations/village_plains",
+    "i-editor:components/map_decorations/village_savanna",
+    "i-editor:components/map_decorations/village_snowy",
+    "i-editor:components/map_decorations/village_taiga"
+  ]
+}

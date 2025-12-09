@@ -1,0 +1,51 @@
+{
+  "type": "minecraft:confirmation",
+  "title": {
+    "translate": "title.i-editor.set_damage",
+    "fallback": "Set Damage"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.set_damage_info",
+      "fallback": "Enter the damage value of the item, which is subtracted from the maximum durability value:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "damage",
+      "width": 125,
+      "label": {
+        "translate": "text.i-editor.damage",
+        "fallback": "Damage"
+      },
+      "max_length": 100
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:damage\":$(damage)}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "i-editor:menu"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "type": "minecraft:confirmation",
+  "title": {
+    "translate": "title.i-editor.set_firework",
+    "fallback": "Set Firework"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.set_firework_info",
+      "fallback": "None:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:number_range",
+      "key": "flight_duration",
+      "label": {
+        "translate": "item.minecraft.firework_rocket.flight"
+      },
+      "start": -128,
+      "end": 127,
+      "step": 1,
+      "initial": 1
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "shape",
+      "label": {
+        "translate": "text.i-editor.shape",
+        "fallback": "Shape"
+      },
+      "options": [
+        {
+          "id": "small_ball",
+          "display": {
+            "translate": "item.minecraft.firework_star.shape.small_ball"
+          }
+        },
+        {
+          "id": "large_ball",
+          "display": {
+            "translate": "item.minecraft.firework_star.shape.large_ball"
+          }
+        },
+        {
+          "id": "star",
+          "display": {
+            "translate": "item.minecraft.firework_star.shape.star"
+          }
+        },
+        {
+          "id": "creeper",
+          "display": {
+            "translate": "item.minecraft.firework_star.shape.creeper"
+          }
+        },
+        {
+          "id": "burst",
+          "display": {
+            "translate": "item.minecraft.firework_star.shape.burst"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:text",
+      "key": "color",
+      "label": [
+        {
+          "translate": "text.i-editor.color",
+          "fallback": "Color "
+        },
+        {
+          "translate": "text.i-editor.color_decimal",
+          "fallback": "[decimal]",
+          "color": "gray"
+        }
+      ],
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "fade_color",
+      "label": [
+        {
+          "translate": "text.i-editor.fade_color",
+          "fallback": "Fade color "
+        },
+        {
+          "translate": "text.i-editor.color_decimal",
+          "fallback": "[decimal]",
+          "color": "gray"
+        }
+      ],
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "has_trail",
+      "label": {
+        "translate": "text.i-editor.has_trail",
+        "fallback": "Has trail"
+      },
+      "initial": false
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "has_twinkle",
+      "label": {
+        "translate": "text.i-editor.has_twinkle",
+        "fallback": "Has twinkle"
+      },
+      "initial": false
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "/item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:fireworks\":{\"explosions\":[{\"shape\":\"$(shape)\",\"colors\":[$(color)],\"fade_colors\":[$(fade_color)],\"has_trail\":$(has_trail),\"has_twinkle\":$(has_twinkle)}],\"flight_duration\":$(flight_duration)}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:menu"
+    }
+  }
+}

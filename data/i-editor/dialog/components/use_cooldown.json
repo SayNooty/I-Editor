@@ -1,0 +1,80 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.use_cooldown",
+      "fallback": "Use Cooldown",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.use_cooldown",
+    "fallback": "Use Cooldown"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_use_cooldown_info",
+      "fallback": "Enter the cooldown time of the item being used and, if necessary, the cooldown group:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "seconds",
+      "width": 150,
+      "label": [
+        {
+          "translate": "text.i-editor.seconds",
+          "fallback": "Seconds "
+        },
+        {
+          "translate": "text.i-editor.min_1",
+          "fallback": "<min: 1>",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "1",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "cooldown_group",
+      "width": 150,
+      "label": {
+        "translate": "text.i-editor.cooldown_group",
+        "fallback": "Cooldown Group"
+      },
+      "max_length": 9999
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:use_cooldown\":{\"seconds\":$(seconds),\"cooldown_group\": \"$(cooldown_group)\"}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

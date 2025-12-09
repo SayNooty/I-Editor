@@ -1,0 +1,81 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.tool",
+      "fallback": "Tool",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.tool",
+    "fallback": "Tool"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_tool_info",
+      "fallback": "Enter the values to setting the mining parameters so that the item is a tool:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "default_mining_speed",
+      "label": {
+        "translate": "text.i-editor.default_mining_speed",
+        "fallback": "Default Mining Speed"
+      },
+      "initial": "1.0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "damage_per_block",
+      "label": {
+        "translate": "text.i-editor.damage_per_block",
+        "fallback": "Damage Per Block"
+      },
+      "initial": "1",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "can_destroy_blocks_in_creative",
+      "label": {
+        "translate": "text.i-editor.can_destroy_blocks_in_creative",
+        "fallback": "Can Destroy Blocks In Creative"
+      },
+      "initial": true
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:tool\":{\"rules\":[],\"default_mining_speed\":$(default_mining_speed),\"damage_per_block\":$(damage_per_block),\"can_destroy_blocks_in_creative\":$(can_destroy_blocks_in_creative)}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

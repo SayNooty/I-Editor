@@ -1,0 +1,107 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.instrument",
+      "fallback": "Instrument",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.instrument",
+    "fallback": "Instrument"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.component_instrument_info",
+      "fallback": "Customize the sound instrument, its sound duration and range, as well as a description:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "sound_event",
+      "width": 175,
+      "label": {
+        "translate": "text.i-editor.sound_event",
+        "fallback": "Sound event"
+      },
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "range",
+      "width": 175,
+      "label": [
+        {
+          "translate": "text.i-editor.range",
+          "fallback": "Range "
+        },
+        {
+          "translate": "text.i-editor.min_1",
+          "fallback": "<min: 1>",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "1",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "use_duration",
+      "width": 175,
+      "label": [
+        {
+          "translate": "text.i-editor.use_duration",
+          "fallback": "Use duration "
+        },
+        {
+          "translate": "text.i-editor.min_1",
+          "fallback": "<min: 1>",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "1",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "description",
+      "width": 175,
+      "label": {
+        "translate": "mco.backup.entry.description"
+      },
+      "max_length": 9999
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:instrument\":{sound_event:\"$(sound_event)\",range:$(range),use_duration:$(use_duration),description:\"$(description)\"}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

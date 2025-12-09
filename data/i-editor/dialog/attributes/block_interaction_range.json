@@ -28,7 +28,7 @@
       "key": "amount",
       "label": {
         "translate": "text.i-editor.amount",
-        "fallback": "amount"
+        "fallback": "Amount"
       },
       "start": 0,
       "end": 64,

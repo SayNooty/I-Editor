@@ -10,6 +10,15 @@
     "translate": "menu.i-editor",
     "fallback": "I Editor"
   },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "text.i-editor.description",
+      "fallback": "Select the element editing item:",
+      "color": "gray"
+    }
+  },
+  "inputs": [],
   "can_close_with_escape": true,
   "pause": false,
   "exit_action": {
@@ -28,9 +37,13 @@
     "i-editor:set_custom_data",
     "i-editor:set_custom_model_data",
     "i-editor:set_attribute",
+    "i-editor:set_component",
     "i-editor:set_enchantment",
+    "i-editor:set_damage",
     "i-editor:set_count",
     "i-editor:set_banner_pattern",
+    "i-editor:set_trim",
+    "i-editor:set_firework",
     "i-editor:set_book_cover",
     "i-editor:set_potion"
   ]
