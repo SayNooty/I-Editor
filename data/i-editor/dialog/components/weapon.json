@@ -16,13 +16,17 @@
     "fallback": "Weapon"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:diamond_sword"
+    },
+    "description": {
       "translate": "text.i-editor.component_weapon_info",
       "fallback": "Enter the cost of strength per hit and the count of seconds for which this item can disable the blocking shield upon a successful attack:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

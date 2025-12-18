@@ -16,13 +16,17 @@
     "fallback": "Suspicious Stew Effects"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:suspicious_stew"
+    },
+    "description": {
       "translate": "text.i-editor.component_suspicious_stew_effects_info",
       "fallback": "Enter the effect ID and the duration of the effect applied to the player or mob when using this item (similar to a suspicious stew):",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

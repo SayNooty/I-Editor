@@ -16,13 +16,17 @@
     "fallback": "Enchantment Glint Override"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:experience_bottle"
+    },
+    "description": {
       "translate": "text.i-editor.component_enchantment_glint_override_info",
       "fallback": "Click on the checkmark so that the item can glint like enchanted books:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {
@@ -31,7 +35,7 @@
       "label": [
         {
           "translate": "text.i-editor.glint_override",
-          "fallback": "Glint override"
+          "fallback": "Glint Override"
         }
       ],
       "initial": false

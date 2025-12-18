@@ -8,7 +8,7 @@
     "type": "minecraft:plain_message",
     "contents": {
       "translate": "text.i-editor.set_firework_info",
-      "fallback": "None:",
+      "fallback": "Adjust how the fireworks will explode after using it:",
       "color": "gray"
     },
     "width": 300
@@ -87,7 +87,7 @@
       "label": [
         {
           "translate": "text.i-editor.fade_color",
-          "fallback": "Fade color "
+          "fallback": "Fade Color "
         },
         {
           "translate": "text.i-editor.color_decimal",
@@ -102,7 +102,7 @@
       "key": "has_trail",
       "label": {
         "translate": "text.i-editor.has_trail",
-        "fallback": "Has trail"
+        "fallback": "Has Trail"
       },
       "initial": false
     },
@@ -111,7 +111,7 @@
       "key": "has_twinkle",
       "label": {
         "translate": "text.i-editor.has_twinkle",
-        "fallback": "Has twinkle"
+        "fallback": "Has Twinkle"
       },
       "initial": false
     }

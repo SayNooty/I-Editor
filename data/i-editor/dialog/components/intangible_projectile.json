@@ -16,13 +16,17 @@
     "fallback": "Intangible Projectile"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:arrow"
+    },
+    "description": {
       "translate": "text.i-editor.component_intangible_projectile_info",
       "fallback": "You don't need to configure anything here, just click done to remove the ability to pick up a projectile (it will become intangible), and if you don't want to, then click back:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [],
   "can_close_with_escape": true,

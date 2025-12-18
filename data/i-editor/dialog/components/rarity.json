@@ -16,13 +16,17 @@
     "fallback": "Rarity"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:nether_star"
+    },
+    "description": {
       "translate": "text.i-editor.component_rarity_info",
       "fallback": "Select the rarity that will be applied to the item:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

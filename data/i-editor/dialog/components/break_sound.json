@@ -16,13 +16,17 @@
     "fallback": "Break Sound"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:wooden_sword"
+    },
+    "description": {
       "translate": "text.i-editor.component_break_sound_info",
-      "fallback": "Enter the ID of the sound that will be played when the item breaks:",
+      "fallback": "Enter the sound ID that will be played when the item breaks:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

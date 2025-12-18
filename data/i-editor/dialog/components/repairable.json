@@ -16,13 +16,17 @@
     "fallback": "Repairable"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:anvil"
+    },
+    "description": {
       "translate": "text.i-editor.component_repairable_info",
       "fallback": "Enter the item ID that can repair the item, if it may be damaged, on the anvil:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

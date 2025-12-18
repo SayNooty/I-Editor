@@ -1,0 +1,111 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.swing_animation",
+      "fallback": "Swing Animation",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.swing_animation",
+    "fallback": "Swing Animation"
+  },
+  "body": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:netherite_spear"
+    },
+    "description": {
+      "translate": "text.i-editor.component_swing_animation_info",
+      "fallback": "Select the animation of the item swinging and the duration like a spear:",
+      "color": "gray"
+    },
+    "show_decorations": false,
+    "show_tooltip": false
+  },
+  "inputs": [
+    {
+      "type": "minecraft:single_option",
+      "key": "type",
+      "width": 150,
+      "label": {
+        "translate": "text.i-editor.type",
+        "fallback": "Type"
+      },
+      "options": [
+        {
+          "id": "none",
+          "display": {
+            "translate": "gui.none"
+          }
+        },
+        {
+          "id": "whack",
+          "display": {
+            "translate": "text.i-editor.whack",
+            "fallback": "Whack"
+          },
+          "initial": true
+        },
+        {
+          "id": "stab",
+          "display": {
+            "translate": "text.i-editor.stab",
+            "fallback": "Stab"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:text",
+      "key": "duration",
+      "width": 150,
+      "label": [
+        {
+          "translate": "text.i-editor.duration",
+          "fallback": "Duration "
+        },
+        {
+          "translate": "text.i-editor.tick_info",
+          "fallback": "(in ticks) ",
+          "color": "gray"
+        },
+        {
+          "translate": "text.i-editor.min_1",
+          "fallback": "<min: 1>",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "6",
+      "max_length": 9
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:swing_animation\":{\"type\":\"$(type)\",\"duration\":$(duration)}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

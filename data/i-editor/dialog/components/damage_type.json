@@ -6,23 +6,23 @@
       "fallback": "Component: "
     },
     {
-      "translate": "component.name.debug_stick_state",
-      "fallback": "Debug Stick State",
+      "translate": "component.name.damage_type",
+      "fallback": "Damage Type",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.debug_stick_state",
-    "fallback": "Debug Stick State"
+    "translate": "component.name.damage_type",
+    "fallback": "Damage Type"
   },
   "body": {
     "type": "minecraft:item",
     "item": {
-      "id": "minecraft:debug_stick"
+      "id": "minecraft:stone_sword"
     },
     "description": {
-      "translate": "text.i-editor.component_debug_stick_state_info",
-      "fallback": "First, enter the block, followed by its state, which will be applied to the debug stick:",
+      "translate": "text.i-editor.component_damage_type_info",
+      "fallback": "Adjust the damage type for the item:",
       "color": "gray"
     },
     "show_decorations": false,
@@ -31,19 +31,11 @@
   "inputs": [
     {
       "type": "minecraft:text",
-      "key": "block_id",
+      "key": "damage_type",
+      "width": 150,
       "label": {
-        "translate": "text.i-editor.block_id",
-        "fallback": "Block ID"
-      },
-      "max_length": 9999
-    },
-    {
-      "type": "minecraft:text",
-      "key": "state",
-      "label": {
-        "translate": "text.i-editor.state",
-        "fallback": "State"
+        "translate": "text.i-editor.damage_type",
+        "fallback": "Damage Type"
       },
       "max_length": 9999
     }
@@ -58,7 +50,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:debug_stick_state\":{\"$(block_id)\":\"$(state)\"}}}]"
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:damage_type\":\"$(damage_type)\"}}]"
     }
   },
   "no": {

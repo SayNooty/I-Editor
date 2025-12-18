@@ -16,13 +16,17 @@
     "fallback": "Use Remainder"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:milk_bucket"
+    },
+    "description": {
       "translate": "text.i-editor.component_use_remainder_info",
       "fallback": "Enter the item ID and select the count of the item that will appear after consuming the previous one:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

@@ -16,13 +16,17 @@
     "fallback": "Dyed Color"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:leather_chestplate"
+    },
+    "description": {
       "translate": "text.i-editor.component_dyed_color_info",
       "fallback": "Enter the color code for coloring leather and wolf armor:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {
@@ -31,7 +35,7 @@
       "label": [
         {
           "translate": "text.i-editor.color_code",
-          "fallback": "Color code "
+          "fallback": "Color Code "
         },
         {
           "translate": "text.i-editor.color_code_decimal",

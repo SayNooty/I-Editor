@@ -16,13 +16,17 @@
     "fallback": "Use Cooldown"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:ender_pearl"
+    },
+    "description": {
       "translate": "text.i-editor.component_use_cooldown_info",
       "fallback": "Enter the cooldown time of the item being used and, if necessary, the cooldown group:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

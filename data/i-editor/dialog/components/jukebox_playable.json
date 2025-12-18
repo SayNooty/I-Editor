@@ -16,13 +16,17 @@
     "fallback": "Jukebox Playable"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:music_disc_cat"
+    },
+    "description": {
       "translate": "text.i-editor.component_jukebox_playable_info",
       "fallback": "Enter the music ID record so that the item plays music in the jokebox:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

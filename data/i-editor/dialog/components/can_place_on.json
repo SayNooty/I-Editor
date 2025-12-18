@@ -16,13 +16,17 @@
     "fallback": "Can Place On"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:cobblestone"
+    },
+    "description": {
       "translate": "text.i-editor.component_can_place_on_info",
       "fallback": "Enter the block ID so that the block is placed only on it in adventure mode:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

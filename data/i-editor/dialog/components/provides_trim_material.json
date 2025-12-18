@@ -16,13 +16,17 @@
     "fallback": "Provides Trim Material"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:coast_armor_trim_smithing_template"
+    },
+    "description": {
       "translate": "text.i-editor.component_provides_trim_material_info",
       "fallback": "Select the trim material that will be applied when using the trim on the smithing table:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

@@ -16,13 +16,17 @@
     "fallback": "Food"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:cooked_beef"
+    },
+    "description": {
       "translate": "text.i-editor.component_food_info",
       "fallback": "Enter the amount of saturation and nutritional value, and checkbox whether this item can always be eaten:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {
@@ -58,7 +62,7 @@
       "key": "can_always_eat",
       "label": {
         "translate": "text.i-editor.can_always_eat",
-        "fallback": "Can always eat"
+        "fallback": "Can Always Eat"
       },
       "initial": false
     }

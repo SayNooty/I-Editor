@@ -16,13 +16,17 @@
     "fallback": "Note Block Sound"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:note_block"
+    },
+    "description": {
       "translate": "text.i-editor.component_note_block_sound_info",
       "fallback": "Enter the sound ID for the head that will play the sound when it stands on the note block:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

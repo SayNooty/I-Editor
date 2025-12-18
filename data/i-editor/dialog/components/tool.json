@@ -16,13 +16,17 @@
     "fallback": "Tool"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:diamond_shovel"
+    },
+    "description": {
       "translate": "text.i-editor.component_tool_info",
       "fallback": "Enter the values to setting the mining parameters so that the item is a tool:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

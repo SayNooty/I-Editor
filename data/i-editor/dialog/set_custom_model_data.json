@@ -21,7 +21,15 @@
       "label": [
         {
           "translate": "text.i-editor.floats",
-          "fallback": "Floats "
+          "fallback": "Floats ",
+          "hover_event": {
+            "action": "show_text",
+            "value": {
+              "translate": "text.i-editor.floats_values_info",
+              "fallback": "For the {range_dispatch} model type.\nMissing values return the {fallback} model.",
+              "color": "gray"
+            }
+          }
         },
         {
           "translate": "text.i-editor.values",
@@ -55,27 +63,28 @@
       ]
     },
     {
-      "type": "minecraft:text",
+      "type": "minecraft:boolean",
       "key": "flags_values",
-      "width": 150,
       "label": [
         {
           "translate": "text.i-editor.flags",
-          "fallback": "Flags "
+          "fallback": "Flags ",
+          "hover_event": {
+            "action": "show_text",
+            "value": {
+              "translate": "text.i-editor.flags_values_info",
+              "fallback": "For the {condition} model type.\nMissing value returns the {is_false} model.",
+              "color": "gray"
+            }
+          }
         },
         {
           "translate": "text.i-editor.values",
-          "fallback": "(values) ",
+          "fallback": "(values)",
           "color": "gray"
-        },
-        {
-          "translate": "text.i-editor.false_and_true",
-          "fallback": "<false & true>",
-          "color": "dark_gray"
         }
       ],
-      "initial": "false",
-      "max_length": 5
+      "initial": false
     },
     {
       "type": "minecraft:single_option",
@@ -107,7 +116,15 @@
       "label": [
         {
           "translate": "text.i-editor.strings",
-          "fallback": "Strings "
+          "fallback": "Strings ",
+          "hover_event": {
+            "action": "show_text",
+            "value": {
+              "translate": "text.i-editor.strings_values_info",
+              "fallback": "For the {select} model type.\nMissing value returns the {fallback} model.",
+              "color": "gray"
+            }
+          }
         },
         {
           "translate": "text.i-editor.values",
@@ -147,7 +164,15 @@
       "label": [
         {
           "translate": "text.i-editor.colors",
-          "fallback": "Colors "
+          "fallback": "Colors ",
+          "hover_event": {
+            "action": "show_text",
+            "value": {
+              "translate": "text.i-editor.colors_values_info",
+              "fallback": "For the {model} model type's {tints}.\nMissing values return the {default} value provided by the item model definition.",
+              "color": "gray"
+            }
+          }
         },
         {
           "translate": "text.i-editor.values",
@@ -191,7 +216,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity SayNooty weapon.mainhand [{\"function\":\"minecraft:set_custom_model_data\",\"floats\":{\"values\":[$(floats_values)],\"mode\":\"$(mode)\"},\"flags\":{\"values\":[$(flags_values)],\"mode\":\"$(mode)\"},\"strings\":{\"values\":[\"$(strings)\"],\"mode\":\"$(mode)\"},\"colors\":{\"values\":[$(colors_values)],\"mode\":\"$(mode)\"}}]"
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_custom_model_data\",\"floats\":{\"values\":[$(floats_values)],\"mode\":\"$(mode)\"},\"flags\":{\"values\":[$(flags_values)],\"mode\":\"$(mode)\"},\"strings\":{\"values\":[\"$(strings)\"],\"mode\":\"$(mode)\"},\"colors\":{\"values\":[$(colors_values)],\"mode\":\"$(mode)\"}}]"
     }
   },
   "no": {

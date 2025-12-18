@@ -16,13 +16,17 @@
     "fallback": "Glider"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:elytra"
+    },
+    "description": {
       "translate": "text.i-editor.component_glider_info",
       "fallback": "There is no need to configure anything here, just click done to allow the item the opportunity to fly like an elytra, and if you don't want to, then click back:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [],
   "can_close_with_escape": true,

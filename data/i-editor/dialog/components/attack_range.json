@@ -1,0 +1,188 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.attack_range",
+      "fallback": "Attack Range",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.attack_range",
+    "fallback": "Attack Range"
+  },
+  "body": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:copper_spear"
+    },
+    "description": {
+      "translate": "text.i-editor.component_attack_range_info",
+      "fallback": "Adjust how far it will attack and pierce the item:",
+      "color": "gray"
+    },
+    "show_decorations": false,
+    "show_tooltip": false
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "min_reach",
+      "label": [
+        {
+          "translate": "text.i-editor.min_reach",
+          "fallback": "Min Reach "
+        },
+        {
+          "translate": "text.i-editor.min_0",
+          "fallback": "<min: 0> ",
+          "color": "dark_gray"
+        },
+        {
+          "translate": "text.i-editor.max_64",
+          "fallback": "<max: 64>",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "max_reach",
+      "label": [
+        {
+          "translate": "text.i-editor.max_reach",
+          "fallback": "Max Reach "
+        },
+        {
+          "translate": "text.i-editor.min_0",
+          "fallback": "<min: 0> ",
+          "color": "dark_gray"
+        },
+        {
+          "translate": "text.i-editor.max_64",
+          "fallback": "<max: 64>",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "3",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "min_creative_reach",
+      "label": [
+        {
+          "translate": "text.i-editor.min_creative_reach",
+          "fallback": "Min Creative Reach "
+        },
+        {
+          "translate": "text.i-editor.min_0",
+          "fallback": "<min: 0> ",
+          "color": "dark_gray"
+        },
+        {
+          "translate": "text.i-editor.max_64",
+          "fallback": "<max: 64>",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "max_creative_reach",
+      "label": [
+        {
+          "translate": "text.i-editor.max_creative_reach",
+          "fallback": "Max Creative Reach "
+        },
+        {
+          "translate": "text.i-editor.min_0",
+          "fallback": "<min: 0> ",
+          "color": "dark_gray"
+        },
+        {
+          "translate": "text.i-editor.max_64",
+          "fallback": "<max: 64>",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "5",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "hitbox_margin",
+      "label": [
+        {
+          "translate": "text.i-editor.hitbox_margin",
+          "fallback": "Hitbox Margin "
+        },
+        {
+          "translate": "text.i-editor.min_0",
+          "fallback": "<min: 0> ",
+          "color": "dark_gray"
+        },
+        {
+          "translate": "text.i-editor.max_1",
+          "fallback": "<max: 1>",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "0.3",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "mob_factor",
+      "label": [
+        {
+          "translate": "text.i-editor.mob_factor",
+          "fallback": "Mob Factor "
+        },
+        {
+          "translate": "text.i-editor.min_0",
+          "fallback": "<min: 0> ",
+          "color": "dark_gray"
+        },
+        {
+          "translate": "text.i-editor.max_2",
+          "fallback": "<max: 2>",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "1",
+      "max_length": 9999
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:attack_range\":{\"min_reach\":$(min_reach),\"max_reach\":$(max_reach),\"min_creative_reach\":$(min_creative_reach),\"max_creative_reach\":$(max_creative_reach),\"hitbox_margin\":$(hitbox_margin),\"mob_factor\":$(mob_factor)}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

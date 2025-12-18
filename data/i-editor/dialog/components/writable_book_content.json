@@ -16,13 +16,17 @@
     "fallback": "Writable Book Content"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:writable_book"
+    },
+    "description": {
       "translate": "text.i-editor.component_writable_book_content_info",
       "fallback": "Write the text that you want to see on the page in the book, and also enter a filter if necessary:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

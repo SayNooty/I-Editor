@@ -16,13 +16,17 @@
     "fallback": "Can Break"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:stone_pickaxe"
+    },
+    "description": {
       "translate": "text.i-editor.component_can_break_info",
       "fallback": "Enter the block ID so that the item can only break this block in adventure mode:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

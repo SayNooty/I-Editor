@@ -16,13 +16,20 @@
     "fallback": "Lodestone Tracker"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:compass",
+      "components": {
+        "minecraft:enchantment_glint_override": true
+      }
+    },
+    "description": {
       "translate": "text.i-editor.component_lodestone_tracker_info",
       "fallback": "Enter the coordinates and dimension to which the compass will point:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

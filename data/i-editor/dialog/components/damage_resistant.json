@@ -16,13 +16,17 @@
     "fallback": "Damage Resistant"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:netherite_ingot"
+    },
+    "description": {
       "translate": "text.i-editor.component_damage_resistant_info",
       "fallback": "Enter the specified damage type that the item will be invulnerable to:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

@@ -1,0 +1,268 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component: "
+    },
+    {
+      "translate": "component.name.kinetic_weapon",
+      "fallback": "Kinetic Weapon",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "component.name.kinetic_weapon",
+    "fallback": "Kinetic Weapon"
+  },
+  "body": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:iron_spear"
+    },
+    "description": {
+      "translate": "text.i-editor.component_kinetic_weapon_info",
+      "fallback": "Enter the values for setting the spear type item:",
+      "color": "gray"
+    },
+    "show_decorations": false,
+    "show_tooltip": false
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "delay_ticks",
+      "label": {
+        "translate": "text.i-editor.delay_ticks",
+        "fallback": "Delay Ticks"
+      },
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "contact_cooldown_ticks",
+      "label": {
+        "translate": "text.i-editor.contact_cooldown_ticks",
+        "fallback": "Contact Cooldown Ticks"
+      },
+      "initial": "10",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "dismount_conditions_max_duration_ticks",
+      "label": [
+        {
+          "translate": "text.i-editor.dismount_conditions",
+          "fallback": "Dismount Conditions "
+        },
+        {
+          "translate": "text.i-editor.max_duration_ticks",
+          "fallback": "(max duration ticks)",
+          "color": "gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "dismount_conditions_min_speed",
+      "label": [
+        {
+          "translate": "text.i-editor.dismount_conditions",
+          "fallback": "Dismount Conditions "
+        },
+        {
+          "translate": "text.i-editor.min_speed",
+          "fallback": "(min speed)",
+          "color": "gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "dismount_conditions_min_relative_speed",
+      "label": [
+        {
+          "translate": "text.i-editor.dismount_conditions",
+          "fallback": "Dismount Conditions "
+        },
+        {
+          "translate": "text.i-editor.min_relative_speed",
+          "fallback": "(min relative speed)",
+          "color": "gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "knockback_conditions_max_duration_ticks",
+      "label": [
+        {
+          "translate": "text.i-editor.knockback_conditions",
+          "fallback": "Knockback Conditions "
+        },
+        {
+          "translate": "text.i-editor.max_duration_ticks",
+          "fallback": "(max duration ticks)",
+          "color": "gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "knockback_conditions_min_speed",
+      "label": [
+        {
+          "translate": "text.i-editor.knockback_conditions",
+          "fallback": "Knockback Conditions "
+        },
+        {
+          "translate": "text.i-editor.min_speed",
+          "fallback": "(min speed)",
+          "color": "gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "knockback_conditions_min_relative_speed",
+      "label": [
+        {
+          "translate": "text.i-editor.knockback_conditions",
+          "fallback": "Knockback Conditions "
+        },
+        {
+          "translate": "text.i-editor.min_relative_speed",
+          "fallback": "(min relative speed)",
+          "color": "gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "damage_conditions_max_duration_ticks",
+      "label": [
+        {
+          "translate": "text.i-editor.damage_conditions",
+          "fallback": "Damage Conditions "
+        },
+        {
+          "translate": "text.i-editor.max_duration_ticks",
+          "fallback": "(max duration ticks)",
+          "color": "gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "damage_conditions_min_speed",
+      "label": [
+        {
+          "translate": "text.i-editor.damage_conditions",
+          "fallback": "Damage Conditions "
+        },
+        {
+          "translate": "text.i-editor.min_speed",
+          "fallback": "(min speed)",
+          "color": "gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "damage_conditions_min_relative_speed",
+      "label": [
+        {
+          "translate": "text.i-editor.damage_conditions",
+          "fallback": "Damage Conditions "
+        },
+        {
+          "translate": "text.i-editor.min_relative_speed",
+          "fallback": "(min relative speed)",
+          "color": "gray"
+        }
+      ],
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "forward_movement",
+      "label": {
+        "translate": "text.i-editor.forward_movement",
+        "fallback": "Forward Movement"
+      },
+      "initial": "0",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "damage_multiplier",
+      "label": {
+        "translate": "text.i-editor.damage_multiplier",
+        "fallback": "Damage Multiplier"
+      },
+      "initial": "1",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "sound",
+      "label": {
+        "translate": "text.i-editor.sound",
+        "fallback": "Sound"
+      },
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "hit_sound",
+      "label": {
+        "translate": "text.i-editor.hit_sound",
+        "fallback": "Hit Sound"
+      },
+      "initial": "minecraft:item.spear.hit",
+      "max_length": 9999
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:kinetic_weapon\":{\"delay_ticks\":$(delay_ticks),\"contact_cooldown_ticks\":$(contact_cooldown_ticks),\"dismount_conditions\":{\"max_duration_ticks\":$(dismount_conditions_max_duration_ticks),\"min_speed\":$(dismount_conditions_min_speed),\"min_relative_speed\":$(dismount_conditions_min_relative_speed)},\"knockback_conditions\":{\"max_duration_ticks\":$(knockback_conditions_max_duration_ticks),\"min_speed\":$(knockback_conditions_min_speed),\"min_relative_speed\":$(knockback_conditions_min_relative_speed)},\"damage_conditions\":{\"max_duration_ticks\":$(damage_conditions_max_duration_ticks),\"min_speed\":$(damage_conditions_min_speed),\"min_relative_speed\":$(damage_conditions_min_relative_speed)},\"forward_movement\":$(forward_movement),\"damage_multiplier\":$(damage_multiplier),\"sound\":\"$(sound)\",\"hit_sound\":\"$(hit_sound)\"}}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

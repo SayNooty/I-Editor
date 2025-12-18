@@ -16,13 +16,16 @@
     "fallback": "Map ID"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
-      "translate": "text.i-editor.component_map_id_info",
-      "fallback": "Enter the ID (number) filled maps:",
-      "color": "gray"
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:filled_map"
     },
-    "width": 300
+    "description": {
+      "translate": "text.i-editor.component_map_id_info",
+      "fallback": "Enter the ID (number) filled maps:"
+    },
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

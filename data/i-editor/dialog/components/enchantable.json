@@ -16,13 +16,17 @@
     "fallback": "Enchantable"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:enchanted_book"
+    },
+    "description": {
       "translate": "text.i-editor.component_enchantable_info",
       "fallback": "Enter the enchanted cost level that you will need in the enchanting table:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

@@ -16,13 +16,17 @@
     "fallback": "Equippable"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:saddle"
+    },
+    "description": {
       "translate": "text.i-editor.component_equippable_info",
       "fallback": "Select and configure certain parameters that will be applied to the item as an element of equipment:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {
@@ -64,7 +68,7 @@
       "key": "equip_sound",
       "label": {
         "translate": "text.i-editor.equip_sound",
-        "fallback": "Equip sound"
+        "fallback": "Equip Sound"
       },
       "initial": "minecraft:item.armor.equip_generic",
       "max_length": 9999
@@ -74,7 +78,7 @@
       "key": "shearing_sound",
       "label": {
         "translate": "text.i-editor.shearing_sound",
-        "fallback": "Shearing sound"
+        "fallback": "Shearing Sound"
       },
       "initial": "minecraft:item.shears.snip",
       "max_length": 9999
@@ -93,7 +97,7 @@
       "key": "camera_overlay",
       "label": {
         "translate": "text.i-editor.camera_overlay",
-        "fallback": "Camera overlay"
+        "fallback": "Camera Overlay"
       },
       "max_length": 9999
     },
@@ -102,7 +106,7 @@
       "key": "allowed_entities",
       "label": {
         "translate": "text.i-editor.allowed_entities",
-        "fallback": "Allowed entities"
+        "fallback": "Allowed Entities"
       },
       "max_length": 9999
     },
@@ -129,7 +133,7 @@
       "key": "damage_on_hurt",
       "label": {
         "translate": "text.i-editor.damage_on_hurt",
-        "fallback": "Damage on hurt"
+        "fallback": "Damage On Hurt"
       },
       "initial": true
     },
@@ -138,7 +142,7 @@
       "key": "equip_on_interact",
       "label": {
         "translate": "text.i-editor.equip_on_interact",
-        "fallback": "Equip on interact"
+        "fallback": "Equip On Interact"
       },
       "initial": false
     },
@@ -147,7 +151,7 @@
       "key": "can_be_sheared",
       "label": {
         "translate": "text.i-editor.can_be_sheared",
-        "fallback": "Can be sheared"
+        "fallback": "Can Be Sheared"
       },
       "initial": false
     }

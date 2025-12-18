@@ -16,13 +16,17 @@
     "fallback": "Ominous Bottle Amplifier"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:ominous_bottle"
+    },
+    "description": {
       "translate": "text.i-editor.component_ominous_bottle_amplifier_info",
       "fallback": "Set the amplifier value given to the player or mob when using this item:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {
@@ -33,7 +37,6 @@
         "translate": "text.i-editor.amplifier",
         "fallback": "Amplifier"
       },
-      "max_length": 9999,
       "start": 0,
       "end": 4,
       "step": 1,

@@ -16,13 +16,16 @@
     "fallback": "Max Stack Size"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:egg"
+    },
+    "description": {
       "translate": "text.i-editor.component_max_stack_size_info",
       "fallback": "Enter the maximum stack size in one slot:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false
   },
   "inputs": [
     {

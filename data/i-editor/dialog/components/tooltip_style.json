@@ -16,13 +16,17 @@
     "fallback": "Tooltip Style"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:painting"
+    },
+    "description": {
       "translate": "text.i-editor.component_tooltip_style_info",
       "fallback": "Enter the path to the background texture file that will be displayed when the cursor hovers over the item:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

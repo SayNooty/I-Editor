@@ -16,13 +16,17 @@
     "fallback": "Repair Cost"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:experience_bottle"
+    },
+    "description": {
       "translate": "text.i-editor.component_repair_cost_info",
       "fallback": "Enter the value number to be added to the base level cost when repairing, combining, or renaming an item using the anvil:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

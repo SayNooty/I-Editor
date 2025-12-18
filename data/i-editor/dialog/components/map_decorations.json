@@ -16,13 +16,17 @@
     "fallback": "Map Decorations"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:filled_map"
+    },
+    "description": {
       "translate": "text.i-editor.component.map_decorations_info",
       "fallback": "Select the icon to display on the map:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [],
   "can_close_with_escape": true,

@@ -16,13 +16,17 @@
     "fallback": "Max Damage"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:diamond_axe"
+    },
+    "description": {
       "translate": "text.i-editor.component_max_damage_info",
       "fallback": "Enter the maximum usage count of the item to break:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

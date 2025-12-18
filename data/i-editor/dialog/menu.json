@@ -25,11 +25,10 @@
     "label": {
       "translate": "gui.back",
       "color": "red"
-    },
-    "width": 200
+    }
   },
-  "columns": 1,
-  "button_width": 200,
+  "columns": 2,
+  "button_width": 150,
   "dialogs": [
     "i-editor:set_name",
     "i-editor:set_lore",

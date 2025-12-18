@@ -16,13 +16,17 @@
     "fallback": "Container"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:shulker_box"
+    },
+    "description": {
       "translate": "text.i-editor.component_container_info",
       "fallback": "Enter the item ID contained in the container and assigned to the slot:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

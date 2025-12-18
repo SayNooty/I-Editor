@@ -180,9 +180,28 @@
     },
     {
       "type": "minecraft:boolean",
+      "key": "shadow_color",
+      "label": {
+        "translate": "text.i-editor.shadow_color",
+        "fallback": "Shadow Color",
+        "hover_event": {
+          "action": "show_text",
+          "value": {
+            "translate": "text.i-editor.shadow_color_info",
+            "fallback": "Adds a shadow to the text\nwhen there is a check mark",
+            "color": "gray"
+          }
+        }
+      },
+      "initial": true,
+      "on_true": " ",
+      "on_false": "\"shadow_color\":0,"
+    },
+    {
+      "type": "minecraft:boolean",
       "key": "bold",
       "label": {
-        "text": "B",
+        "text": "Bold",
         "bold": true
       },
       "initial": false
@@ -191,7 +210,7 @@
       "type": "minecraft:boolean",
       "key": "italic",
       "label": {
-        "text": "I",
+        "text": "Italic",
         "italic": true
       },
       "initial": false
@@ -200,7 +219,7 @@
       "type": "minecraft:boolean",
       "key": "underlined",
       "label": {
-        "text": "U",
+        "text": "Underlined",
         "underlined": true
       },
       "initial": false
@@ -209,7 +228,7 @@
       "type": "minecraft:boolean",
       "key": "strikethrough",
       "label": {
-        "text": "S",
+        "text": "Strikethrough",
         "strikethrough": true
       },
       "initial": false
@@ -218,7 +237,7 @@
       "type": "minecraft:boolean",
       "key": "obfuscated",
       "label": {
-        "text": "O",
+        "text": "Obfuscated",
         "obfuscated": true
       },
       "initial": false
@@ -234,7 +253,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_lore\",\"lore\":[{\"text\":\"$(lore)\",\"color\":\"$(color)\",\"bold\":$(bold),\"italic\":$(italic),\"underlined\":$(underlined),\"strikethrough\":$(strikethrough),\"obfuscated\":$(obfuscated)}],\"mode\":\"$(mode)\"}]"
+      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_lore\",\"lore\":[{\"text\":\"$(lore)\",\"color\":\"$(color)\",$(shadow_color)\"bold\":$(bold),\"italic\":$(italic),\"underlined\":$(underlined),\"strikethrough\":$(strikethrough),\"obfuscated\":$(obfuscated)}],\"mode\":\"$(mode)\"}]"
     }
   },
   "no": {

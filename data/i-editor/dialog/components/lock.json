@@ -16,13 +16,17 @@
     "fallback": "Lock"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:tripwire_hook"
+    },
+    "description": {
       "translate": "text.i-editor.component_lock_info",
       "fallback": "Enter the item ID and its count that is required to open the container for which you are using this component:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

@@ -16,13 +16,17 @@
     "fallback": "Provides Banner Patterns"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:creeper_banner_pattern"
+    },
+    "description": {
       "translate": "text.i-editor.component_provides_banner_patterns_info",
       "fallback": "Select the pattern that will be applied when using the item in the loom:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

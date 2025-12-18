@@ -16,13 +16,17 @@
     "fallback": "Death Protection"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:totem_of_undying"
+    },
+    "description": {
       "translate": "text.i-editor.component_death_protection_info",
       "fallback": "By default, the item protects the owner from death. Enter the sound ID of the item being lost at death:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

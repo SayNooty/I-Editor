@@ -16,13 +16,17 @@
     "fallback": "Instrument"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:goat_horn"
+    },
+    "description": {
       "translate": "text.i-editor.component_instrument_info",
       "fallback": "Customize the sound instrument, its sound duration and range, as well as a description:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {
@@ -31,7 +35,7 @@
       "width": 175,
       "label": {
         "translate": "text.i-editor.sound_event",
-        "fallback": "Sound event"
+        "fallback": "Sound Event"
       },
       "max_length": 9999
     },
@@ -60,7 +64,7 @@
       "label": [
         {
           "translate": "text.i-editor.use_duration",
-          "fallback": "Use duration "
+          "fallback": "Use Duration "
         },
         {
           "translate": "text.i-editor.min_1",

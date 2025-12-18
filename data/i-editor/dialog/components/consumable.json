@@ -16,13 +16,17 @@
     "fallback": "Consumable"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:golden_apple"
+    },
+    "description": {
       "translate": "text.i-editor.component_consumable_info",
       "fallback": "Enter the values and configure the consumption configuration like a food:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {
@@ -30,7 +34,7 @@
       "key": "consume_seconds",
       "label": {
         "translate": "text.i-editor.consume_seconds",
-        "fallback": "Consume seconds"
+        "fallback": "Consume Seconds"
       },
       "initial": "1.6",
       "max_length": 9999
@@ -83,6 +87,13 @@
           }
         },
         {
+          "id": "spear",
+          "display": {
+            "translate": "text.i-editor.spear",
+            "fallback": "Spear"
+          }
+        },
+        {
           "id": "crossbow",
           "display": {
             "translate": "item.minecraft.crossbow"
@@ -129,7 +140,7 @@
       "key": "has_consume_particles",
       "label": {
         "translate": "text.i-editor.has_consume_particles",
-        "fallback": "Has consume particles"
+        "fallback": "Has Consume Particles"
       },
       "initial": true
     }

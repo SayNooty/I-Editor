@@ -16,13 +16,17 @@
     "fallback": "Unbreakable"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:bedrock"
+    },
+    "description": {
       "translate": "text.i-editor.component_unbreakable_info",
       "fallback": "You don't need to configure anything here, just click done to make the item invulnerable to damage, and if you don't want to do this, then click back:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [],
   "can_close_with_escape": true,

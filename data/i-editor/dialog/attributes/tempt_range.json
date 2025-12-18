@@ -24,16 +24,28 @@
   },
   "inputs": [
     {
-      "type": "minecraft:number_range",
+      "type": "minecraft:text",
       "key": "amount",
-      "label": {
-        "translate": "text.i-editor.amount",
-        "fallback": "Amount"
-      },
-      "start": 0,
-      "end": 2024,
-      "step": 1,
-      "initial": 10
+      "label": [
+        {
+          "translate": "text.i-editor.amount",
+          "fallback": "Amount"
+        },
+        " ",
+        {
+          "translate": "text.i-editor.min_0",
+          "fallback": "<min: 0>",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "translate": "text.i-editor.max_2024",
+          "fallback": "<max: 2024>",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "10",
+      "max_length": 9999
     },
     {
       "type": "minecraft:single_option",

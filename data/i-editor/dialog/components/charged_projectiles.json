@@ -16,13 +16,17 @@
     "fallback": "Charged Projectiles"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:crossbow"
+    },
+    "description": {
       "translate": "text.i-editor.component_charged_projectiles_info",
       "fallback": "Enter the item ID that will be charged in the crossbow and select the count:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

@@ -16,13 +16,17 @@
     "fallback": "Container Loot"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:chest"
+    },
+    "description": {
       "translate": "text.i-editor.component_container_loot_info",
       "fallback": "Enter the loot table ID that will be contained in the container:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {

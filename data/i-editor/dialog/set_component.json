@@ -21,7 +21,6 @@
       "translate": "gui.back",
       "color": "red"
     },
-    "width": 200,
     "action": {
       "type": "minecraft:show_dialog",
       "dialog": "i-editor:menu"
@@ -30,6 +29,7 @@
   "columns": 3,
   "button_width": 125,
   "dialogs": [
+    "i-editor:components/attack_range",
     "i-editor:components/blocks_attacks",
     "i-editor:components/break_sound",
     "i-editor:components/can_break",
@@ -39,6 +39,7 @@
     "i-editor:components/container",
     "i-editor:components/container_loot",
     "i-editor:components/damage_resistant",
+    "i-editor:components/damage_type",
     "i-editor:components/death_protection",
     "i-editor:components/debug_stick_state",
     "i-editor:components/dyed_color",
@@ -50,6 +51,7 @@
     "i-editor:components/instrument",
     "i-editor:components/intangible_projectile",
     "i-editor:components/jukebox_playable",
+    "i-editor:components/kinetic_weapon",
     "i-editor:components/lock",
     "i-editor:components/lodestone_tracker",
     "i-editor:components/map_color",
@@ -57,8 +59,10 @@
     "i-editor:components/map_id",
     "i-editor:components/max_damage",
     "i-editor:components/max_stack_size",
+    "i-editor:components/minimum_attack_charge",
     "i-editor:components/note_block_sound",
     "i-editor:components/ominous_bottle_amplifier",
+    "i-editor:components/piercing_weapon",
     "i-editor:components/pot_decorations",
     "i-editor:components/provides_banner_patterns",
     "i-editor:components/provides_trim_material",
@@ -66,11 +70,13 @@
     "i-editor:components/repair_cost",
     "i-editor:components/repairable",
     "i-editor:components/suspicious_stew_effects",
+    "i-editor:components/swing_animation",
     "i-editor:components/tool",
     "i-editor:components/tooltip_display",
     "i-editor:components/tooltip_style",
     "i-editor:components/unbreakable",
     "i-editor:components/use_cooldown",
+    "i-editor:components/use_effects",
     "i-editor:components/use_remainder",
     "i-editor:components/weapon",
     "i-editor:components/writable_book_content"
