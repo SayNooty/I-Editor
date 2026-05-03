@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.suspicious_stew_effects",
+      "translate": "component.i-editor.suspicious_stew_effects",
       "fallback": "Suspicious Stew Effects",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.suspicious_stew_effects",
+    "translate": "component.i-editor.suspicious_stew_effects",
     "fallback": "Suspicious Stew Effects"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:suspicious_stew"
     },
     "description": {
-      "translate": "text.i-editor.component_suspicious_stew_effects_info",
+      "translate": "description.i-editor.component.suspicious_stew_effects",
       "fallback": "Enter the effect ID and the duration of the effect applied to the player or mob when using this item (similar to a suspicious stew):",
       "color": "gray"
     },
@@ -31,10 +32,10 @@
   "inputs": [
     {
       "type": "minecraft:text",
-      "key": "effect",
+      "key": "effect_id",
       "label": {
-        "translate": "text.i-editor.effect",
-        "fallback": "Effect"
+        "translate": "subtitle.i-editor.effect_id",
+        "fallback": "Effect ID"
       },
       "max_length": 9999
     },
@@ -43,12 +44,13 @@
       "key": "duration",
       "label": [
         {
-          "translate": "text.i-editor.duration",
-          "fallback": "Duration "
+          "translate": "subtitle.i-editor.duration",
+          "fallback": "Duration"
         },
+        " ",
         {
-          "translate": "text.i-editor.tick_info",
-          "fallback": "(in ticks)",
+          "translate": "subtitle.i-editor.tick",
+          "fallback": "[in ticks]",
           "color": "gray"
         }
       ],
@@ -66,7 +68,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:suspicious_stew_effects\":[{\"id\":\"$(effect)\",\"duration\":$(duration)}]}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:suspicious_stew_effects\":[{\"id\":\"$(effect_id)\",\"duration\":$(duration)}]}}]"
     }
   },
   "no": {

@@ -1,0 +1,151 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component"
+    },
+    ": ",
+    {
+      "translate": "component.i-editor.entity_variants",
+      "fallback": "Entity Variants",
+      "color": "yellow"
+    },
+    {
+      "text": " | ",
+      "color": "gray"
+    },
+    {
+      "translate": "entity.minecraft.cat",
+      "color": "gold"
+    }
+  ],
+  "external_title": {
+    "translate": "entity.minecraft.cat"
+  },
+  "body": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:cat_spawn_egg"
+    },
+    "description": {
+      "translate": "description.i-editor.component.entity_variants.entity",
+      "fallback": "Select the variant that you want to apply to the spawn egg of this entity:",
+      "color": "gray"
+    },
+    "show_decorations": false,
+    "show_tooltip": false
+  },
+  "inputs": [
+    {
+      "type": "minecraft:single_option",
+      "key": "variant",
+      "label": {
+        "translate": "subtitle.i-editor.variant",
+        "fallback": "Variant"
+      },
+      "options": [
+        {
+          "id": "all_black",
+          "display": {
+            "translate": "variant.i-editor.all_black",
+            "fallback": "All Black"
+          }
+        },
+        {
+          "id": "black",
+          "display": {
+            "translate": "variant.i-editor.black",
+            "fallback": "Black"
+          }
+        },
+        {
+          "id": "british_shorthair",
+          "display": {
+            "translate": "variant.i-editor.british_shorthair",
+            "fallback": "British Shorthair"
+          }
+        },
+        {
+          "id": "calico",
+          "display": {
+            "translate": "variant.i-editor.calico",
+            "fallback": "Calico"
+          }
+        },
+        {
+          "id": "jellie",
+          "display": {
+            "translate": "variant.i-editor.jellie",
+            "fallback": "Jellie"
+          }
+        },
+        {
+          "id": "persian",
+          "display": {
+            "translate": "variant.i-editor.persian",
+            "fallback": "Persian"
+          }
+        },
+        {
+          "id": "ragdoll",
+          "display": {
+            "translate": "variant.i-editor.ragdoll",
+            "fallback": "Ragdoll"
+          }
+        },
+        {
+          "id": "red",
+          "display": {
+            "translate": "variant.i-editor.red",
+            "fallback": "Red"
+          }
+        },
+        {
+          "id": "siamese",
+          "display": {
+            "translate": "variant.i-editor.siamese",
+            "fallback": "Siamese"
+          }
+        },
+        {
+          "id": "tabby",
+          "display": {
+            "translate": "variant.i-editor.tabby",
+            "fallback": "Tabby"
+          }
+        },
+        {
+          "id": "white",
+          "display": {
+            "translate": "variant.i-editor.white",
+            "fallback": "White"
+          }
+        }
+      ]
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:cat/variant\":\"$(variant)\"}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:components/entity_variants"
+    }
+  }
+}

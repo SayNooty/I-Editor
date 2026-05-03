@@ -1,0 +1,27 @@
+{
+	"schemaVersion": 1,
+	"id": "i-editor",
+	"version": "1.4.3",
+	"name": "I Editor",
+	"description": "The item editor is straight out of vanilla minecraft",
+	"authors": [
+		"SayNooty"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": "https://github.com/SayNooty/I-Editor"
+	},
+	"license": "MIT",
+	"icon": "pack.png",
+	"environment": "*",
+	"entrypoints": {},
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "26.2.x",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.break_sound",
+      "translate": "component.i-editor.break_sound",
       "fallback": "Break Sound",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.break_sound",
+    "translate": "component.i-editor.break_sound",
     "fallback": "Break Sound"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:wooden_sword"
     },
     "description": {
-      "translate": "text.i-editor.component_break_sound_info",
+      "translate": "description.i-editor.component.break_sound",
       "fallback": "Enter the sound ID that will be played when the item breaks:",
       "color": "gray"
     },
@@ -33,7 +34,7 @@
       "type": "minecraft:text",
       "key": "sound_id",
       "label": {
-        "translate": "text.i-editor.sound_id",
+        "translate": "subtitle.i-editor.sound_id",
         "fallback": "Sound ID"
       },
       "max_length": 9999
@@ -49,7 +50,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:break_sound\":\"$(sound_id)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:break_sound\":\"$(sound_id)\"}}]"
     }
   },
   "no": {

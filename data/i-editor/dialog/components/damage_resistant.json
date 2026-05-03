@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.damage_resistant",
+      "translate": "component.i-editor.damage_resistant",
       "fallback": "Damage Resistant",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.damage_resistant",
+    "translate": "component.i-editor.damage_resistant",
     "fallback": "Damage Resistant"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:netherite_ingot"
     },
     "description": {
-      "translate": "text.i-editor.component_damage_resistant_info",
+      "translate": "description.i-editor.component.damage_resistant",
       "fallback": "Enter the specified damage type that the item will be invulnerable to:",
       "color": "gray"
     },
@@ -33,8 +34,8 @@
       "type": "minecraft:text",
       "key": "type",
       "label": {
-        "translate": "text.i-editor.type",
-        "fallback": "Type"
+        "translate": "subtitle.i-editor.tag",
+        "fallback": "Tag"
       },
       "initial": "#minecraft:is_fire",
       "max_length": 9999
@@ -50,7 +51,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:damage_resistant\":{\"types\":\"$(type)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:damage_resistant\":{\"types\":\"$(type)\"}}}]"
     }
   },
   "no": {

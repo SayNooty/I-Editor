@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.can_place_on",
+      "translate": "component.i-editor.can_place_on",
       "fallback": "Can Place On",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.can_place_on",
+    "translate": "component.i-editor.can_place_on",
     "fallback": "Can Place On"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:cobblestone"
     },
     "description": {
-      "translate": "text.i-editor.component_can_place_on_info",
+      "translate": "description.i-editor.component.can_place_on",
       "fallback": "Enter the block ID so that the block is placed only on it in adventure mode:",
       "color": "gray"
     },
@@ -33,7 +34,7 @@
       "type": "minecraft:text",
       "key": "block_id",
       "label": {
-        "translate": "text.i-editor.block_id",
+        "translate": "subtitle.i-editor.block_id",
         "fallback": "Block ID"
       },
       "initial": "minecraft:stone",
@@ -50,7 +51,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:can_place_on\":{\"blocks\":\"$(block_id)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:can_place_on\":{\"blocks\":\"$(block_id)\"}}}]"
     }
   },
   "no": {

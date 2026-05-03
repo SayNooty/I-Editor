@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.ominous_bottle_amplifier",
+      "translate": "component.i-editor.ominous_bottle_amplifier",
       "fallback": "Ominous Bottle Amplifier",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.ominous_bottle_amplifier",
+    "translate": "component.i-editor.ominous_bottle_amplifier",
     "fallback": "Ominous Bottle Amplifier"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:ominous_bottle"
     },
     "description": {
-      "translate": "text.i-editor.component_ominous_bottle_amplifier_info",
+      "translate": "description.i-editor.component.ominous_bottle_amplifier",
       "fallback": "Set the amplifier value given to the player or mob when using this item:",
       "color": "gray"
     },
@@ -34,7 +35,7 @@
       "key": "amplifier",
       "width": 150,
       "label": {
-        "translate": "text.i-editor.amplifier",
+        "translate": "subtitle.i-editor.amplifier",
         "fallback": "Amplifier"
       },
       "start": 0,
@@ -53,7 +54,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:ominous_bottle_amplifier\":$(amplifier)}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:ominous_bottle_amplifier\":$(amplifier)}}]"
     }
   },
   "no": {

@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.container",
+      "translate": "component.i-editor.container",
       "fallback": "Container",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.container",
+    "translate": "component.i-editor.container",
     "fallback": "Container"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:shulker_box"
     },
     "description": {
-      "translate": "text.i-editor.component_container_info",
+      "translate": "description.i-editor.component.container",
       "fallback": "Enter the item ID contained in the container and assigned to the slot:",
       "color": "gray"
     },
@@ -34,17 +35,45 @@
       "key": "slot",
       "label": [
         {
-          "translate": "text.i-editor.slot",
-          "fallback": "Slot "
+          "translate": "subtitle.i-editor.slot",
+          "fallback": "Slot"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.slot_min",
-          "fallback": "<min: 0> ",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "0",
           "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.slot_max",
-          "fallback": "<max: 255>",
+          "text": ">",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
+        },
+        {
+          "translate": "subtitle.i-editor.max",
+          "fallback": "max:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "255",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -54,7 +83,7 @@
       "type": "minecraft:text",
       "key": "item_id",
       "label": {
-        "translate": "text.i-editor.item_id",
+        "translate": "subtitle.i-editor.item_id",
         "fallback": "Item ID"
       },
       "initial": "minecraft:diamond",
@@ -64,7 +93,7 @@
       "type": "minecraft:number_range",
       "key": "count",
       "label": {
-        "translate": "text.i-editor.count",
+        "translate": "subtitle.i-editor.count",
         "fallback": "Count"
       },
       "start": 1,
@@ -83,7 +112,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:container\":[{\"slot\":$(slot),\"item\":{\"id\":\"$(item_id)\",\"count\":$(count)}}]}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:container\":[{\"slot\":$(slot),\"item\":{\"id\":\"$(item_id)\",\"count\":$(count)}}]}}]"
     }
   },
   "no": {

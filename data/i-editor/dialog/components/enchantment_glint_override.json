@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.enchantment_glint_override",
+      "translate": "component.i-editor.enchantment_glint_override",
       "fallback": "Enchantment Glint Override",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.enchantment_glint_override",
+    "translate": "component.i-editor.enchantment_glint_override",
     "fallback": "Enchantment Glint Override"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:experience_bottle"
     },
     "description": {
-      "translate": "text.i-editor.component_enchantment_glint_override_info",
+      "translate": "description.i-editor.component.enchantment_glint_override",
       "fallback": "Click on the checkmark so that the item can glint like enchanted books:",
       "color": "gray"
     },
@@ -31,11 +32,11 @@
   "inputs": [
     {
       "type": "minecraft:boolean",
-      "key": "glint_override",
+      "key": "has_glint",
       "label": [
         {
-          "translate": "text.i-editor.glint_override",
-          "fallback": "Glint Override"
+          "translate": "subtitle.i-editor.has_glint",
+          "fallback": "Has Glint"
         }
       ],
       "initial": false
@@ -51,7 +52,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:enchantment_glint_override\":$(glint_override)}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:enchantment_glint_override\":$(has_glint)}}]"
     }
   },
   "no": {

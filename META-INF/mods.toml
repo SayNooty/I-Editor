@@ -1,0 +1,24 @@
+modLoader="lowcodefml"
+loaderVersion="[1,)"
+license="MIT"
+
+[[mods]]
+    modId="i_editor"
+    version="1.4.3"
+    displayName="I Editor"
+    logoFile="pack.png"
+    authors="SayNooty"
+    description="The item editor is straight out of vanilla minecraft"
+
+[[dependencies.i_editor]]
+    modId="forge"
+    mandatory=false
+    versionRange="[65,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.i_editor]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[26.2,26.3)"
+    ordering="NONE"
+    side="BOTH"

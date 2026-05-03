@@ -7,7 +7,7 @@
   "body": {
     "type": "minecraft:plain_message",
     "contents": {
-      "translate": "text.i-editor.custom_data_info",
+      "translate": "description.i-editor.set_custom_data",
       "fallback": "Enter the custom data to apply it to the subject:",
       "color": "gray"
     },
@@ -18,7 +18,7 @@
       "type": "minecraft:text",
       "key": "tag",
       "label": {
-        "translate": "text.i-editor.tag",
+        "translate": "subtitle.i-editor.tag",
         "fallback": "Tag"
       },
       "max_length": 9999
@@ -34,7 +34,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_custom_data\",\"tag\":\"$(tag)\"}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_custom_data\",\"tag\":\"$(tag)\"}]"
     }
   },
   "no": {

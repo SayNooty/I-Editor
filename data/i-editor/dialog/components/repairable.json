@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.repairable",
+      "translate": "component.i-editor.repairable",
       "fallback": "Repairable",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.repairable",
+    "translate": "component.i-editor.repairable",
     "fallback": "Repairable"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:anvil"
     },
     "description": {
-      "translate": "text.i-editor.component_repairable_info",
+      "translate": "description.i-editor.component.repairable",
       "fallback": "Enter the item ID that can repair the item, if it may be damaged, on the anvil:",
       "color": "gray"
     },
@@ -33,7 +34,7 @@
       "type": "minecraft:text",
       "key": "item",
       "label": {
-        "translate": "text.i-editor.item",
+        "translate": "subtitle.i-editor.item",
         "fallback": "Item"
       },
       "max_length": 9999
@@ -49,7 +50,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:repairable\":{\"items\":\"$(item)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:repairable\":{\"items\":\"$(item)\"}}}]"
     }
   },
   "no": {

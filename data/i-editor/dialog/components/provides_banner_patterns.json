@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.provides_banner_patterns",
+      "translate": "component.i-editor.provides_banner_patterns",
       "fallback": "Provides Banner Patterns",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.provides_banner_patterns",
+    "translate": "component.i-editor.provides_banner_patterns",
     "fallback": "Provides Banner Patterns"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:creeper_banner_pattern"
     },
     "description": {
-      "translate": "text.i-editor.component_provides_banner_patterns_info",
+      "translate": "description.i-editor.component.provides_banner_patterns",
       "fallback": "Select the pattern that will be applied when using the item in the loom:",
       "color": "gray"
     },
@@ -33,84 +34,84 @@
       "type": "minecraft:single_option",
       "key": "pattern",
       "label": {
-        "translate": "text.i-editor.pattern",
+        "translate": "subtitle.i-editor.pattern",
         "fallback": "Pattern"
       },
       "options": [
         {
           "id": "no_item_required",
           "display": {
-            "translate": "text.i-editor.no_item_required",
+            "translate": "subtitle.i-editor.no_item_required",
             "fallback": "No Item Required"
           }
         },
         {
           "id": "bordure_indented",
           "display": {
-            "translate": "text.i-editor.banner_pattern_bordure_indeted",
+            "translate": "banner_pattern.i-editor.bordure_indeted",
             "fallback": "Bordure Indented"
           }
         },
         {
           "id": "creeper",
           "display": {
-            "translate": "text.i-editor.banner_pattern_creeper",
+            "translate": "banner_pattern.i-editor.creeper",
             "fallback": "Creeper"
           }
         },
         {
           "id": "field_masoned",
           "display": {
-            "translate": "text.i-editor.banner_pattern_fleid_masoned",
+            "translate": "banner_pattern.i-editor.fleid_masoned",
             "fallback": "Field Masoned"
           }
         },
         {
           "id": "flow",
           "display": {
-            "translate": "text.i-editor.banner_pattern_flow",
+            "translate": "banner_pattern.i-editor.flow",
             "fallback": "Flow"
           }
         },
         {
           "id": "flower",
           "display": {
-            "translate": "text.i-editor.banner_pattern_flower",
+            "translate": "banner_pattern.i-editor.flower",
             "fallback": "Flower"
           }
         },
         {
           "id": "globe",
           "display": {
-            "translate": "text.i-editor.banner_pattern_globe",
+            "translate": "banner_pattern.i-editor.globe",
             "fallback": "Globe"
           }
         },
         {
           "id": "guster",
           "display": {
-            "translate": "text.i-editor.banner_pattern_guster",
+            "translate": "banner_pattern.i-editor.guster",
             "fallback": "Guster"
           }
         },
         {
           "id": "mojang",
           "display": {
-            "translate": "text.i-editor.banner_pattern_mojang",
+            "translate": "banner_pattern.i-editor.mojang",
             "fallback": "Mojang"
           }
         },
         {
           "id": "piglin",
           "display": {
-            "translate": "text.i-editor.banner_pattern_piglin",
+            "translate": "banner_pattern.i-editor.piglin",
             "fallback": "Piglin"
           }
         },
         {
           "id": "skull",
           "display": {
-            "translate": "text.i-editor.banner_pattern_skull",
+            "translate": "banner_pattern.i-editor.skull",
             "fallback": "Skull"
           }
         }
@@ -127,7 +128,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:provides_banner_patterns\":\"#minecraft:pattern_item/$(pattern)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:provides_banner_patterns\":\"#minecraft:pattern_item/$(pattern)\"}}]"
     }
   },
   "no": {

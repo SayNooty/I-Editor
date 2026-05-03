@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.unbreakable",
+      "translate": "component.i-editor.unbreakable",
       "fallback": "Unbreakable",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.unbreakable",
+    "translate": "component.i-editor.unbreakable",
     "fallback": "Unbreakable"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:bedrock"
     },
     "description": {
-      "translate": "text.i-editor.component_unbreakable_info",
+      "translate": "description.i-editor.component.unbreakable",
       "fallback": "You don't need to configure anything here, just click done to make the item invulnerable to damage, and if you don't want to do this, then click back:",
       "color": "gray"
     },
@@ -39,7 +40,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:unbreakable\":{$(unbreakable)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:unbreakable\":{$(unbreakable)}}}]"
     }
   },
   "no": {

@@ -5,13 +5,17 @@
     "fallback": "Set Enchantment"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
-      "translate": "text.i-editor.set_enchantment_info",
-      "fallback": "Select an enchantment to apply to the item:",
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:enchanted_book"
+    },
+    "description": {
+      "translate": "description.i-editor.set_enchantment",
+      "fallback": "Choose a enchantment that suits the item:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [],
   "can_close_with_escape": true,

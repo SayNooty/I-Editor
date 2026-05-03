@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.rarity",
+      "translate": "component.i-editor.rarity",
       "fallback": "Rarity",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.rarity",
+    "translate": "component.i-editor.rarity",
     "fallback": "Rarity"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:nether_star"
     },
     "description": {
-      "translate": "text.i-editor.component_rarity_info",
+      "translate": "description.i-editor.component.rarity",
       "fallback": "Select the rarity that will be applied to the item:",
       "color": "gray"
     },
@@ -33,21 +34,21 @@
       "type": "minecraft:single_option",
       "key": "rarity",
       "label": {
-        "translate": "text.i-editor.rarity",
+        "translate": "subtitle.i-editor.rarity",
         "fallback": "Rarity"
       },
       "options": [
         {
           "id": "common",
           "display": {
-            "translate": "text.i-editor.rarity_common",
+            "translate": "rarity.i-editor.common",
             "fallback": "Common"
           }
         },
         {
           "id": "uncommon",
           "display": {
-            "translate": "text.i-editor.rarity_uncommon",
+            "translate": "rarity.i-editor.uncommon",
             "fallback": "Uncommon",
             "color": "yellow"
           }
@@ -55,7 +56,7 @@
         {
           "id": "rare",
           "display": {
-            "translate": "text.i-editor.rarity_rare",
+            "translate": "rarity.i-editor.rare",
             "fallback": "Rare",
             "color": "aqua"
           }
@@ -63,7 +64,7 @@
         {
           "id": "epic",
           "display": {
-            "translate": "text.i-editor.rarity_epic",
+            "translate": "rarity.i-editor.epic",
             "fallback": "Epic",
             "color": "light_purple"
           }
@@ -81,7 +82,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:rarity\":\"$(rarity)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:rarity\":\"$(rarity)\"}}]"
     }
   },
   "no": {

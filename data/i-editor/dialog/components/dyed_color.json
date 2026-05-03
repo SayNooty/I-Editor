@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.dyed_color",
+      "translate": "component.i-editor.dyed_color",
       "fallback": "Dyed Color",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.dyed_color",
+    "translate": "component.i-editor.dyed_color",
     "fallback": "Dyed Color"
   },
   "body": {
@@ -21,8 +22,8 @@
       "id": "minecraft:leather_chestplate"
     },
     "description": {
-      "translate": "text.i-editor.component_dyed_color_info",
-      "fallback": "Enter the color code for coloring leather and wolf armor:",
+      "translate": "description.i-editor.component.dyed_color",
+      "fallback": "Enter the color code for coloring leather clothing and wolf armor:",
       "color": "gray"
     },
     "show_decorations": false,
@@ -34,11 +35,12 @@
       "key": "color_code",
       "label": [
         {
-          "translate": "text.i-editor.color_code",
-          "fallback": "Color Code "
+          "translate": "subtitle.i-editor.color_code",
+          "fallback": "Color Code"
         },
+        " ",
         {
-          "translate": "text.i-editor.color_code_decimal",
+          "translate": "subtitle.i-editor.decimal",
           "fallback": "[decimal]",
           "color": "gray"
         }
@@ -56,7 +58,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:dyed_color\":$(color_code)}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:dyed_color\":$(color_code)}}]"
     }
   },
   "no": {

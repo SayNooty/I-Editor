@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.death_protection",
+      "translate": "component.i-editor.death_protection",
       "fallback": "Death Protection",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.death_protection",
+    "translate": "component.i-editor.death_protection",
     "fallback": "Death Protection"
   },
   "body": {
@@ -21,8 +22,8 @@
       "id": "minecraft:totem_of_undying"
     },
     "description": {
-      "translate": "text.i-editor.component_death_protection_info",
-      "fallback": "By default, the item protects the owner from death. Enter the sound ID of the item being lost at death:",
+      "translate": "description.i-editor.component.death_protection",
+      "fallback": "Enter the sound ID of the item being lost at death:",
       "color": "gray"
     },
     "show_decorations": false,
@@ -33,7 +34,7 @@
       "type": "minecraft:text",
       "key": "sound_id",
       "label": {
-        "translate": "text.i-editor.sound_id",
+        "translate": "subtitle.i-editor.sound_id",
         "fallback": "Sound ID"
       },
       "initial": "minecraft:item.totem.use",
@@ -50,7 +51,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:death_protection\":{\"death_effects\":[{\"type\":\"minecraft:play_sound\",\"sound\":\"$(sound_id)\"}]}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:death_protection\":{\"death_effects\":[{\"type\":\"minecraft:play_sound\",\"sound\":\"$(sound_id)\"}]}}}]"
     }
   },
   "no": {

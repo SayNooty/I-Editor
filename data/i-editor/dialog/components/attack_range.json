@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.attack_range",
+      "translate": "component.i-editor.attack_range",
       "fallback": "Attack Range",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.attack_range",
+    "translate": "component.i-editor.attack_range",
     "fallback": "Attack Range"
   },
   "body": {
@@ -21,8 +22,8 @@
       "id": "minecraft:copper_spear"
     },
     "description": {
-      "translate": "text.i-editor.component_attack_range_info",
-      "fallback": "Adjust how far it will attack and pierce the item:",
+      "translate": "description.i-editor.component.attack_range",
+      "fallback": "Adjust how far the item will attack and pierce:",
       "color": "gray"
     },
     "show_decorations": false,
@@ -34,17 +35,45 @@
       "key": "min_reach",
       "label": [
         {
-          "translate": "text.i-editor.min_reach",
-          "fallback": "Min Reach "
+          "translate": "subtitle.i-editor.min_reach",
+          "fallback": "Min Reach"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.min_0",
-          "fallback": "<min: 0> ",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "0",
           "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.max_64",
-          "fallback": "<max: 64>",
+          "text": ">",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
+        },
+        {
+          "translate": "subtitle.i-editor.max",
+          "fallback": "max:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "64",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -56,17 +85,45 @@
       "key": "max_reach",
       "label": [
         {
-          "translate": "text.i-editor.max_reach",
-          "fallback": "Max Reach "
+          "translate": "subtitle.i-editor.max_reach",
+          "fallback": "Max Reach"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.min_0",
-          "fallback": "<min: 0> ",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "0",
           "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.max_64",
-          "fallback": "<max: 64>",
+          "text": ">",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
+        },
+        {
+          "translate": "subtitle.i-editor.max",
+          "fallback": "max:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "64",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -78,17 +135,45 @@
       "key": "min_creative_reach",
       "label": [
         {
-          "translate": "text.i-editor.min_creative_reach",
-          "fallback": "Min Creative Reach "
+          "translate": "subtitle.i-editor.min_creative_reach",
+          "fallback": "Min Creative Reach"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.min_0",
-          "fallback": "<min: 0> ",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "0",
           "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.max_64",
-          "fallback": "<max: 64>",
+          "text": ">",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
+        },
+        {
+          "translate": "subtitle.i-editor.max",
+          "fallback": "max:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "64",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -100,17 +185,45 @@
       "key": "max_creative_reach",
       "label": [
         {
-          "translate": "text.i-editor.max_creative_reach",
-          "fallback": "Max Creative Reach "
+          "translate": "subtitle.i-editor.max_creative_reach",
+          "fallback": "Max Creative Reach"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.min_0",
-          "fallback": "<min: 0> ",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "0",
           "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.max_64",
-          "fallback": "<max: 64>",
+          "text": ">",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
+        },
+        {
+          "translate": "subtitle.i-editor.max",
+          "fallback": "max:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "64",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -122,17 +235,45 @@
       "key": "hitbox_margin",
       "label": [
         {
-          "translate": "text.i-editor.hitbox_margin",
-          "fallback": "Hitbox Margin "
+          "translate": "subtitle.i-editor.hitbox_margin",
+          "fallback": "Hitbox Margin"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.min_0",
-          "fallback": "<min: 0> ",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "0",
           "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.max_1",
-          "fallback": "<max: 1>",
+          "text": ">",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
+        },
+        {
+          "translate": "subtitle.i-editor.max",
+          "fallback": "max:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "1",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -144,17 +285,45 @@
       "key": "mob_factor",
       "label": [
         {
-          "translate": "text.i-editor.mob_factor",
-          "fallback": "Mob Factor "
+          "translate": "subtitle.i-editor.mob_factor",
+          "fallback": "Mob Factor"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.min_0",
-          "fallback": "<min: 0> ",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "0",
           "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.max_2",
-          "fallback": "<max: 2>",
+          "text": ">",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
+        },
+        {
+          "translate": "subtitle.i-editor.max",
+          "fallback": "max:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "2",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -172,7 +341,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:attack_range\":{\"min_reach\":$(min_reach),\"max_reach\":$(max_reach),\"min_creative_reach\":$(min_creative_reach),\"max_creative_reach\":$(max_creative_reach),\"hitbox_margin\":$(hitbox_margin),\"mob_factor\":$(mob_factor)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:attack_range\":{\"min_reach\":$(min_reach),\"max_reach\":$(max_reach),\"min_creative_reach\":$(min_creative_reach),\"max_creative_reach\":$(max_creative_reach),\"hitbox_margin\":$(hitbox_margin),\"mob_factor\":$(mob_factor)}}}]"
     }
   },
   "no": {

@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.writable_book_content",
+      "translate": "component.i-editor.writable_book_content",
       "fallback": "Writable Book Content",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.writable_book_content",
+    "translate": "component.i-editor.writable_book_content",
     "fallback": "Writable Book Content"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:writable_book"
     },
     "description": {
-      "translate": "text.i-editor.component_writable_book_content_info",
+      "translate": "description.i-editor.component.writable_book_content",
       "fallback": "Write the text that you want to see on the page in the book, and also enter a filter if necessary:",
       "color": "gray"
     },
@@ -34,7 +35,7 @@
       "key": "raw",
       "width": 175,
       "label": {
-        "translate": "text.i-editor.raw",
+        "translate": "subtitle.i-editor.raw",
         "fallback": "Raw"
       },
       "max_length": 9999,
@@ -47,7 +48,7 @@
       "key": "filtered",
       "width": 175,
       "label": {
-        "translate": "text.i-editor.filtered",
+        "translate": "subtitle.i-editor.filtered",
         "fallback": "Filtered"
       }
     }
@@ -62,7 +63,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:writable_book_content\":{\"pages\":[{\"raw\":\"$(raw)\",\"filtered\":\"$(filtered)\"}]}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:writable_book_content\":{\"pages\":[{\"raw\":\"$(raw)\",\"filtered\":\"$(filtered)\"}]}}}]"
     }
   },
   "no": {

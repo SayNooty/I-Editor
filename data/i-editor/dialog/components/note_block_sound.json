@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.note_block_sound",
+      "translate": "component.i-editor.note_block_sound",
       "fallback": "Note Block Sound",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.note_block_sound",
+    "translate": "component.i-editor.note_block_sound",
     "fallback": "Note Block Sound"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:note_block"
     },
     "description": {
-      "translate": "text.i-editor.component_note_block_sound_info",
+      "translate": "description.i-editor.component.note_block_sound",
       "fallback": "Enter the sound ID for the head that will play the sound when it stands on the note block:",
       "color": "gray"
     },
@@ -33,7 +34,7 @@
       "type": "minecraft:text",
       "key": "sound",
       "label": {
-        "translate": "text.i-editor.sound",
+        "translate": "subtitle.i-editor.sound",
         "fallback": "Sound"
       },
       "max_length": 9999
@@ -49,7 +50,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:note_block_sound\":\"$(sound)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:note_block_sound\":\"$(sound)\"}}]"
     }
   },
   "no": {

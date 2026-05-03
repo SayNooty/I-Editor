@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.lodestone_tracker",
+      "translate": "component.i-editor.lodestone_tracker",
       "fallback": "Lodestone Tracker",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.lodestone_tracker",
+    "translate": "component.i-editor.lodestone_tracker",
     "fallback": "Lodestone Tracker"
   },
   "body": {
@@ -24,7 +25,7 @@
       }
     },
     "description": {
-      "translate": "text.i-editor.component_lodestone_tracker_info",
+      "translate": "description.i-editor.component.lodestone_tracker",
       "fallback": "Enter the coordinates and dimension to which the compass will point:",
       "color": "gray"
     },
@@ -38,17 +39,12 @@
       "width": 150,
       "label": [
         {
-          "translate": "text.i-editor.target",
-          "fallback": "Target "
+          "translate": "subtitle.i-editor.pos",
+          "fallback": "Pos"
         },
+        " ",
         {
-          "translate": "text.i-editor.pos",
-          "fallback": "(pos) ",
-          "color": "gray"
-        },
-        {
-          "translate": "text.i-editor.x",
-          "fallback": "<x, y, z>",
+          "text": "<x, y, z>",
           "color": "dark_gray"
         }
       ],
@@ -60,18 +56,33 @@
       "key": "dimension",
       "width": 150,
       "label": {
-        "translate": "text.i-editor.dimension",
+        "translate": "subtitle.i-editor.dimension",
         "fallback": "Dimension"
       },
       "options": [
         {
-          "id": "overworld"
+          "id": "overworld",
+          "display": {
+            "translate": "world.i-editor.overworld",
+            "fallback": "Overworld",
+            "color": "green"
+          }
         },
         {
-          "id": "the_nether"
+          "id": "the_nether",
+          "display": {
+            "translate": "world.i-editor.nether",
+            "fallback": "Nether",
+            "color": "red"
+          }
         },
         {
-          "id": "the_end"
+          "id": "the_end",
+          "display": {
+            "translate": "world.i-editor.end",
+            "fallback": "End",
+            "color": "dark_purple"
+          }
         }
       ]
     },
@@ -79,7 +90,7 @@
       "type": "minecraft:boolean",
       "key": "tracked",
       "label": {
-        "translate": "text.i-editor.tracked",
+        "translate": "subtitle.i-editor.tracked",
         "fallback": "Tracked"
       },
       "initial": true
@@ -95,7 +106,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:lodestone_tracker\":{target:{pos:[$(pos_xyz)],dimension:\"$(dimension)\"},tracked:$(tracked)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:lodestone_tracker\":{target:{pos:[$(pos_xyz)],dimension:\"$(dimension)\"},tracked:$(tracked)}}}]"
     }
   },
   "no": {

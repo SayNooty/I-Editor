@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "quilt_loader": {
+	"intermediate_mappings": "net.fabricmc:intermediary",
+    "group": "com.i-editor",
+    "id": "i-editor",
+    "version": "1.4.3",
+    "metadata": {
+      "name": "I Editor",
+      "description": "The item editor is straight out of vanilla minecraft",
+      "contributors": {
+        "SayNooty": "Owner"
+      },
+      "contact": {
+        "sources": "https://github.com/SayNooty/I-Editor"
+      },
+      "license": "MIT",
+      "icon": "pack.png"
+    },
+    "environment": "*",
+    "entrypoints": {},
+    "depends": [
+      {
+        "id": "minecraft",
+        "versions": "~26.2"
+      },
+      {
+        "id": "quilt_loader",
+        "versions": ">=0.29.0"
+      },
+      {
+        "id": "java",
+        "versions": ">=21"
+      }
+    ]
+  }
+}

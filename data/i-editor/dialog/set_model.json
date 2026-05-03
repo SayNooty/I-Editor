@@ -7,7 +7,7 @@
   "body": {
     "type": "minecraft:plain_message",
     "contents": {
-      "translate": "text.i-editor.set_model_info",
+      "translate": "description.i-editor.set_model",
       "fallback": "Enter the path to the desired item model in this field:",
       "color": "gray"
     },
@@ -18,8 +18,8 @@
       "type": "minecraft:text",
       "key": "model",
       "label": {
-        "translate": "text.i-editor.model",
-        "fallback": "Model"
+        "translate": "subtitle.i-editor.file_path",
+        "fallback": "File Path"
       },
       "max_length": 9999
     }
@@ -35,7 +35,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand {\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:item_model\":\"$(model)\"}}"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:item_model\":\"$(model)\"}}"
     }
   },
   "no": {

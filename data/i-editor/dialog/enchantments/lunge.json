@@ -3,8 +3,9 @@
   "title": [
     {
       "translate": "title.i-editor.enchantment",
-      "fallback": "Enchantment: "
+      "fallback": "Enchantment"
     },
+    ": ",
     {
       "translate": "enchantment.minecraft.lunge",
       "color": "yellow"
@@ -16,7 +17,7 @@
   "body": {
     "type": "minecraft:plain_message",
     "contents": {
-      "translate": "title.i-editor.enchantment_info",
+      "translate": "description.i-editor.enchantment",
       "fallback": "Drag the slider to the desired enchantment level:",
       "color": "gray"
     },
@@ -27,8 +28,8 @@
       "type": "minecraft:number_range",
       "key": "level",
       "label": {
-        "translate": "text.i-editor.lvl",
-        "fallback": "lvl"
+        "translate": "subtitle.i-editor.level",
+        "fallback": "Level"
       },
       "start": 1,
       "end": 255,

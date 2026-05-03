@@ -7,7 +7,7 @@
   "body": {
     "type": "minecraft:plain_message",
     "contents": {
-      "translate": "text.i-editor.set_damage_info",
+      "translate": "description.i-editor.set_damage",
       "fallback": "Enter the damage value of the item, which is subtracted from the maximum durability value:",
       "color": "gray"
     },
@@ -16,11 +16,11 @@
   "inputs": [
     {
       "type": "minecraft:text",
-      "key": "damage",
+      "key": "value",
       "width": 125,
       "label": {
-        "translate": "text.i-editor.damage",
-        "fallback": "Damage"
+        "translate": "subtitle.i-editor.value",
+        "fallback": "Value"
       },
       "max_length": 100
     }
@@ -35,7 +35,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:damage\":$(damage)}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:damage\":$(value)}}]"
     }
   },
   "no": {

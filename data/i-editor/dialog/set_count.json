@@ -7,7 +7,7 @@
   "body": {
     "type": "minecraft:plain_message",
     "contents": {
-      "translate": "text.i-editor.set_count_info",
+      "translate": "description.i-editor.set_count",
       "fallback": "Select the count of the item:",
       "color": "gray"
     },
@@ -18,7 +18,7 @@
       "type": "minecraft:number_range",
       "key": "count",
       "label": {
-        "translate": "text.i-editor.count",
+        "translate": "subtitle.i-editor.count",
         "fallback": "Count"
       },
       "start": 1,
@@ -37,7 +37,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_count\",\"count\":$(count)}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_count\",\"count\":$(count)}]"
     }
   },
   "no": {

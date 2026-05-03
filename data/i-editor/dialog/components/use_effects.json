@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.use_effects",
+      "translate": "component.i-editor.use_effects",
       "fallback": "Use Effects",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.use_effects",
+    "translate": "component.i-editor.use_effects",
     "fallback": "Use Effects"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:golden_spear"
     },
     "description": {
-      "translate": "text.i-editor.component_use_effects_info",
+      "translate": "description.i-editor.component.use_effects",
       "fallback": "Adjust the use of the item while running, the speed multiplier, and whether the use generates:",
       "color": "gray"
     },
@@ -34,7 +35,7 @@
       "key": "speed_multiplier",
       "width": 150,
       "label": {
-        "translate": "text.i-editor.speed_multiplier",
+        "translate": "subtitle.i-editor.speed_multiplier",
         "fallback": "Speed Multiplier"
       },
       "start": 0,
@@ -46,7 +47,7 @@
       "type": "minecraft:boolean",
       "key": "can_sprint",
       "label": {
-        "translate": "text.i-editor.can_sprint",
+        "translate": "subtitle.i-editor.can_sprint",
         "fallback": "Can Sprint"
       },
       "initial": false
@@ -55,7 +56,7 @@
       "type": "minecraft:boolean",
       "key": "interact_vibrations",
       "label": {
-        "translate": "text.i-editor.interact_vibrations",
+        "translate": "subtitle.i-editor.interact_vibrations",
         "fallback": "Interact Vibrations"
       },
       "initial": true
@@ -71,7 +72,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:use_effects\":{\"speed_multiplier\":$(speed_multiplier),\"can_sprint\":$(can_sprint),\"interact_vibrations\":$(interact_vibrations)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:use_effects\":{\"speed_multiplier\":$(speed_multiplier),\"can_sprint\":$(can_sprint),\"interact_vibrations\":$(interact_vibrations)}}}]"
     }
   },
   "no": {

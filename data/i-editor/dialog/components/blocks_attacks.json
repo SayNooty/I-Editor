@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.blocks_attacks",
+      "translate": "component.i-editor.blocks_attacks",
       "fallback": "Blocks Attacks",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.blocks_attacks",
+    "translate": "component.i-editor.blocks_attacks",
     "fallback": "Blocks Attacks"
   },
   "body": {
@@ -21,8 +22,8 @@
       "id": "minecraft:shield"
     },
     "description": {
-      "translate": "text.i-editor.component_blocks_attacks_info",
-      "fallback": "Enter the value of the lock like a shield:",
+      "translate": "description.i-editor.component.blocks_attacks",
+      "fallback": "Enter the values in the fields to adjust the shield lock parameters:",
       "color": "gray"
     },
     "show_decorations": false,
@@ -35,12 +36,26 @@
       "width": 175,
       "label": [
         {
-          "translate": "text.i-editor.block_delay_seconds",
-          "fallback": "Block Delay Seconds "
+          "translate": "subtitle.i-editor.block_delay_seconds",
+          "fallback": "Block Delay Seconds"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.min",
-          "fallback": "<min: 0>",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "0",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -53,12 +68,26 @@
       "width": 175,
       "label": [
         {
-          "translate": "text.i-editor.disable_cooldown_scale",
-          "fallback": "Disable Cooldown Scale "
+          "translate": "subtitle.i-editor.disable_cooldown_scale",
+          "fallback": "Disable Cooldown Scale"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.min",
-          "fallback": "<min: 0>",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "0",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -71,11 +100,12 @@
       "width": 175,
       "label": [
         {
-          "translate": "text.i-editor.damage_reductions",
-          "fallback": "Damage Reductions "
+          "translate": "subtitle.i-editor.damage_reductions",
+          "fallback": "Damage Reductions"
         },
+        " ",
         {
-          "translate": "text.i-editor.base",
+          "translate": "subtitle.i-editor.base",
           "fallback": "(base)",
           "color": "gray"
         }
@@ -89,11 +119,12 @@
       "width": 175,
       "label": [
         {
-          "translate": "text.i-editor.damage_reductions",
-          "fallback": "Damage Reductions "
+          "translate": "subtitle.i-editor.damage_reductions",
+          "fallback": "Damage Reductions"
         },
+        " ",
         {
-          "translate": "text.i-editor.factor",
+          "translate": "subtitle.i-editor.factor",
           "fallback": "(factor)",
           "color": "gray"
         }
@@ -107,17 +138,32 @@
       "width": 175,
       "label": [
         {
-          "translate": "text.i-editor.item_damage",
-          "fallback": "Item Damage "
+          "translate": "subtitle.i-editor.item_damage",
+          "fallback": "Item Damage"
         },
+        " ",
         {
-          "translate": "text.i-editor.item_damage_threshold",
-          "fallback": "(threshold) ",
+          "translate": "subtitle.i-editor.item_damage_threshold",
+          "fallback": "(threshold)",
           "color": "gray"
         },
+        " ",
         {
-          "translate": "text.i-editor.min",
-          "fallback": "<min: 0>",
+        "text": "<",
+        "color": "dark_gray"
+        },
+        {
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "0",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -130,12 +176,13 @@
       "width": 175,
       "label": [
         {
-          "translate": "text.i-editor.item_damage",
-          "fallback": "Item Damage "
+          "translate": "subtitle.i-editor.item_damage",
+          "fallback": "Item Damage"
         },
+        " ",
         {
-          "translate": "text.i-editor.base",
-          "fallback": "(base) ",
+          "translate": "subtitle.i-editor.base",
+          "fallback": "(base)",
           "color": "gray"
         }
       ],
@@ -148,11 +195,12 @@
       "width": 175,
       "label": [
         {
-          "translate": "text.i-editor.item_damage",
-          "fallback": "Item Damage "
+          "translate": "subtitle.i-editor.item_damage",
+          "fallback": "Item Damage"
         },
+        " ",
         {
-          "translate": "text.i-editor.factor",
+          "translate": "subtitle.i-editor.factor",
           "fallback": "(factor)",
           "color": "gray"
         }
@@ -171,7 +219,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:blocks_attacks\":{\"block_delay_seconds\":$(block_delay_seconds),\"disable_cooldown_scale\":$(disable_cooldown_scale),\"damage_reductions\":[{\"base\":$(damage_reductions_base),\"factor\":$(damage_reductions_factor)}],\"item_damage\":{\"threshold\":$(item_damage_threshold),\"base\":$(item_damage_base),\"factor\":$(item_damage_factor)}}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:blocks_attacks\":{\"block_delay_seconds\":$(block_delay_seconds),\"disable_cooldown_scale\":$(disable_cooldown_scale),\"damage_reductions\":[{\"base\":$(damage_reductions_base),\"factor\":$(damage_reductions_factor)}],\"item_damage\":{\"threshold\":$(item_damage_threshold),\"base\":$(item_damage_base),\"factor\":$(item_damage_factor)}}}}]"
     }
   },
   "no": {

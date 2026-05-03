@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.use_remainder",
+      "translate": "component.i-editor.use_remainder",
       "fallback": "Use Remainder",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.use_remainder",
+    "translate": "component.i-editor.use_remainder",
     "fallback": "Use Remainder"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:milk_bucket"
     },
     "description": {
-      "translate": "text.i-editor.component_use_remainder_info",
+      "translate": "description.i-editor.component.use_remainder",
       "fallback": "Enter the item ID and select the count of the item that will appear after consuming the previous one:",
       "color": "gray"
     },
@@ -33,7 +34,7 @@
       "type": "minecraft:text",
       "key": "item",
       "label": {
-        "translate": "text.i-editor.item",
+        "translate": "subtitle.i-editor.item",
         "fallback": "Item"
       },
       "max_length": 9999
@@ -42,7 +43,7 @@
       "type": "minecraft:number_range",
       "key": "count",
       "label": {
-        "translate": "text.i-editor.count",
+        "translate": "subtitle.i-editor.count",
         "fallback": "Count"
       },
       "start": 1,
@@ -61,7 +62,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:use_remainder\":{\"id\":\"$(item)\",\"count\":$(count)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:use_remainder\":{\"id\":\"$(item)\",\"count\":$(count)}}}]"
     }
   },
   "no": {

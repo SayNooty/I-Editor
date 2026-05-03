@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.container_loot",
+      "translate": "component.i-editor.container_loot",
       "fallback": "Container Loot",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.container_loot",
+    "translate": "component.i-editor.container_loot",
     "fallback": "Container Loot"
   },
   "body": {
@@ -21,8 +22,8 @@
       "id": "minecraft:chest"
     },
     "description": {
-      "translate": "text.i-editor.component_container_loot_info",
-      "fallback": "Enter the loot table ID that will be contained in the container:",
+      "translate": "description.i-editor.component.container_loot",
+      "fallback": "Enter the file path loot table that will be contained in the container:",
       "color": "gray"
     },
     "show_decorations": false,
@@ -31,10 +32,10 @@
   "inputs": [
     {
       "type": "minecraft:text",
-      "key": "loot_table_id",
+      "key": "file_path",
       "label": {
-        "translate": "text.i-editor.loot_table_id",
-        "fallback": "Loot Table ID"
+        "translate": "subtitle.i-editor.file_path",
+        "fallback": "File Path"
       },
       "initial": "minecraft:chests/ancient_city",
       "max_length": 9999
@@ -50,7 +51,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:container_loot\":{\"loot_table\":\"$(loot_table_id)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:container_loot\":{\"loot_table\":\"$(file_path)\"}}}]"
     }
   },
   "no": {

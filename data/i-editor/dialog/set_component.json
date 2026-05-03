@@ -7,7 +7,7 @@
   "body": {
     "type": "minecraft:plain_message",
     "contents": {
-      "translate": "text.i-editor.set_component_info",
+      "translate": "description.i-editor.set_component",
       "fallback": "Select a component suitable for a specific item and configure it:",
       "color": "gray"
     },
@@ -30,6 +30,7 @@
   "button_width": 125,
   "dialogs": [
     "i-editor:components/attack_range",
+    "i-editor:components/base_color",
     "i-editor:components/blocks_attacks",
     "i-editor:components/break_sound",
     "i-editor:components/can_break",
@@ -45,6 +46,7 @@
     "i-editor:components/dyed_color",
     "i-editor:components/enchantable",
     "i-editor:components/enchantment_glint_override",
+    "i-editor:components/entity_variants",
     "i-editor:components/equippable",
     "i-editor:components/food",
     "i-editor:components/glider",
@@ -69,10 +71,10 @@
     "i-editor:components/rarity",
     "i-editor:components/repair_cost",
     "i-editor:components/repairable",
+	  "i-editor:components/sulfur_cube_content",
     "i-editor:components/suspicious_stew_effects",
     "i-editor:components/swing_animation",
     "i-editor:components/tool",
-    "i-editor:components/tooltip_display",
     "i-editor:components/tooltip_style",
     "i-editor:components/unbreakable",
     "i-editor:components/use_cooldown",

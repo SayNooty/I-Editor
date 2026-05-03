@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.debug_stick_state",
+      "translate": "component.i-editor.debug_stick_state",
       "fallback": "Debug Stick State",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.debug_stick_state",
+    "translate": "component.i-editor.debug_stick_state",
     "fallback": "Debug Stick State"
   },
   "body": {
@@ -21,8 +22,8 @@
       "id": "minecraft:debug_stick"
     },
     "description": {
-      "translate": "text.i-editor.component_debug_stick_state_info",
-      "fallback": "First, enter the block, followed by its state, which will be applied to the debug stick:",
+      "translate": "description.i-editor.component.debug_stick_state",
+      "fallback": "Enter the block ID and its state, which will be applied to the debug stick:",
       "color": "gray"
     },
     "show_decorations": false,
@@ -33,7 +34,7 @@
       "type": "minecraft:text",
       "key": "block_id",
       "label": {
-        "translate": "text.i-editor.block_id",
+        "translate": "subtitle.i-editor.block_id",
         "fallback": "Block ID"
       },
       "max_length": 9999
@@ -42,7 +43,7 @@
       "type": "minecraft:text",
       "key": "state",
       "label": {
-        "translate": "text.i-editor.state",
+        "translate": "subtitle.i-editor.state",
         "fallback": "State"
       },
       "max_length": 9999
@@ -58,7 +59,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:debug_stick_state\":{\"$(block_id)\":\"$(state)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:debug_stick_state\":{\"$(block_id)\":\"$(state)\"}}}]"
     }
   },
   "no": {

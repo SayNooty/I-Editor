@@ -3,8 +3,9 @@
   "title": [
     {
       "translate": "title.i-editor.enchantment",
-      "fallback": "Enchantment: "
+      "fallback": "Enchantment"
     },
+    ": ",
     {
       "translate": "enchantment.minecraft.aqua_affinity",
       "color": "yellow"
@@ -16,7 +17,7 @@
   "body": {
     "type": "minecraft:plain_message",
     "contents": {
-      "translate": "title.i-editor.enchantment_info",
+      "translate": "description.i-editor.enchantment",
       "fallback": "Drag the slider to the desired enchantment level:",
       "color": "gray"
     },
@@ -27,8 +28,8 @@
       "type": "minecraft:number_range",
       "key": "level",
       "label": {
-        "translate": "text.i-editor.lvl",
-        "fallback": "lvl"
+        "translate": "subtitle.i-editor.level",
+        "fallback": "Level"
       },
       "start": 1,
       "end": 255,
@@ -46,7 +47,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand {\"function\":\"minecraft:set_enchantments\",\"enchantments\":{\"minecraft:aqua_affinity\":$(level)}}"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"function\":\"minecraft:set_enchantments\",\"enchantments\":{\"minecraft:aqua_affinity\":$(level)}}"
     }
   },
   "no": {
