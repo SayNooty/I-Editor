@@ -1,34 +1,21 @@
-## I Editor: A revolution in the world of crafting
-
-### Open a new era of creativity in Minecraft
-
-**I Editor (Item Editor)** is not just a datapack, it is a real breakthrough in the possibilities of editing items in Minecraft. Now you can become a true master craftsman, controlling every aspect of your items like never before.
-
-------
-**Limited use:** All item editing functions are performed through commands, which in most cases are inaccessible to ordinary players. Remember that executing commands will work only if it is allowed on the server or in the world.
-
-------
-
-### Key Features
-
-* **Complete editing** of all item parameters: durability, enchantments, name, description, and more
-* **Intuitive interface**, understandable even for beginners
-* **Powerful tools** to create unique items
-* **Flexible configuration** of all parameters through a user-friendly graphical interface
+## ⚡ I Editor: A Revolution in the World of Minecraft and Customization
 
 ![Template edit item](https://cdn.modrinth.com/data/cached_images/97f4542211d5d7ed36c2bc24ebbe0e8db9baacac.gif)
 
-### Why it will change your game
+### 🚀 Open a New Era of Creativity in Minecraft
 
-Forget about the limitations of standard minecraft. With **I Editor** you get:
+**I Editor (Item Editor)** is not just a datapack, it's a true breakthrough in the possibilities of item editing! 🛠️ Forget the boring limitations of vanilla Minecraft. Now you can become a true Master Smith, controlling every tiny detail of your inventory. Turn an ordinary sword into a legendary artifact or create a potion with unique properties — it's all in your hands! ✨
 
-* The ability to create perfect items with desired enchantments
-* Editing existing items without losing their characteristics
-* Create unique decorative items with custom names
-* Full control over the condition of objects in your world
+------
+⚠️ **Important:** All editing functions are performed through commands. Make sure command usage is allowed on your server or world to unlock the full potential of this datapack.
 
-![Set Potion: Setting](https://cdn.modrinth.com/data/cached_images/6d6dec355a1669694d0b8dbed6b68bb50393f34a_0.webp)
+------
 
-### Start creating today
+### 🔥 Key Features
 
-**I Editor** is not just a tool, it is a new level of gameplay. Turn your Minecraft into a real workshop of creativity, where every object can become exactly the way you see it.
+*   **💯 Full Customization:** Change *absolutely everything*: durability, enchantments, name, description, and even potion effects!
+*   **🎮 Intuitive Interface:** A clear menu and easy-to-use controls that even beginners can understand.
+*   **⚙️ Powerful Tools:** Create truly unique items that don't exist in the standard game.
+*   **🖱️ Flexible Settings:** Adjust all parameters through a user-friendly graphical interface — no more confusing commands.
+
+![Set Potion](https://cdn.modrinth.com/data/cached_images/3c2cc3e691c21b0befe671c36649da3c1fa1c149_0.webp)
