@@ -1,0 +1,123 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component"
+    },
+    ": ",
+    {
+      "translate": "component.i-editor.entity_variants",
+      "fallback": "Entity Variants",
+      "color": "yellow"
+    },
+    {
+      "text": " | ",
+      "color": "gray"
+    },
+    {
+      "translate": "entity.minecraft.villager",
+      "color": "gold"
+    }
+  ],
+  "external_title": {
+    "translate": "entity.minecraft.villager"
+  },
+  "body": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:villager_spawn_egg"
+    },
+    "description": {
+      "translate": "description.i-editor.component.entity_variants.entity",
+      "fallback": "Select the variant that you want to apply to the spawn egg of this entity:",
+      "color": "gray"
+    },
+    "show_decorations": false,
+    "show_tooltip": false
+  },
+  "inputs": [
+    {
+      "type": "minecraft:single_option",
+      "key": "variant",
+      "label": {
+        "translate": "subtitle.i-editor.variant",
+        "fallback": "Variant"
+      },
+      "options": [
+        {
+          "id": "desert",
+          "display": {
+            "translate": "variant.i-editor.desert",
+            "fallback": "Desert"
+          }
+        },
+        {
+          "id": "jungle",
+          "display": {
+            "translate": "variant.i-editor.jungle",
+            "fallback": "Jungle"
+          }
+        },
+        {
+          "id": "plains",
+          "display": {
+            "translate": "variant.i-editor.plains",
+            "fallback": "Plains"
+          }
+        },
+        {
+          "id": "savanna",
+          "display": {
+            "translate": "variant.i-editor.savanna",
+            "fallback": "Savanna"
+          }
+        },
+        {
+          "id": "snow",
+          "display": {
+            "translate": "variant.i-editor.snow",
+            "fallback": "Snow"
+          }
+        },
+        {
+          "id": "swamp",
+          "display": {
+            "translate": "variant.i-editor.swamp",
+            "fallback": "Swamp"
+          }
+        },
+        {
+          "id": "taiga",
+          "display": {
+            "translate": "variant.i-editor.taiga",
+            "fallback": "Taiga"
+          }
+        }
+      ]
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:villager/variant\":\"$(variant)\"}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:components/entity_variants"
+    }
+  }
+}

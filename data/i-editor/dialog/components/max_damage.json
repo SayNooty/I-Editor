@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.max_damage",
+      "translate": "component.i-editor.max_damage",
       "fallback": "Max Damage",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.max_damage",
+    "translate": "component.i-editor.max_damage",
     "fallback": "Max Damage"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:diamond_axe"
     },
     "description": {
-      "translate": "text.i-editor.component_max_damage_info",
+      "translate": "description.i-editor.component.max_damage",
       "fallback": "Enter the maximum usage count of the item to break:",
       "color": "gray"
     },
@@ -34,7 +35,7 @@
       "key": "count",
       "width": 125,
       "label": {
-        "translate": "text.i-editor.count",
+        "translate": "subtitle.i-editor.count",
         "fallback": "Count"
       },
       "max_length": 9999
@@ -50,7 +51,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:max_damage\":$(count)}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:max_damage\":$(count)}}]"
     }
   },
   "no": {

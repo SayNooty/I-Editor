@@ -7,7 +7,7 @@
   "body": {
     "type": "minecraft:plain_message",
     "contents": {
-      "translate": "text.i-editor.set_name_info",
+      "translate": "description.i-editor.set_name",
       "fallback": "Enter the name of the item and configure additional visualization settings:",
       "color": "gray"
     },
@@ -18,16 +18,43 @@
       "type": "minecraft:text",
       "key": "name",
       "label": {
-        "translate": "text.i-editor.name",
+        "translate": "subtitle.i-editor.name",
         "fallback": "Name"
       },
       "max_length": 100
     },
     {
       "type": "minecraft:single_option",
+      "key": "font",
+      "label": {
+        "translate": "subtitle.i-editor.font",
+        "fallback": "Font"
+      },
+      "options": [
+        {
+          "id": "include/default",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default",
+            "font": "minecraft:include/default"
+          },
+          "initial": true
+        },
+        {
+          "id": "include/unifont",
+          "display": {
+            "translate": "mode.i-editor.unifont",
+            "fallback": "Unifont",
+            "font": "minecraft:include/unifont"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
       "key": "color",
       "label": {
-        "translate": "text.i-editor.color",
+        "translate": "subtitle.i-editor.color",
         "fallback": "Color"
       },
       "options": [
@@ -62,7 +89,7 @@
         {
           "id": "dark_red",
           "display": {
-            "translate": "text.i-editor.dark_red",
+            "translate": "color.minecraft.dark_red",
             "fallback": "Dark Red",
             "color": "dark_red"
           }
@@ -77,7 +104,7 @@
         {
           "id": "gold",
           "display": {
-            "translate": "text.i-editor.gold",
+            "translate": "color.minecraft.gold",
             "fallback": "Gold",
             "color": "gold"
           }
@@ -99,7 +126,7 @@
         {
           "id": "dark_green",
           "display": {
-            "translate": "text.i-editor.dark_green",
+            "translate": "color.minecraft.dark_green",
             "fallback": "Dark Green",
             "color": "dark_green"
           }
@@ -128,7 +155,7 @@
         {
           "id": "dark_blue",
           "display": {
-            "translate": "text.i-editor.dark_blue",
+            "translate": "color.minecraft.dark_blue",
             "fallback": "Dark Blue",
             "color": "dark_blue"
           }
@@ -136,7 +163,7 @@
         {
           "id": "dark_purple",
           "display": {
-            "translate": "text.i-editor.dark_purple",
+            "translate": "color.minecraft.dark_purple",
             "fallback": "Dark Purple",
             "color": "dark_purple"
           }
@@ -144,7 +171,7 @@
         {
           "id": "light_purple",
           "display": {
-            "translate": "text.i-editor.light_purple",
+            "translate": "color.minecraft.light_purple",
             "fallback": "Light Purple",
             "color": "light_purple"
           }
@@ -153,14 +180,14 @@
     },
     {
       "type": "minecraft:boolean",
-      "key": "shadow_color",
+      "key": "shadow",
       "label": {
-        "translate": "text.i-editor.shadow_color",
-        "fallback": "Shadow Color",
+        "translate": "subtitle.i-editor.shadow",
+        "fallback": "Shadow",
         "hover_event": {
           "action": "show_text",
           "value": {
-            "translate": "text.i-editor.shadow_color_info",
+            "translate": "description.i-editor.shadow",
             "fallback": "Adds a shadow to the text\nwhen there is a check mark",
             "color": "gray"
           }
@@ -174,7 +201,8 @@
       "type": "minecraft:boolean",
       "key": "bold",
       "label": {
-        "text": "Bold",
+        "translate": "formatting.i-editor.bold",
+        "fallback": "Bold",
         "bold": true
       },
       "initial": false
@@ -183,7 +211,8 @@
       "type": "minecraft:boolean",
       "key": "italic",
       "label": {
-        "text": "Italic",
+        "translate": "formatting.i-editor.italic",
+        "fallback": "Italic",
         "italic": true
       },
       "initial": false
@@ -192,7 +221,8 @@
       "type": "minecraft:boolean",
       "key": "underlined",
       "label": {
-        "text": "Underlined",
+        "translate": "formatting.i-editor.underlined",
+        "fallback": "Underlined",
         "underlined": true
       },
       "initial": false
@@ -201,7 +231,8 @@
       "type": "minecraft:boolean",
       "key": "strikethrough",
       "label": {
-        "text": "Strikethrough",
+        "translate": "formatting.i-editor.strikethrough",
+        "fallback": "Strikethrough",
         "strikethrough": true
       },
       "initial": false
@@ -210,8 +241,17 @@
       "type": "minecraft:boolean",
       "key": "obfuscated",
       "label": {
-        "text": "Obfuscated",
-        "obfuscated": true
+        "translate": "formatting.i-editor.obfuscated",
+        "fallback": "Obfuscated",
+        "obfuscated": true,
+        "hover_event": {
+          "action": "show_text",
+          "value": {
+            "translate": "formatting.i-editor.obfuscated",
+            "fallback": "Obfuscated",
+            "color": "gray"
+          }
+        }
       },
       "initial": false
     }
@@ -226,7 +266,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_name\",\"name\":{\"text\":\"$(name)\",\"color\":\"$(color)\",$(shadow_color)\"bold\":$(bold),\"italic\":$(italic),\"underlined\":$(underlined),\"strikethrough\":$(strikethrough),\"obfuscated\":$(obfuscated)}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_name\",\"name\":{\"text\":\"$(name)\",\"font\":\"$(font)\",\"color\":\"$(color)\",$(shadow)\"bold\":$(bold),\"italic\":$(italic),\"underlined\":$(underlined),\"strikethrough\":$(strikethrough),\"obfuscated\":$(obfuscated)}}]"
     }
   },
   "no": {

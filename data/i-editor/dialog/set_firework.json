@@ -5,13 +5,17 @@
     "fallback": "Set Firework"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
-      "translate": "text.i-editor.set_firework_info",
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:firework_rocket"
+    },
+    "description": {
+      "translate": "description.i-editor.set_firework",
       "fallback": "Adjust how the fireworks will explode after using it:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {
@@ -29,7 +33,7 @@
       "type": "minecraft:single_option",
       "key": "shape",
       "label": {
-        "translate": "text.i-editor.shape",
+        "translate": "subtitle.i-editor.shape",
         "fallback": "Shape"
       },
       "options": [
@@ -70,11 +74,12 @@
       "key": "color",
       "label": [
         {
-          "translate": "text.i-editor.color",
-          "fallback": "Color "
+          "translate": "subtitle.i-editor.color",
+          "fallback": "Color"
         },
+        " ",
         {
-          "translate": "text.i-editor.color_decimal",
+          "translate": "subtitle.i-editor.decimal",
           "fallback": "[decimal]",
           "color": "gray"
         }
@@ -86,11 +91,12 @@
       "key": "fade_color",
       "label": [
         {
-          "translate": "text.i-editor.fade_color",
-          "fallback": "Fade Color "
+          "translate": "subtitle.i-editor.fade_color",
+          "fallback": "Fade Color"
         },
+        " ",
         {
-          "translate": "text.i-editor.color_decimal",
+          "translate": "subtitle.i-editor.decimal",
           "fallback": "[decimal]",
           "color": "gray"
         }
@@ -101,7 +107,7 @@
       "type": "minecraft:boolean",
       "key": "has_trail",
       "label": {
-        "translate": "text.i-editor.has_trail",
+        "translate": "subtitle.i-editor.has_trail",
         "fallback": "Has Trail"
       },
       "initial": false
@@ -110,7 +116,7 @@
       "type": "minecraft:boolean",
       "key": "has_twinkle",
       "label": {
-        "translate": "text.i-editor.has_twinkle",
+        "translate": "subtitle.i-editor.has_twinkle",
         "fallback": "Has Twinkle"
       },
       "initial": false
@@ -126,7 +132,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "/item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:fireworks\":{\"explosions\":[{\"shape\":\"$(shape)\",\"colors\":[$(color)],\"fade_colors\":[$(fade_color)],\"has_trail\":$(has_trail),\"has_twinkle\":$(has_twinkle)}],\"flight_duration\":$(flight_duration)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{function:\"minecraft:set_fireworks\",flight_duration:$(flight_duration),explosions:{values:[{shape:\"$(shape)\",colors:[$(colors)],fade_colors:[$(fade_colors)],has_trail:$(has_trail),has_twinkle:$(has_twinkle)}],mode:\"append\"}}]"
     }
   },
   "no": {

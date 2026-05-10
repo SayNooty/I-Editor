@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.pot_decorations",
+      "translate": "component.i-editor.pot_decorations",
       "fallback": "Pot Decorations",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.pot_decorations",
+    "translate": "component.i-editor.pot_decorations",
     "fallback": "Pot Decorations"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:danger_pottery_sherd"
     },
     "description": {
-      "translate": "text.i-editor.component_pot_decorations_info",
+      "translate": "description.i-editor.component.pot_decorations",
       "fallback": "Select a sherd to overlay on the shard:",
       "color": "gray"
     },
@@ -33,175 +34,175 @@
       "type": "minecraft:single_option",
       "key": "sherd",
       "label": {
-        "translate": "text.i-editor.sherd",
+        "translate": "subtitle.i-editor.sherd",
         "fallback": "Sherd"
       },
       "options": [
         {
           "id": "angler",
           "display": {
-            "translate": "text.i-editor.sherd_angler",
+            "translate": "sherd.i-editor.angler",
             "fallback": "Angler"
           }
         },
         {
           "id": "archer",
           "display": {
-            "translate": "text.i-editor.sherd_archer",
+            "translate": "sherd.i-editor.archer",
             "fallback": "Archer"
           }
         },
         {
           "id": "arms_up",
           "display": {
-            "translate": "text.i-editor.sherd_arms_up",
+            "translate": "sherd.i-editor.arms_up",
             "fallback": "Arms Up"
           }
         },
         {
           "id": "blade",
           "display": {
-            "translate": "text.i-editor.sherd_blade",
+            "translate": "sherd.i-editor.blade",
             "fallback": "Blade"
           }
         },
         {
           "id": "brewer",
           "display": {
-            "translate": "text.i-editor.sherd_brewer",
+            "translate": "sherd.i-editor.brewer",
             "fallback": "Brewer"
           }
         },
         {
           "id": "brick",
           "display": {
-            "translate": "text.i-editor.sherd_brick",
+            "translate": "sherd.i-editor.brick",
             "fallback": "Brick"
           }
         },
         {
           "id": "burn",
           "display": {
-            "translate": "text.i-editor.sherd_burn",
+            "translate": "sherd.i-editor.burn",
             "fallback": "Burn"
           }
         },
         {
           "id": "danger",
           "display": {
-            "translate": "text.i-editor.sherd_danger",
+            "translate": "sherd.i-editor.danger",
             "fallback": "Danger"
           }
         },
         {
           "id": "explorer",
           "display": {
-            "translate": "text.i-editor.sherd_explorer",
+            "translate": "sherd.i-editor.explorer",
             "fallback": "Explorer"
           }
         },
         {
           "id": "friend",
           "display": {
-            "translate": "text.i-editor.sherd_friend",
+            "translate": "sherd.i-editor.friend",
             "fallback": "Friend"
           }
         },
         {
           "id": "heart",
           "display": {
-            "translate": "text.i-editor.sherd_heart",
+            "translate": "sherd.i-editor.heart",
             "fallback": "Heart"
           }
         },
         {
           "id": "heartbreak",
           "display": {
-            "translate": "text.i-editor.sherd_heartbreak",
+            "translate": "sherd.i-editor.heartbreak",
             "fallback": "Heartbreak"
           }
         },
         {
           "id": "howl",
           "display": {
-            "translate": "text.i-editor.sherd_howl",
+            "translate": "sherd.i-editor.howl",
             "fallback": "Howl"
           }
         },
         {
           "id": "miner",
           "display": {
-            "translate": "text.i-editor.sherd_miner",
+            "translate": "sherd.i-editor.miner",
             "fallback": "Miner"
           }
         },
         {
           "id": "mourner",
           "display": {
-            "translate": "text.i-editor.sherd_mourner",
+            "translate": "sherd.i-editor.mourner",
             "fallback": "Mourner"
           }
         },
         {
           "id": "plenty",
           "display": {
-            "translate": "text.i-editor.sherd_plenty",
+            "translate": "sherd.i-editor.plenty",
             "fallback": "Plenty"
           }
         },
         {
           "id": "prize",
           "display": {
-            "translate": "text.i-editor.sherd_prize",
+            "translate": "sherd.i-editor.prize",
             "fallback": "Prize"
           }
         },
         {
           "id": "sheaf",
           "display": {
-            "translate": "text.i-editor.sherd_sheaf",
+            "translate": "sherd.i-editor.sheaf",
             "fallback": "Sheaf"
           }
         },
         {
           "id": "shelter",
           "display": {
-            "translate": "text.i-editor.sherd_shelter",
+            "translate": "sherd.i-editor.shelter",
             "fallback": "Shelter"
           }
         },
         {
           "id": "skull",
           "display": {
-            "translate": "text.i-editor.sherd_skull",
+            "translate": "sherd.i-editor.skull",
             "fallback": "Skull"
           }
         },
         {
           "id": "snort",
           "display": {
-            "translate": "text.i-editor.sherd_snort",
+            "translate": "sherd.i-editor.snort",
             "fallback": "Snort"
           }
         },
         {
           "id": "flow",
           "display": {
-            "translate": "text.i-editor.sherd_flow",
+            "translate": "sherd.i-editor.flow",
             "fallback": "Flow"
           }
         },
         {
           "id": "guster",
           "display": {
-            "translate": "text.i-editor.sherd_guster",
+            "translate": "sherd.i-editor.guster",
             "fallback": "Guster"
           }
         },
         {
           "id": "scrape",
           "display": {
-            "translate": "text.i-editor.sherd_scrape",
+            "translate": "sherd.i-editor.scrape",
             "fallback": "Scrape"
           }
         }
@@ -218,7 +219,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:pot_decorations\":[\"minecraft:$(sherd)_pottery_sherd\"]}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:pot_decorations\":[\"minecraft:$(sherd)_pottery_sherd\"]}}]"
     }
   },
   "no": {

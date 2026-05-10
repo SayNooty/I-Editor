@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.consumable",
+      "translate": "component.i-editor.consumable",
       "fallback": "Consumable",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.consumable",
+    "translate": "component.i-editor.consumable",
     "fallback": "Consumable"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:golden_apple"
     },
     "description": {
-      "translate": "text.i-editor.component_consumable_info",
+      "translate": "description.i-editor.component.consumable",
       "fallback": "Enter the values and configure the consumption configuration like a food:",
       "color": "gray"
     },
@@ -31,11 +32,19 @@
   "inputs": [
     {
       "type": "minecraft:text",
-      "key": "consume_seconds",
-      "label": {
-        "translate": "text.i-editor.consume_seconds",
-        "fallback": "Consume Seconds"
-      },
+      "key": "consumption_time",
+      "label": [
+        {
+          "translate": "subtitle.i-editor.consumption_time",
+          "fallback": "Consumption Time"
+        },
+        " ",
+        {
+          "translate": "subtitle.i-editor.in_seconds",
+          "fallback": "[in seconds]",
+          "color": "gray"
+        }
+      ],
       "initial": "1.6",
       "max_length": 9999
     },
@@ -43,7 +52,7 @@
       "type": "minecraft:single_option",
       "key": "animation",
       "label": {
-        "translate": "text.i-editor.animation",
+        "translate": "subtitle.i-editor.animation",
         "fallback": "Animation"
       },
       "options": [
@@ -56,21 +65,21 @@
         {
           "id": "eat",
           "display": {
-            "translate": "text.i-editor.eat",
+            "translate": "subtitle.i-editor.eat",
             "fallback": "Eat"
           }
         },
         {
           "id": "drink",
           "display": {
-            "translate": "text.i-editor.drink",
+            "translate": "subtitle.i-editor.drink",
             "fallback": "Drink"
           }
         },
         {
           "id": "block",
           "display": {
-            "translate": "text.i-editor.block",
+            "translate": "subtitle.i-editor.block",
             "fallback": "Block"
           }
         },
@@ -89,7 +98,7 @@
         {
           "id": "spear",
           "display": {
-            "translate": "text.i-editor.spear",
+            "translate": "subtitle.i-editor.spear",
             "fallback": "Spear"
           }
         },
@@ -129,7 +138,7 @@
       "type": "minecraft:text",
       "key": "sound_id",
       "label": {
-        "translate": "text.i-editor.sound_id",
+        "translate": "subtitle.i-editor.sound_id",
         "fallback": "Sound ID"
       },
       "initial": "minecraft:entity.generic.eat",
@@ -139,7 +148,7 @@
       "type": "minecraft:boolean",
       "key": "has_consume_particles",
       "label": {
-        "translate": "text.i-editor.has_consume_particles",
+        "translate": "subtitle.i-editor.has_consume_particles",
         "fallback": "Has Consume Particles"
       },
       "initial": true
@@ -155,7 +164,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:consumable\":{\"consume_seconds\":$(consume_seconds),\"animation\":\"$(animation)\",\"sound\":\"$(sound_id)\",\"has_consume_particles\":$(has_consume_particles)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:consumable\":{\"consume_seconds\":$(consumption_time),\"animation\":\"$(animation)\",\"sound\":\"$(sound_id)\",\"has_consume_particles\":$(has_consume_particles)}}}]"
     }
   },
   "no": {

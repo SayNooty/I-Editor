@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.tool",
+      "translate": "component.i-editor.tool",
       "fallback": "Tool",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.tool",
+    "translate": "component.i-editor.tool",
     "fallback": "Tool"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:diamond_shovel"
     },
     "description": {
-      "translate": "text.i-editor.component_tool_info",
+      "translate": "description.i-editor.component.tool",
       "fallback": "Enter the values to setting the mining parameters so that the item is a tool:",
       "color": "gray"
     },
@@ -33,7 +34,7 @@
       "type": "minecraft:text",
       "key": "default_mining_speed",
       "label": {
-        "translate": "text.i-editor.default_mining_speed",
+        "translate": "subtitle.i-editor.default_mining_speed",
         "fallback": "Default Mining Speed"
       },
       "initial": "1.0",
@@ -43,7 +44,7 @@
       "type": "minecraft:text",
       "key": "damage_per_block",
       "label": {
-        "translate": "text.i-editor.damage_per_block",
+        "translate": "subtitle.i-editor.damage_per_block",
         "fallback": "Damage Per Block"
       },
       "initial": "1",
@@ -53,7 +54,7 @@
       "type": "minecraft:boolean",
       "key": "can_destroy_blocks_in_creative",
       "label": {
-        "translate": "text.i-editor.can_destroy_blocks_in_creative",
+        "translate": "subtitle.i-editor.can_destroy_blocks_in_creative",
         "fallback": "Can Destroy Blocks In Creative"
       },
       "initial": true
@@ -69,7 +70,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:tool\":{\"rules\":[],\"default_mining_speed\":$(default_mining_speed),\"damage_per_block\":$(damage_per_block),\"can_destroy_blocks_in_creative\":$(can_destroy_blocks_in_creative)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:tool\":{\"rules\":[],\"default_mining_speed\":$(default_mining_speed),\"damage_per_block\":$(damage_per_block),\"can_destroy_blocks_in_creative\":$(can_destroy_blocks_in_creative)}}}]"
     }
   },
   "no": {

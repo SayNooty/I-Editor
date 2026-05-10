@@ -7,7 +7,7 @@
   "body": {
     "type": "minecraft:plain_message",
     "contents": {
-      "translate": "text.i-editor.custom_model_data_info",
+      "translate": "description.i-editor.set_custom_model_data",
       "fallback": "Enter the data in the value lists to select the model and color of the item:",
       "color": "gray"
     },
@@ -20,19 +20,20 @@
       "width": 150,
       "label": [
         {
-          "translate": "text.i-editor.floats",
-          "fallback": "Floats ",
+          "translate": "subtitle.i-editor.floats",
+          "fallback": "Floats",
           "hover_event": {
             "action": "show_text",
             "value": {
-              "translate": "text.i-editor.floats_values_info",
+              "translate": "description.i-editor.floats_values",
               "fallback": "For the {range_dispatch} model type.\nMissing values return the {fallback} model.",
               "color": "gray"
             }
           }
         },
+        " ",
         {
-          "translate": "text.i-editor.values",
+          "translate": "subtitle.i-editor.values",
           "fallback": "(values)",
           "color": "gray"
         }
@@ -44,21 +45,37 @@
       "key": "mode",
       "width": 150,
       "label": {
-        "translate": "text.i-editor.mode",
+        "translate": "subtitle.i-editor.mode",
         "fallback": "Mode"
       },
       "options": [
         {
-          "id": "append"
+          "id": "append",
+          "display": {
+            "translate": "mode.i-editor.append",
+            "fallback": "Append"
+          }
         },
         {
-          "id": "insert"
+          "id": "insert",
+          "display": {
+            "translate": "mode.i-editor.insert",
+            "fallback": "Insert"
+          }
         },
         {
-          "id": "replace_all"
+          "id": "replace_all",
+          "display": {
+            "translate": "mode.i-editor.replace_all",
+            "fallback": "Replace All"
+          }
         },
         {
-          "id": "replace_section"
+          "id": "replace_section",
+          "display": {
+            "translate": "mode.i-editor.replace_section",
+            "fallback": "Replace Section"
+          }
         }
       ]
     },
@@ -67,19 +84,20 @@
       "key": "flags_values",
       "label": [
         {
-          "translate": "text.i-editor.flags",
-          "fallback": "Flags ",
+          "translate": "subtitle.i-editor.flags",
+          "fallback": "Flags",
           "hover_event": {
             "action": "show_text",
             "value": {
-              "translate": "text.i-editor.flags_values_info",
+              "translate": "description.i-editor.flags_values",
               "fallback": "For the {condition} model type.\nMissing value returns the {is_false} model.",
               "color": "gray"
             }
           }
         },
+        " ",
         {
-          "translate": "text.i-editor.values",
+          "translate": "subtitle.i-editor.values",
           "fallback": "(values)",
           "color": "gray"
         }
@@ -91,21 +109,37 @@
       "key": "mode",
       "width": 150,
       "label": {
-        "translate": "text.i-editor.mode",
+        "translate": "subtitle.i-editor.mode",
         "fallback": "Mode"
       },
       "options": [
         {
-          "id": "append"
+          "id": "append",
+          "display": {
+            "translate": "mode.i-editor.append",
+            "fallback": "Append"
+          }
         },
         {
-          "id": "insert"
+          "id": "insert",
+          "display": {
+            "translate": "mode.i-editor.insert",
+            "fallback": "Insert"
+          }
         },
         {
-          "id": "replace_all"
+          "id": "replace_all",
+          "display": {
+            "translate": "mode.i-editor.replace_all",
+            "fallback": "Replace All"
+          }
         },
         {
-          "id": "replace_section"
+          "id": "replace_section",
+          "display": {
+            "translate": "mode.i-editor.replace_section",
+            "fallback": "Replace Section"
+          }
         }
       ]
     },
@@ -115,19 +149,20 @@
       "width": 150,
       "label": [
         {
-          "translate": "text.i-editor.strings",
-          "fallback": "Strings ",
+          "translate": "subtitle.i-editor.strings",
+          "fallback": "Strings",
           "hover_event": {
             "action": "show_text",
             "value": {
-              "translate": "text.i-editor.strings_values_info",
+              "translate": "description.i-editor.strings_values",
               "fallback": "For the {select} model type.\nMissing value returns the {fallback} model.",
               "color": "gray"
             }
           }
         },
+        " ",
         {
-          "translate": "text.i-editor.values",
+          "translate": "subtitle.i-editor.values",
           "fallback": "(values)",
           "color": "gray"
         }
@@ -139,21 +174,37 @@
       "key": "mode",
       "width": 150,
       "label": {
-        "translate": "text.i-editor.mode",
+        "translate": "subtitle.i-editor.mode",
         "fallback": "Mode"
       },
       "options": [
         {
-          "id": "append"
+          "id": "append",
+          "display": {
+            "translate": "mode.i-editor.append",
+            "fallback": "Append"
+          }
         },
         {
-          "id": "insert"
+          "id": "insert",
+          "display": {
+            "translate": "mode.i-editor.insert",
+            "fallback": "Insert"
+          }
         },
         {
-          "id": "replace_all"
+          "id": "replace_all",
+          "display": {
+            "translate": "mode.i-editor.replace_all",
+            "fallback": "Replace All"
+          }
         },
         {
-          "id": "replace_section"
+          "id": "replace_section",
+          "display": {
+            "translate": "mode.i-editor.replace_section",
+            "fallback": "Replace Section"
+          }
         }
       ]
     },
@@ -163,19 +214,20 @@
       "width": 150,
       "label": [
         {
-          "translate": "text.i-editor.colors",
-          "fallback": "Colors ",
+          "translate": "subtitle.i-editor.colors",
+          "fallback": "Colors",
           "hover_event": {
             "action": "show_text",
             "value": {
-              "translate": "text.i-editor.colors_values_info",
+              "translate": "description.i-editor.colors_values",
               "fallback": "For the {model} model type's {tints}.\nMissing values return the {default} value provided by the item model definition.",
               "color": "gray"
             }
           }
         },
+        " ",
         {
-          "translate": "text.i-editor.values",
+          "translate": "subtitle.i-editor.values",
           "fallback": "(values)",
           "color": "gray"
         }
@@ -187,21 +239,37 @@
       "key": "mode",
       "width": 150,
       "label": {
-        "translate": "text.i-editor.mode",
+        "translate": "subtitle.i-editor.mode",
         "fallback": "Mode"
       },
       "options": [
         {
-          "id": "append"
+          "id": "append",
+          "display": {
+            "translate": "mode.i-editor.append",
+            "fallback": "Append"
+          }
         },
         {
-          "id": "insert"
+          "id": "insert",
+          "display": {
+            "translate": "mode.i-editor.insert",
+            "fallback": "Insert"
+          }
         },
         {
-          "id": "replace_all"
+          "id": "replace_all",
+          "display": {
+            "translate": "mode.i-editor.replace_all",
+            "fallback": "Replace All"
+          }
         },
         {
-          "id": "replace_section"
+          "id": "replace_section",
+          "display": {
+            "translate": "mode.i-editor.replace_section",
+            "fallback": "Replace Section"
+          }
         }
       ]
     }
@@ -216,7 +284,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_custom_model_data\",\"floats\":{\"values\":[$(floats_values)],\"mode\":\"$(mode)\"},\"flags\":{\"values\":[$(flags_values)],\"mode\":\"$(mode)\"},\"strings\":{\"values\":[\"$(strings)\"],\"mode\":\"$(mode)\"},\"colors\":{\"values\":[$(colors_values)],\"mode\":\"$(mode)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_custom_model_data\",\"floats\":{\"values\":[$(floats_values)],\"mode\":\"$(mode)\"},\"flags\":{\"values\":[$(flags_values)],\"mode\":\"$(mode)\"},\"strings\":{\"values\":[\"$(strings)\"],\"mode\":\"$(mode)\"},\"colors\":{\"values\":[$(colors_values)],\"mode\":\"$(mode)\"}}]"
     }
   },
   "no": {

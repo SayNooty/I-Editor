@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.instrument",
+      "translate": "component.i-editor.instrument",
       "fallback": "Instrument",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.instrument",
+    "translate": "component.i-editor.instrument",
     "fallback": "Instrument"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:goat_horn"
     },
     "description": {
-      "translate": "text.i-editor.component_instrument_info",
+      "translate": "description.i-editor.component.instrument",
       "fallback": "Customize the sound instrument, its sound duration and range, as well as a description:",
       "color": "gray"
     },
@@ -34,7 +35,7 @@
       "key": "sound_event",
       "width": 175,
       "label": {
-        "translate": "text.i-editor.sound_event",
+        "translate": "subtitle.i-editor.sound_event",
         "fallback": "Sound Event"
       },
       "max_length": 9999
@@ -45,12 +46,26 @@
       "width": 175,
       "label": [
         {
-          "translate": "text.i-editor.range",
-          "fallback": "Range "
+          "translate": "subtitle.i-editor.range",
+          "fallback": "Range"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.min_1",
-          "fallback": "<min: 1>",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "1",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -63,12 +78,26 @@
       "width": 175,
       "label": [
         {
-          "translate": "text.i-editor.use_duration",
-          "fallback": "Use Duration "
+          "translate": "subtitle.i-editor.use_duration",
+          "fallback": "Use Duration"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.min_1",
-          "fallback": "<min: 1>",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "1",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -80,7 +109,8 @@
       "key": "description",
       "width": 175,
       "label": {
-        "translate": "mco.backup.entry.description"
+        "translate": "subtitle.i-editor.description",
+        "fallback": "Description"
       },
       "max_length": 9999
     }
@@ -95,7 +125,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:instrument\":{sound_event:\"$(sound_event)\",range:$(range),use_duration:$(use_duration),description:\"$(description)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:instrument\":{sound_event:\"$(sound_event)\",range:$(range),use_duration:$(use_duration),description:\"$(description)\"}}}]"
     }
   },
   "no": {

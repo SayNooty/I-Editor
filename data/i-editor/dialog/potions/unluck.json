@@ -3,8 +3,9 @@
   "title": [
     {
       "translate": "title.i-editor.potion",
-      "fallback": "Potion: "
+      "fallback": "Potion"
     },
+    ": ",
     {
       "translate": "effect.minecraft.unluck",
       "color": "#C0A44D"
@@ -15,13 +16,26 @@
     "color": "#C0A44D"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
-      "translate": "text.i-editor.set_potion_info",
-      "fallback": "Adjust the parameters of this effect to apply it to an item:",
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:potion",
+      "components": {
+        "minecraft:potion_contents": {
+          "custom_effects": [
+            {
+              "id": "minecraft:unluck"
+            }
+          ]
+        }
+      }
+    },
+    "description": {
+      "translate": "description.i-editor.potion",
+      "fallback": "Edit the amplifier, duration, and visualization of the effect of this potion:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {
@@ -29,7 +43,7 @@
       "key": "amplifier",
       "width": 150,
       "label": {
-        "translate": "text.i-editor.amplifier",
+        "translate": "subtitle.i-editor.amplifier",
         "fallback": "Amplifier"
       },
       "start": 0,
@@ -43,12 +57,13 @@
       "width": 150,
       "label": [
         {
-          "translate": "text.i-editor.duration",
-          "fallback": "Duration "
+          "translate": "subtitle.i-editor.duration",
+          "fallback": "Duration"
         },
+        " ",
         {
-          "translate": "text.i-editor.tick_info",
-          "fallback": "(in ticks)",
+          "translate": "subtitle.i-editor.in_ticks",
+          "fallback": "[in ticks]",
           "color": "gray"
         }
       ],
@@ -59,7 +74,7 @@
       "type": "minecraft:boolean",
       "key": "ambient",
       "label": {
-        "translate": "text.i-editor.ambient",
+        "translate": "subtitle.i-editor.ambient",
         "fallback": "Ambient"
       },
       "initial": true
@@ -68,7 +83,7 @@
       "type": "minecraft:boolean",
       "key": "show_particles",
       "label": {
-        "translate": "text.i-editor.show_particles",
+        "translate": "subtitle.i-editor.show_particles",
         "fallback": "Show Particles"
       },
       "initial": true
@@ -77,7 +92,7 @@
       "type": "minecraft:boolean",
       "key": "show_icon",
       "label": {
-        "translate": "text.i-editor.show_icon",
+        "translate": "subtitle.i-editor.show_icon",
         "fallback": "Show Icon"
       },
       "initial": true
@@ -93,7 +108,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:potion_contents\":{\"custom_effects\":[{\"id\":\"minecraft:unluck\",\"amplifier\":$(amplifier),\"duration\":$(duration),\"ambient\":$(ambient),\"show_particles\":$(show_particles),\"show_icon\":$(show_icon)}]}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:potion_contents\":{\"custom_effects\":[{\"id\":\"minecraft:unluck\",\"amplifier\":$(amplifier),\"duration\":$(duration),\"ambient\":$(ambient),\"show_particles\":$(show_particles),\"show_icon\":$(show_icon)}]}}}]"
     }
   },
   "no": {

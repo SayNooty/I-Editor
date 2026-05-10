@@ -3,10 +3,11 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+	": ",
     {
-      "translate": "component.name.map_decorations",
+      "translate": "component.i-editor.map_decorations",
       "fallback": "Map Decorations",
       "color": "yellow"
     },
@@ -15,23 +16,27 @@
       "color": "gray"
     },
     {
-      "translate": "component.name.map_decorations.banner_white",
+      "translate": "component.i-editor.map_decorations.banner_white",
       "fallback": "Banner White",
       "color": "gold"
     }
   ],
   "external_title": {
-    "translate": "component.name.map_decorations.banner_white",
+    "translate": "component.i-editor.map_decorations.banner_white",
     "fallback": "Banner White"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
-      "translate": "text.i-editor.component.map_decorations_icon_info",
-      "fallback": "Enter the name and the x, z coordinates and the rotation of the icon:",
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:white_banner"
+    },
+    "description": {
+      "translate": "description.i-editor.component.map_decorations.marker",
+      "fallback": "Enter the name and the x, z coordinates and the rotation of the marker:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {
@@ -39,7 +44,7 @@
       "key": "name",
       "width": 150,
       "label": {
-        "translate": "text.i-editor.name",
+        "translate": "subtitle.i-editor.name",
         "fallback": "Name"
       },
       "max_length": 9999
@@ -50,9 +55,10 @@
       "width": 150,
       "label": [
         {
-          "translate": "text.i-editor.pos",
-          "fallback": "Pos "
+          "translate": "subtitle.i-editor.pos",
+          "fallback": "Pos"
         },
+        " ",
         {
           "text": "<x>",
           "color": "dark_gray"
@@ -67,9 +73,10 @@
       "width": 150,
       "label": [
         {
-          "translate": "text.i-editor.pos",
-          "fallback": "Pos "
+          "translate": "subtitle.i-editor.pos",
+          "fallback": "Pos"
         },
+        " ",
         {
           "text": "<z>",
           "color": "dark_gray"
@@ -83,7 +90,7 @@
       "key": "rotation",
       "width": 150,
       "label": {
-        "translate": "text.i-editor.rotation",
+        "translate": "subtitle.i-editor.rotation",
         "fallback": "Rotation"
       },
       "initial": "0",
@@ -100,7 +107,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:map_decorations\":{\"$(name)\":{\"type\":\"minecraft:banner_white\",\"x\":$(pos_x),\"z\":$(pos_z),\"rotation\":$(rotation)}}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:map_decorations\":{\"$(name)\":{\"type\":\"minecraft:banner_white\",\"x\":$(pos_x),\"z\":$(pos_z),\"rotation\":$(rotation)}}}}]"
     }
   },
   "no": {

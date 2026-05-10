@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.enchantable",
+      "translate": "component.i-editor.enchantable",
       "fallback": "Enchantable",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.enchantable",
+    "translate": "component.i-editor.enchantable",
     "fallback": "Enchantable"
   },
   "body": {
@@ -21,8 +22,8 @@
       "id": "minecraft:enchanted_book"
     },
     "description": {
-      "translate": "text.i-editor.component_enchantable_info",
-      "fallback": "Enter the enchanted cost level that you will need in the enchanting table:",
+      "translate": "description.i-editor.component.enchantable",
+      "fallback": "Enter the enchantment cost level in the enchantment table:",
       "color": "gray"
     },
     "show_decorations": false,
@@ -35,12 +36,26 @@
       "width": 125,
       "label": [
         {
-          "translate": "text.i-editor.value",
-          "fallback": "Value "
+          "translate": "subtitle.i-editor.value",
+          "fallback": "Value"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.value_min",
-          "fallback": "<min: 1>",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "1",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -57,7 +72,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:enchantable\":{\"value\":$(value)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:enchantable\":{\"value\":$(value)}}}]"
     }
   },
   "no": {

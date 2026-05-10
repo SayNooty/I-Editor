@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.map_id",
+      "translate": "component.i-editor.map_id",
       "fallback": "Map ID",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.map_id",
+    "translate": "component.i-editor.map_id",
     "fallback": "Map ID"
   },
   "body": {
@@ -21,8 +22,9 @@
       "id": "minecraft:filled_map"
     },
     "description": {
-      "translate": "text.i-editor.component_map_id_info",
-      "fallback": "Enter the ID (number) filled maps:"
+      "translate": "description.i-editor.component.map_id",
+      "fallback": "Enter the ID (number) filled maps:",
+      "color": "gray"
     },
     "show_decorations": false,
     "show_tooltip": false
@@ -33,7 +35,7 @@
       "key": "map_id",
       "width": 100,
       "label": {
-        "translate": "text.i-editor.map_id",
+        "translate": "subtitle.i-editor.map_id",
         "fallback": "Map ID"
       },
       "max_length": 9999
@@ -49,7 +51,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:map_id\":$(map_id)}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:map_id\":$(map_id)}}]"
     }
   },
   "no": {

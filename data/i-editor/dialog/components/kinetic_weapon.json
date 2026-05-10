@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.kinetic_weapon",
+      "translate": "component.i-editor.kinetic_weapon",
       "fallback": "Kinetic Weapon",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.kinetic_weapon",
+    "translate": "component.i-editor.kinetic_weapon",
     "fallback": "Kinetic Weapon"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:iron_spear"
     },
     "description": {
-      "translate": "text.i-editor.component_kinetic_weapon_info",
+      "translate": "description.i-editor.component.kinetic_weapon",
       "fallback": "Enter the values for setting the spear type item:",
       "color": "gray"
     },
@@ -33,7 +34,7 @@
       "type": "minecraft:text",
       "key": "delay_ticks",
       "label": {
-        "translate": "text.i-editor.delay_ticks",
+        "translate": "subtitle.i-editor.delay_ticks",
         "fallback": "Delay Ticks"
       },
       "initial": "0",
@@ -43,7 +44,7 @@
       "type": "minecraft:text",
       "key": "contact_cooldown_ticks",
       "label": {
-        "translate": "text.i-editor.contact_cooldown_ticks",
+        "translate": "subtitle.i-editor.contact_cooldown_ticks",
         "fallback": "Contact Cooldown Ticks"
       },
       "initial": "10",
@@ -54,11 +55,12 @@
       "key": "dismount_conditions_max_duration_ticks",
       "label": [
         {
-          "translate": "text.i-editor.dismount_conditions",
-          "fallback": "Dismount Conditions "
+          "translate": "subtitle.i-editor.dismount_conditions",
+          "fallback": "Dismount Conditions"
         },
+        " ",
         {
-          "translate": "text.i-editor.max_duration_ticks",
+          "translate": "subtitle.i-editor.max_duration_ticks",
           "fallback": "(max duration ticks)",
           "color": "gray"
         }
@@ -71,11 +73,12 @@
       "key": "dismount_conditions_min_speed",
       "label": [
         {
-          "translate": "text.i-editor.dismount_conditions",
-          "fallback": "Dismount Conditions "
+          "translate": "subtitle.i-editor.dismount_conditions",
+          "fallback": "Dismount Conditions"
         },
+        " ",
         {
-          "translate": "text.i-editor.min_speed",
+          "translate": "subtitle.i-editor.min_speed",
           "fallback": "(min speed)",
           "color": "gray"
         }
@@ -88,11 +91,12 @@
       "key": "dismount_conditions_min_relative_speed",
       "label": [
         {
-          "translate": "text.i-editor.dismount_conditions",
-          "fallback": "Dismount Conditions "
+          "translate": "subtitle.i-editor.dismount_conditions",
+          "fallback": "Dismount Conditions"
         },
+        " ",
         {
-          "translate": "text.i-editor.min_relative_speed",
+          "translate": "subtitle.i-editor.min_relative_speed",
           "fallback": "(min relative speed)",
           "color": "gray"
         }
@@ -105,11 +109,12 @@
       "key": "knockback_conditions_max_duration_ticks",
       "label": [
         {
-          "translate": "text.i-editor.knockback_conditions",
-          "fallback": "Knockback Conditions "
+          "translate": "subtitle.i-editor.knockback_conditions",
+          "fallback": "Knockback Conditions"
         },
+        " ",
         {
-          "translate": "text.i-editor.max_duration_ticks",
+          "translate": "subtitle.i-editor.max_duration_ticks",
           "fallback": "(max duration ticks)",
           "color": "gray"
         }
@@ -122,11 +127,12 @@
       "key": "knockback_conditions_min_speed",
       "label": [
         {
-          "translate": "text.i-editor.knockback_conditions",
-          "fallback": "Knockback Conditions "
+          "translate": "subtitle.i-editor.knockback_conditions",
+          "fallback": "Knockback Conditions"
         },
+        " ",
         {
-          "translate": "text.i-editor.min_speed",
+          "translate": "subtitle.i-editor.min_speed",
           "fallback": "(min speed)",
           "color": "gray"
         }
@@ -139,11 +145,12 @@
       "key": "knockback_conditions_min_relative_speed",
       "label": [
         {
-          "translate": "text.i-editor.knockback_conditions",
-          "fallback": "Knockback Conditions "
+          "translate": "subtitle.i-editor.knockback_conditions",
+          "fallback": "Knockback Conditions"
         },
+        " ",
         {
-          "translate": "text.i-editor.min_relative_speed",
+          "translate": "subtitle.i-editor.min_relative_speed",
           "fallback": "(min relative speed)",
           "color": "gray"
         }
@@ -156,11 +163,12 @@
       "key": "damage_conditions_max_duration_ticks",
       "label": [
         {
-          "translate": "text.i-editor.damage_conditions",
-          "fallback": "Damage Conditions "
+          "translate": "subtitle.i-editor.damage_conditions",
+          "fallback": "Damage Conditions"
         },
+        " ",
         {
-          "translate": "text.i-editor.max_duration_ticks",
+          "translate": "subtitle.i-editor.max_duration_ticks",
           "fallback": "(max duration ticks)",
           "color": "gray"
         }
@@ -173,11 +181,12 @@
       "key": "damage_conditions_min_speed",
       "label": [
         {
-          "translate": "text.i-editor.damage_conditions",
-          "fallback": "Damage Conditions "
+          "translate": "subtitle.i-editor.damage_conditions",
+          "fallback": "Damage Conditions"
         },
+        " ",
         {
-          "translate": "text.i-editor.min_speed",
+          "translate": "subtitle.i-editor.min_speed",
           "fallback": "(min speed)",
           "color": "gray"
         }
@@ -190,11 +199,12 @@
       "key": "damage_conditions_min_relative_speed",
       "label": [
         {
-          "translate": "text.i-editor.damage_conditions",
-          "fallback": "Damage Conditions "
+          "translate": "subtitle.i-editor.damage_conditions",
+          "fallback": "Damage Conditions"
         },
+        " ",
         {
-          "translate": "text.i-editor.min_relative_speed",
+          "translate": "subtitle.i-editor.min_relative_speed",
           "fallback": "(min relative speed)",
           "color": "gray"
         }
@@ -206,7 +216,7 @@
       "type": "minecraft:text",
       "key": "forward_movement",
       "label": {
-        "translate": "text.i-editor.forward_movement",
+        "translate": "subtitle.i-editor.forward_movement",
         "fallback": "Forward Movement"
       },
       "initial": "0",
@@ -216,7 +226,7 @@
       "type": "minecraft:text",
       "key": "damage_multiplier",
       "label": {
-        "translate": "text.i-editor.damage_multiplier",
+        "translate": "subtitle.i-editor.damage_multiplier",
         "fallback": "Damage Multiplier"
       },
       "initial": "1",
@@ -226,16 +236,17 @@
       "type": "minecraft:text",
       "key": "sound",
       "label": {
-        "translate": "text.i-editor.sound",
+        "translate": "subtitle.i-editor.sound",
         "fallback": "Sound"
       },
+      "initial": "minecraft:item.spear.use",
       "max_length": 9999
     },
     {
       "type": "minecraft:text",
       "key": "hit_sound",
       "label": {
-        "translate": "text.i-editor.hit_sound",
+        "translate": "subtitle.i-editor.hit_sound",
         "fallback": "Hit Sound"
       },
       "initial": "minecraft:item.spear.hit",
@@ -252,7 +263,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:kinetic_weapon\":{\"delay_ticks\":$(delay_ticks),\"contact_cooldown_ticks\":$(contact_cooldown_ticks),\"dismount_conditions\":{\"max_duration_ticks\":$(dismount_conditions_max_duration_ticks),\"min_speed\":$(dismount_conditions_min_speed),\"min_relative_speed\":$(dismount_conditions_min_relative_speed)},\"knockback_conditions\":{\"max_duration_ticks\":$(knockback_conditions_max_duration_ticks),\"min_speed\":$(knockback_conditions_min_speed),\"min_relative_speed\":$(knockback_conditions_min_relative_speed)},\"damage_conditions\":{\"max_duration_ticks\":$(damage_conditions_max_duration_ticks),\"min_speed\":$(damage_conditions_min_speed),\"min_relative_speed\":$(damage_conditions_min_relative_speed)},\"forward_movement\":$(forward_movement),\"damage_multiplier\":$(damage_multiplier),\"sound\":\"$(sound)\",\"hit_sound\":\"$(hit_sound)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:kinetic_weapon\":{\"delay_ticks\":$(delay_ticks),\"contact_cooldown_ticks\":$(contact_cooldown_ticks),\"dismount_conditions\":{\"max_duration_ticks\":$(dismount_conditions_max_duration_ticks),\"min_speed\":$(dismount_conditions_min_speed),\"min_relative_speed\":$(dismount_conditions_min_relative_speed)},\"knockback_conditions\":{\"max_duration_ticks\":$(knockback_conditions_max_duration_ticks),\"min_speed\":$(knockback_conditions_min_speed),\"min_relative_speed\":$(knockback_conditions_min_relative_speed)},\"damage_conditions\":{\"max_duration_ticks\":$(damage_conditions_max_duration_ticks),\"min_speed\":$(damage_conditions_min_speed),\"min_relative_speed\":$(damage_conditions_min_relative_speed)},\"forward_movement\":$(forward_movement),\"damage_multiplier\":$(damage_multiplier),\"sound\":\"$(sound)\",\"hit_sound\":\"$(hit_sound)\"}}}]"
     }
   },
   "no": {

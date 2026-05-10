@@ -3,33 +3,46 @@
   "title": [
     {
       "translate": "title.i-editor.banner_pattern",
-      "fallback": "Banner Pattern: "
+      "fallback": "Banner Pattern"
     },
+    ": ",
     {
-      "translate": "text.i-editor.banner_pattern_bricks",
+      "translate": "banner_pattern.i-editor.bricks",
       "fallback": "Bricks",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "text.i-editor.banner_pattern_bricks",
+    "translate": "banner_pattern.i-editor.bricks",
     "fallback": "Bricks"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
-      "translate": "text.i-editor.banner_pattern_info",
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:white_banner",
+      "components": {
+        "minecraft:banner_patterns": [
+          {
+            "color": "black",
+            "pattern": "minecraft:bricks"
+          }
+        ]
+      }
+    },
+    "description": {
+      "translate": "description.i-editor.banner_pattern",
       "fallback": "Select color, and overlay mode for the flag:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [
     {
       "type": "minecraft:single_option",
       "key": "color",
       "label": {
-        "translate": "text.i-editor.color",
+        "translate": "subtitle.i-editor.color",
         "fallback": "Color"
       },
       "options": [
@@ -151,7 +164,7 @@
       "type": "minecraft:boolean",
       "key": "append",
       "label": {
-        "translate": "text.i-editor.append",
+        "translate": "subtitle.i-editor.append",
         "fallback": "Append"
       },
       "initial": false
@@ -167,7 +180,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_banner_pattern\",\"patterns\":[{\"pattern\":\"minecraft:bricks\",\"color\":\"$(color)\"}],\"append\":$(append)}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_banner_pattern\",\"patterns\":[{\"pattern\":\"minecraft:bricks\",\"color\":\"$(color)\"}],\"append\":$(append)}]"
     }
   },
   "no": {

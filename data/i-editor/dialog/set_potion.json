@@ -5,13 +5,23 @@
     "fallback": "Set Potion"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
-      "translate": "text.i-editor.set_potion_info",
-      "fallback": "Choose the type of potion that will be applied to the item:",
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:potion",
+      "components": {
+        "minecraft:potion_contents": {
+          "potion": "minecraft:regeneration",
+          "custom_effects": []
+        }
+      }
+    },
+    "description": {
+      "translate": "description.i-editor.set_potion",
+      "fallback": "Select the effect of a potion that can be abjust and applied to the item:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [],
   "can_close_with_escape": true,

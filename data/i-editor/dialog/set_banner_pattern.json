@@ -5,13 +5,17 @@
     "fallback": "Set Banner Pattern"
   },
   "body": {
-    "type": "minecraft:plain_message",
-    "contents": {
-      "translate": "text.i-editor.set_banner_pattern_info",
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:white_banner"
+    },
+    "description": {
+      "translate": "description.i-editor.set_banner_pattern",
       "fallback": "Select the banner pattern, and then adjust it:",
       "color": "gray"
     },
-    "width": 300
+    "show_decorations": false,
+    "show_tooltip": false
   },
   "inputs": [],
   "can_close_with_escape": true,
@@ -55,7 +59,7 @@
     "i-editor:banner_patterns/piglin",
     "i-editor:banner_patterns/rhombus",
     "i-editor:banner_patterns/skull",
-    "i-editor:banner_patterns/skull_stripes",
+    "i-editor:banner_patterns/small_stripes",
     "i-editor:banner_patterns/square_bottom_left",
     "i-editor:banner_patterns/square_bottom_right",
     "i-editor:banner_patterns/square_top_left",

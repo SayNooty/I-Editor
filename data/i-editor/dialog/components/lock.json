@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.lock",
+      "translate": "component.i-editor.lock",
       "fallback": "Lock",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.lock",
+    "translate": "component.i-editor.lock",
     "fallback": "Lock"
   },
   "body": {
@@ -21,8 +22,8 @@
       "id": "minecraft:tripwire_hook"
     },
     "description": {
-      "translate": "text.i-editor.component_lock_info",
-      "fallback": "Enter the item ID and its count that is required to open the container for which you are using this component:",
+      "translate": "description.i-editor.component.lock",
+      "fallback": "Enter the item ID and its count that is required to open the container:",
       "color": "gray"
     },
     "show_decorations": false,
@@ -35,11 +36,12 @@
       "width": 150,
       "label": [
         {
-          "translate": "text.i-editor.item",
-          "fallback": "Item "
+          "translate": "subtitle.i-editor.item",
+          "fallback": "Item"
         },
+        " ",
         {
-          "translate": "text.i-editor.to_chest",
+          "translate": "subtitle.i-editor.to_container",
           "fallback": "[to container]",
           "color": "gray"
         }
@@ -52,7 +54,7 @@
       "key": "count",
       "width": 150,
       "label": {
-        "translate": "text.i-editor.count",
+        "translate": "subtitle.i-editor.count",
         "fallback": "Count"
       },
       "initial": "1",
@@ -69,7 +71,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:lock\":{items:\"$(item)\",count:$(count)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:lock\":{items:\"$(item)\",count:$(count)}}}]"
     }
   },
   "no": {

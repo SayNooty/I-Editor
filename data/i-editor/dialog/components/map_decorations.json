@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "title.i-editor.component.map_decorations",
+      "translate": "component.i-editor.map_decorations",
       "fallback": "Map Decorations",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.map_decorations",
+    "translate": "component.i-editor.map_decorations",
     "fallback": "Map Decorations"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:filled_map"
     },
     "description": {
-      "translate": "text.i-editor.component.map_decorations_info",
+      "translate": "description.i-editor.component.map_decorations",
       "fallback": "Select the icon to display on the map:",
       "color": "gray"
     },

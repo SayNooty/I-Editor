@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.provides_trim_material",
+      "translate": "component.i-editor.provides_trim_material",
       "fallback": "Provides Trim Material",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.provides_trim_material",
+    "translate": "component.i-editor.provides_trim_material",
     "fallback": "Provides Trim Material"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:coast_armor_trim_smithing_template"
     },
     "description": {
-      "translate": "text.i-editor.component_provides_trim_material_info",
+      "translate": "description.i-editor.component.provides_trim_material",
       "fallback": "Select the trim material that will be applied when using the trim on the smithing table:",
       "color": "gray"
     },
@@ -33,14 +34,14 @@
       "type": "minecraft:single_option",
       "key": "material",
       "label": {
-        "translate": "text.i-editor.material",
+        "translate": "subtitle.i-editor.material",
         "fallback": "Material"
       },
       "options": [
         {
           "id": "amethyst",
           "display": {
-            "translate": "text.i-editor.trim_material.amethyst",
+            "translate": "trim_material.i-editor.amethyst",
             "fallback": "Amethyst",
             "color": "#9A5CC6"
           }
@@ -48,7 +49,7 @@
         {
           "id": "copper",
           "display": {
-            "translate": "text.i-editor.trim_material.copper",
+            "translate": "trim_material.i-editor.copper",
             "fallback": "Copper",
             "color": "#B4684D"
           }
@@ -56,7 +57,7 @@
         {
           "id": "diamond",
           "display": {
-            "translate": "text.i-editor.trim_material.diamond",
+            "translate": "trim_material.i-editor.diamond",
             "fallback": "Diamond",
             "color": "#6EECD2"
           }
@@ -64,7 +65,7 @@
         {
           "id": "emerald",
           "display": {
-            "translate": "text.i-editor.trim_material.emerald",
+            "translate": "trim_material.i-editor.emerald",
             "fallback": "Emerald",
             "color": "#11A036"
           }
@@ -72,7 +73,7 @@
         {
           "id": "gold",
           "display": {
-            "translate": "text.i-editor.trim_material.gold",
+            "translate": "trim_material.i-editor.gold",
             "fallback": "Gold",
             "color": "#DEB12D"
           }
@@ -80,7 +81,7 @@
         {
           "id": "iron",
           "display": {
-            "translate": "text.i-editor.trim_material.iron",
+            "translate": "trim_material.i-editor.iron",
             "fallback": "Iron",
             "color": "#ECECEC"
           }
@@ -88,7 +89,7 @@
         {
           "id": "lapis",
           "display": {
-            "translate": "text.i-editor.trim_material.lapis",
+            "translate": "trim_material.i-editor.lapis",
             "fallback": "Lapis",
             "color": "#416E97"
           }
@@ -96,7 +97,7 @@
         {
           "id": "netherite",
           "display": {
-            "translate": "text.i-editor.trim_material.netherite",
+            "translate": "trim_material.i-editor.netherite",
             "fallback": "Netherite",
             "color": "#625859"
           }
@@ -104,7 +105,7 @@
         {
           "id": "quartz",
           "display": {
-            "translate": "text.i-editor.trim_material.quartz",
+            "translate": "trim_material.i-editor.quartz",
             "fallback": "Quartz",
             "color": "#E3D4C4"
           }
@@ -112,7 +113,7 @@
         {
           "id": "redstone",
           "display": {
-            "translate": "text.i-editor.trim_material.redstone",
+            "translate": "trim_material.i-editor.redstone",
             "fallback": "Redstone",
             "color": "#971607"
           }
@@ -120,7 +121,7 @@
         {
           "id": "resin",
           "display": {
-            "translate": "text.i-editor.trim_material.resin",
+            "translate": "trim_material.i-editor.resin",
             "fallback": "Resin",
             "color": "#FC7812"
           }
@@ -138,7 +139,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:provides_trim_material\":\"$(material)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:provides_trim_material\":\"$(material)\"}}]"
     }
   },
   "no": {

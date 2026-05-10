@@ -1,0 +1,205 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.attribute",
+      "fallback": "Attribute"
+    },
+    ": ",
+    {
+      "translate": "attribute.name.name_tag_distance",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "attribute.name.name_tag_distance"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "description.i-editor.attribute",
+      "fallback": "Select the amount, slot, and summation method of the attribute:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "amount",
+      "label": [
+        {
+          "translate": "subtitle.i-editor.amount",
+          "fallback": "Amount"
+        },
+        " ",
+        {
+          "text": "<",
+          "color": "dark_gray"
+        },
+        {
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "0",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "<",
+          "color": "dark_gray"
+        },
+        {
+          "translate": "subtitle.i-editor.max",
+          "fallback": "max:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "512",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
+          "color": "dark_gray"
+        }
+      ],
+      "initial": "64",
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "slot",
+      "label": {
+        "translate": "subtitle.i-editor.slot",
+        "fallback": "Slot"
+      },
+      "options": [
+        {
+          "id": "any",
+          "display": {
+            "translate": "slot.i-editor.any",
+            "fallback": "Any"
+          }
+        },
+        {
+          "id": "armor",
+          "display": {
+            "translate": "slot.i-editor.armor",
+            "fallback": "Armor"
+          }
+        },
+        {
+          "id": "chest",
+          "display": {
+            "translate": "slot.i-editor.chest",
+            "fallback": "Chest"
+          }
+        },
+        {
+          "id": "feet",
+          "display": {
+            "translate": "slot.i-editor.feet",
+            "fallback": "Feet"
+          }
+        },
+        {
+          "id": "hand",
+          "display": {
+            "translate": "slot.i-editor.hand",
+            "fallback": "Hand"
+          }
+        },
+        {
+          "id": "head",
+          "display": {
+            "translate": "slot.i-editor.head",
+            "fallback": "Head"
+          }
+        },
+        {
+          "id": "legs",
+          "display": {
+            "translate": "slot.i-editor.legs",
+            "fallback": "Legs"
+          }
+        },
+        {
+          "id": "mainhand",
+          "display": {
+            "translate": "slot.i-editor.mainhand",
+            "fallback": "Mainhand"
+          }
+        },
+        {
+          "id": "offhand",
+          "display": {
+            "translate": "slot.i-editor.offhand",
+            "fallback": "Offhand"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "operation",
+      "label": {
+        "translate": "subtitle.i-editor.operation",
+        "fallback": "Operation"
+      },
+      "options": [
+        {
+          "id": "add_value",
+          "display": {
+            "translate": "operation.i-editor.add_value",
+            "fallback": "Add Value"
+          }
+        },
+        {
+          "id": "add_multiplied_base",
+          "display": {
+            "translate": "operation.i-editor.add_multiplied_base",
+            "fallback": "Add Multiplied Base"
+          }
+        },
+        {
+          "id": "add_multiplied_total",
+          "display": {
+            "translate": "operation.i-editor.add_multiplied_total",
+            "fallback": "Add Multiplied Total"
+          }
+        }
+      ]
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{function:\"minecraft:set_attributes\",modifiers:[{attribute:\"minecraft:name_tag_distance\",id:\"minecraft:\",amount:$(amount),operation:\"$(operation)\",slot:\"$(slot)\"}],replace:false}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_attribute"
+    }
+  }
+}

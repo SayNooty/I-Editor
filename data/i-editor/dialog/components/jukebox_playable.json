@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.jukebox_playable",
+      "translate": "component.i-editor.jukebox_playable",
       "fallback": "Jukebox Playable",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.jukebox_playable",
+    "translate": "component.i-editor.jukebox_playable",
     "fallback": "Jukebox Playable"
   },
   "body": {
@@ -21,8 +22,8 @@
       "id": "minecraft:music_disc_cat"
     },
     "description": {
-      "translate": "text.i-editor.component_jukebox_playable_info",
-      "fallback": "Enter the music ID record so that the item plays music in the jokebox:",
+      "translate": "description.i-editor.component.jukebox_playable",
+      "fallback": "Enter the music ID so that the item plays music in the jokebox:",
       "color": "gray"
     },
     "show_decorations": false,
@@ -31,10 +32,10 @@
   "inputs": [
     {
       "type": "minecraft:text",
-      "key": "music",
+      "key": "music_id",
       "label": {
-        "translate": "text.i-editor.music",
-        "fallback": "Music"
+        "translate": "subtitle.i-editor.music_id",
+        "fallback": "Music ID"
       },
       "initial": "minecraft:pigstep",
       "max_length": 9999
@@ -50,7 +51,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:jukebox_playable\":\"$(music)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:jukebox_playable\":\"$(music_id)\"}}]"
     }
   },
   "no": {

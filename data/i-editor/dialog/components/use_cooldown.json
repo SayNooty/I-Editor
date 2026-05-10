@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.use_cooldown",
+      "translate": "component.i-editor.use_cooldown",
       "fallback": "Use Cooldown",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.use_cooldown",
+    "translate": "component.i-editor.use_cooldown",
     "fallback": "Use Cooldown"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:ender_pearl"
     },
     "description": {
-      "translate": "text.i-editor.component_use_cooldown_info",
+      "translate": "description.i-editor.component.use_cooldown",
       "fallback": "Enter the cooldown time of the item being used and, if necessary, the cooldown group:",
       "color": "gray"
     },
@@ -35,12 +36,26 @@
       "width": 150,
       "label": [
         {
-          "translate": "text.i-editor.seconds",
-          "fallback": "Seconds "
+          "translate": "subtitle.i-editor.seconds",
+          "fallback": "Seconds"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.min_1",
-          "fallback": "<min: 1>",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "1",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -52,7 +67,7 @@
       "key": "cooldown_group",
       "width": 150,
       "label": {
-        "translate": "text.i-editor.cooldown_group",
+        "translate": "subtitle.i-editor.cooldown_group",
         "fallback": "Cooldown Group"
       },
       "max_length": 9999
@@ -68,7 +83,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:use_cooldown\":{\"seconds\":$(seconds),\"cooldown_group\": \"$(cooldown_group)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:use_cooldown\":{\"seconds\":$(seconds),\"cooldown_group\": \"$(cooldown_group)\"}}}]"
     }
   },
   "no": {

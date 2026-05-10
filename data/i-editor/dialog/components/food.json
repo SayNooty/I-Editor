@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.food",
+      "translate": "component.i-editor.food",
       "fallback": "Food",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.food",
+    "translate": "component.i-editor.food",
     "fallback": "Food"
   },
   "body": {
@@ -21,8 +22,8 @@
       "id": "minecraft:cooked_beef"
     },
     "description": {
-      "translate": "text.i-editor.component_food_info",
-      "fallback": "Enter the amount of saturation and nutritional value, and checkbox whether this item can always be eaten:",
+      "translate": "description.i-editor.component.food",
+      "fallback": "Enter the values of nutrition and saturation, and then adjust the parameter of constant eating of the item:",
       "color": "gray"
     },
     "show_decorations": false,
@@ -35,12 +36,26 @@
       "width": 125,
       "label": [
         {
-          "translate": "text.i-editor.nutrition",
-          "fallback": "Nutrition "
+          "translate": "subtitle.i-editor.nutrition",
+          "fallback": "Nutrition"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.min_0",
-          "fallback": "<min: 0>",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "0",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -52,7 +67,7 @@
       "key": "saturation",
       "width": 125,
       "label": {
-        "translate": "text.i-editor.saturation",
+        "translate": "subtitle.i-editor.saturation",
         "fallback": "Saturation"
       },
       "max_length": 9999
@@ -61,7 +76,7 @@
       "type": "minecraft:boolean",
       "key": "can_always_eat",
       "label": {
-        "translate": "text.i-editor.can_always_eat",
+        "translate": "subtitle.i-editor.can_always_eat",
         "fallback": "Can Always Eat"
       },
       "initial": false
@@ -77,7 +92,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:food\":{\"nutrition\":$(nutrition),\"saturation\":$(saturation),\"can_always_eat\":$(can_always_eat)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:food\":{\"nutrition\":$(nutrition),\"saturation\":$(saturation),\"can_always_eat\":$(can_always_eat)}}}]"
     }
   },
   "no": {

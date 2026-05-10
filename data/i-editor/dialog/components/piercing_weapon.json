@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.piercing_weapon",
+      "translate": "component.i-editor.piercing_weapon",
       "fallback": "Piercing Weapon",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.piercing_weapon",
+    "translate": "component.i-editor.piercing_weapon",
     "fallback": "Piercing Weapon"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:diamond_spear"
     },
     "description": {
-      "translate": "text.i-editor.component_minimum_piercing_weapon_info",
+      "translate": "description.i-editor.component.minimum_piercing_weapon",
       "fallback": "Setting whether an item will attack through targets and whether it will bounce:",
       "color": "gray"
     },
@@ -33,7 +34,7 @@
       "type": "minecraft:boolean",
       "key": "deals_knockback",
       "label": {
-        "translate": "text.i-editor.deals_knockback",
+        "translate": "subtitle.i-editor.deals_knockback",
         "fallback": "Deals Knockback"
       },
       "initial": true
@@ -42,18 +43,18 @@
       "type": "minecraft:boolean",
       "key": "dismounts",
       "label": {
-        "translate": "text.i-editor.dismounts",
+        "translate": "subtitle.i-editor.dismounts",
         "fallback": "Dismounts"
       },
       "initial": false
     },
     {
       "type": "minecraft:text",
-      "key": "sound",
+      "key": "sound_id",
       "width": 150,
       "label": {
-        "translate": "text.i-editor.sound",
-        "fallback": "Sound"
+        "translate": "subtitle.i-editor.sound_id",
+        "fallback": "Sound ID"
       },
       "max_length": 9999
     },
@@ -62,7 +63,7 @@
       "key": "hit_sound",
       "width": 150,
       "label": {
-        "translate": "text.i-editor.hit_sound",
+        "translate": "subtitle.i-editor.hit_sound",
         "fallback": "Hit Sound"
       },
       "initial": "minecraft:item.spear.hit",
@@ -79,7 +80,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:piercing_weapon\":{\"deals_knockback\":$(deals_knockback),\"dismounts\":$(dismounts),\"sound\":\"$(sound)\",\"hit_sound\":\"$(hit_sound)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:piercing_weapon\":{\"deals_knockback\":$(deals_knockback),\"dismounts\":$(dismounts),\"sound\":\"$(sound)\",\"hit_sound\":\"$(hit_sound)\"}}}]"
     }
   },
   "no": {

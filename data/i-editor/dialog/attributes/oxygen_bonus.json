@@ -3,8 +3,9 @@
   "title": [
     {
       "translate": "title.i-editor.attribute",
-      "fallback": "Attribute: "
+      "fallback": "Attribute"
     },
+	": ",
     {
       "translate": "attribute.name.oxygen_bonus",
       "color": "yellow"
@@ -16,7 +17,7 @@
   "body": {
     "type": "minecraft:plain_message",
     "contents": {
-      "translate": "text.i-editor.attribute_info",
+      "translate": "description.i-editor.attribute",
       "fallback": "Select the amount, slot, and summation method of the attribute:",
       "color": "gray"
     },
@@ -28,19 +29,45 @@
       "key": "amount",
       "label": [
         {
-          "translate": "text.i-editor.amount",
+          "translate": "subtitle.i-editor.amount",
           "fallback": "Amount"
         },
         " ",
         {
-          "translate": "text.i-editor.min_0",
-          "fallback": "<min: 0>",
+          "text": "<",
+          "color": "dark_gray"
+        },
+        {
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
           "color": "dark_gray"
         },
         " ",
         {
-          "translate": "text.i-editor.max_1024",
-          "fallback": "<max: 1024>",
+          "text": "0",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "<",
+          "color": "dark_gray"
+        },
+        {
+          "translate": "subtitle.i-editor.max",
+          "fallback": "max:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "1024",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -51,62 +78,71 @@
       "type": "minecraft:single_option",
       "key": "slot",
       "label": {
-        "translate": "text.i-editor.slot",
+        "translate": "subtitle.i-editor.slot",
         "fallback": "Slot"
       },
       "options": [
         {
           "id": "any",
           "display": {
-            "text": "any"
+            "translate": "slot.i-editor.any",
+            "fallback": "Any"
           }
         },
         {
           "id": "armor",
           "display": {
-            "text": "armor"
+            "translate": "slot.i-editor.armor",
+            "fallback": "Armor"
           }
         },
         {
           "id": "chest",
           "display": {
-            "text": "chest"
+            "translate": "slot.i-editor.chest",
+            "fallback": "Chest"
           }
         },
         {
           "id": "feet",
           "display": {
-            "text": "feet"
+            "translate": "slot.i-editor.feet",
+            "fallback": "Feet"
           }
         },
         {
           "id": "hand",
           "display": {
-            "text": "hand"
+            "translate": "slot.i-editor.hand",
+            "fallback": "Hand"
           }
         },
         {
           "id": "head",
           "display": {
-            "text": "head"
+            "translate": "slot.i-editor.head",
+            "fallback": "Head"
           }
         },
         {
           "id": "legs",
           "display": {
-            "text": "legs"
+            "translate": "slot.i-editor.legs",
+            "fallback": "Legs"
           }
         },
         {
           "id": "mainhand",
           "display": {
-            "text": "mainhand"
+            "translate": "slot.i-editor.mainhand",
+            "fallback": "Mainhand"
           }
         },
         {
           "id": "offhand",
           "display": {
-            "text": "offhand"
+            "translate": "slot.i-editor.offhand",
+            "fallback": "Offhand"
           }
         }
       ]
@@ -115,32 +151,29 @@
       "type": "minecraft:single_option",
       "key": "operation",
       "label": {
-        "translate": "text.i-edtior.operation",
-        "fallback": "Operation",
-        "hover_event": {
-          "action": "show_text",
-          "value": {
-            "translate": "text.i-edtior.operation_info"
-          }
-        }
+        "translate": "subtitle.i-editor.operation",
+        "fallback": "Operation"
       },
       "options": [
         {
           "id": "add_value",
           "display": {
-            "text": "add_value"
+            "translate": "operation.i-editor.add_value",
+            "fallback": "Add Value"
           }
         },
         {
           "id": "add_multiplied_base",
           "display": {
-            "text": "add_multiplied_base"
+            "translate": "operation.i-editor.add_multiplied_base",
+            "fallback": "Add Multiplied Base"
           }
         },
         {
           "id": "add_multiplied_total",
           "display": {
-            "text": "add_multiplied_total"
+            "translate": "operation.i-editor.add_multiplied_total",
+            "fallback": "Add Multiplied Total"
           }
         }
       ]
@@ -156,7 +189,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_attributes\",\"modifiers\":[{\"attribute\":\"minecraft:oxygen_bonus\",\"id\":\"minecraft:\",\"amount\":$(amount),\"operation\":\"$(operation)\",\"slot\":\"$(slot)\"}]}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{function:\"minecraft:set_attributes\",modifiers:[{attribute:\"minecraft:oxygen_bonus\",id:\"minecraft:\",amount:$(amount),operation:\"$(operation)\",slot:\"$(slot)\"}],replace:false}]"
     }
   },
   "no": {

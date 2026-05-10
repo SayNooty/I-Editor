@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.damage_type",
+      "translate": "component.i-editor.damage_type",
       "fallback": "Damage Type",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.damage_type",
+    "translate": "component.i-editor.damage_type",
     "fallback": "Damage Type"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:stone_sword"
     },
     "description": {
-      "translate": "text.i-editor.component_damage_type_info",
+      "translate": "description.i-editor.component.damage_type",
       "fallback": "Adjust the damage type for the item:",
       "color": "gray"
     },
@@ -31,11 +32,11 @@
   "inputs": [
     {
       "type": "minecraft:text",
-      "key": "damage_type",
+      "key": "damage_id",
       "width": 150,
       "label": {
-        "translate": "text.i-editor.damage_type",
-        "fallback": "Damage Type"
+        "translate": "subtitle.i-editor.damage_id",
+        "fallback": "Damage ID"
       },
       "max_length": 9999
     }
@@ -50,7 +51,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:damage_type\":\"$(damage_type)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:damage_type\":\"$(damage_id)\"}}]"
     }
   },
   "no": {

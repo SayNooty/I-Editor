@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.equippable",
+      "translate": "component.i-editor.equippable",
       "fallback": "Equippable",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.equippable",
+    "translate": "component.i-editor.equippable",
     "fallback": "Equippable"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:saddle"
     },
     "description": {
-      "translate": "text.i-editor.component_equippable_info",
+      "translate": "description.i-editor.component.equippable",
       "fallback": "Select and configure certain parameters that will be applied to the item as an element of equipment:",
       "color": "gray"
     },
@@ -33,33 +34,65 @@
       "type": "minecraft:single_option",
       "key": "slot",
       "label": {
-        "translate": "text.i-editor.slot",
+        "translate": "subtitle.i-editor.slot",
         "fallback": "Slot"
       },
       "options": [
         {
-          "id": "mainhand"
+          "id": "mainhand",
+          "display": {
+            "translate": "slot.i-editor.mainhand",
+            "fallback": "Mainhand"
+          }
         },
         {
-          "id": "offhand"
+          "id": "offhand",
+          "display": {
+            "translate": "slot.i-editor.offhand",
+            "fallback": "Offhand"
+          }
         },
         {
-          "id": "head"
+          "id": "head",
+          "display": {
+            "translate": "slot.i-editor.head",
+            "fallback": "Head"
+          }
         },
         {
-          "id": "chest"
+          "id": "chest",
+          "display": {
+            "translate": "slot.i-editor.chest",
+            "fallback": "Chest"
+          }
         },
         {
-          "id": "legs"
+          "id": "legs",
+          "display": {
+            "translate": "slot.i-editor.legs",
+            "fallback": "Legs"
+          }
         },
         {
-          "id": "feet"
+          "id": "feet",
+          "display": {
+            "translate": "slot.i-editor.feet",
+            "fallback": "Feet"
+          }
         },
         {
-          "id": "body"
+          "id": "body",
+          "display": {
+            "translate": "slot.i-editor.body",
+            "fallback": "Body"
+          }
         },
         {
-          "id": "saddle"
+          "id": "saddle",
+          "display": {
+            "translate": "slot.i-editor.saddle",
+            "fallback": "Saddle"
+          }
         }
       ]
     },
@@ -67,7 +100,7 @@
       "type": "minecraft:text",
       "key": "equip_sound",
       "label": {
-        "translate": "text.i-editor.equip_sound",
+        "translate": "subtitle.i-editor.equip_sound",
         "fallback": "Equip Sound"
       },
       "initial": "minecraft:item.armor.equip_generic",
@@ -77,7 +110,7 @@
       "type": "minecraft:text",
       "key": "shearing_sound",
       "label": {
-        "translate": "text.i-editor.shearing_sound",
+        "translate": "subtitle.i-editor.shearing_sound",
         "fallback": "Shearing Sound"
       },
       "initial": "minecraft:item.shears.snip",
@@ -85,10 +118,10 @@
     },
     {
       "type": "minecraft:text",
-      "key": "asset_id",
+      "key": "displayed_model",
       "label": {
-        "translate": "text.i-editor.asset_id",
-        "fallback": "Asset ID"
+        "translate": "subtitle.i-editor.displayed_model",
+        "fallback": "Displayed Model"
       },
       "max_length": 9999
     },
@@ -96,7 +129,7 @@
       "type": "minecraft:text",
       "key": "camera_overlay",
       "label": {
-        "translate": "text.i-editor.camera_overlay",
+        "translate": "subtitle.i-editor.camera_overlay",
         "fallback": "Camera Overlay"
       },
       "max_length": 9999
@@ -105,17 +138,17 @@
       "type": "minecraft:text",
       "key": "allowed_entities",
       "label": {
-        "translate": "text.i-editor.allowed_entities",
+        "translate": "subtitle.i-editor.allowed_entities",
         "fallback": "Allowed Entities"
       },
       "max_length": 9999
     },
     {
       "type": "minecraft:boolean",
-      "key": "dispensable",
+      "key": "interaction_in_dispenser",
       "label": {
-        "translate": "text.i-editor.dispensable",
-        "fallback": "Dispensable"
+        "translate": "subtitle.i-editor.interaction_in_dispenser",
+        "fallback": "Interaction In Dispenser"
       },
       "initial": true
     },
@@ -123,7 +156,7 @@
       "type": "minecraft:boolean",
       "key": "swappable",
       "label": {
-        "translate": "text.i-editor.swappable",
+        "translate": "subtitle.i-editor.swappable",
         "fallback": "Swappable"
       },
       "initial": true
@@ -132,7 +165,7 @@
       "type": "minecraft:boolean",
       "key": "damage_on_hurt",
       "label": {
-        "translate": "text.i-editor.damage_on_hurt",
+        "translate": "subtitle.i-editor.damage_on_hurt",
         "fallback": "Damage On Hurt"
       },
       "initial": true
@@ -141,7 +174,7 @@
       "type": "minecraft:boolean",
       "key": "equip_on_interact",
       "label": {
-        "translate": "text.i-editor.equip_on_interact",
+        "translate": "subtitle.i-editor.equip_on_interact",
         "fallback": "Equip On Interact"
       },
       "initial": false
@@ -150,7 +183,7 @@
       "type": "minecraft:boolean",
       "key": "can_be_sheared",
       "label": {
-        "translate": "text.i-editor.can_be_sheared",
+        "translate": "subtitle.i-editor.can_be_sheared",
         "fallback": "Can Be Sheared"
       },
       "initial": false
@@ -166,7 +199,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:equippable\":{\"slot\":\"$(slot)\",\"equip_sound\":\"$(equip_sound)\",\"asset_id\":\"$(asset_id)\",\"camera_entities\":\"$(camera_entities)\",\"dispensable\":$(dispensable),\"swappable\":$(swappable),\"damage_on_hurt\":$(damage_on_hurt),\"equip_on_interact\":$(equip_on_interact),\"can_be_sheared\":$(can_be_sheared),\"shearing_sound\":\"$(shearing_sound)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:equippable\":{\"slot\":\"$(slot)\",\"equip_sound\":\"$(equip_sound)\",\"asset_id\":\"$(displayed_model)\",\"camera_entities\":\"$(camera_entities)\",\"dispensable\":$(interaction_in_dispenser),\"swappable\":$(swappable),\"damage_on_hurt\":$(damage_on_hurt),\"equip_on_interact\":$(equip_on_interact),\"can_be_sheared\":$(can_be_sheared),\"shearing_sound\":\"$(shearing_sound)\"}}}]"
     }
   },
   "no": {

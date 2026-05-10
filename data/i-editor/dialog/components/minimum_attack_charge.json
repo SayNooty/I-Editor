@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.minimum_attack_charge",
+      "translate": "component.i-editor.minimum_attack_charge",
       "fallback": "Minimum Attack Charge",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.minimum_attack_charge",
+    "translate": "component.i-editor.minimum_attack_charge",
     "fallback": "Minimum Attack Charge"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:stone_spear"
     },
     "description": {
-      "translate": "text.i-editor.component_minimum_attack_charge_info",
+      "translate": "description.i-editor.component.minimum_attack_charge",
       "fallback": "Enter the minimum attack charge required to attack with this item:",
       "color": "gray"
     },
@@ -33,7 +34,7 @@
       "type": "minecraft:number_range",
       "key": "minimum_attack_charge",
       "label": {
-        "translate": "text.i-editor.minimum_attack_charge",
+        "translate": "subtitle.i-editor.minimum_attack_charge",
         "fallback": "Minimum Attack Charge"
       },
       "start": 0,
@@ -52,7 +53,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:minimum_attack_charge\":$(minimum_attack_charge)}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:minimum_attack_charge\":$(minimum_attack_charge)}}]"
     }
   },
   "no": {

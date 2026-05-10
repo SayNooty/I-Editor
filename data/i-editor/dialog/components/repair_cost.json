@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.repair_cost",
+      "translate": "component.i-editor.repair_cost",
       "fallback": "Repair Cost",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.repair_cost",
+    "translate": "component.i-editor.repair_cost",
     "fallback": "Repair Cost"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:experience_bottle"
     },
     "description": {
-      "translate": "text.i-editor.component_repair_cost_info",
+      "translate": "description.i-editor.component.repair_cost",
       "fallback": "Enter the value number to be added to the base level cost when repairing, combining, or renaming an item using the anvil:",
       "color": "gray"
     },
@@ -35,12 +36,26 @@
       "width": 100,
       "label": [
         {
-          "translate": "text.i-editor.cost",
-          "fallback": "Cost "
+          "translate": "subtitle.i-editor.cost",
+          "fallback": "Cost"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.min_0",
-          "fallback": "<min: 0>",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "0",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -58,7 +73,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:repair_cost\":$(cost)}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:repair_cost\":$(cost)}}]"
     }
   },
   "no": {

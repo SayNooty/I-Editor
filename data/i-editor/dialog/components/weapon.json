@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.weapon",
+      "translate": "component.i-editor.weapon",
       "fallback": "Weapon",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.weapon",
+    "translate": "component.i-editor.weapon",
     "fallback": "Weapon"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:diamond_sword"
     },
     "description": {
-      "translate": "text.i-editor.component_weapon_info",
+      "translate": "description.i-editor.component.weapon",
       "fallback": "Enter the cost of strength per hit and the count of seconds for which this item can disable the blocking shield upon a successful attack:",
       "color": "gray"
     },
@@ -34,12 +35,26 @@
       "key": "item_damage_per_attack",
       "label": [
         {
-          "translate": "text.i-editor.item_damage_per_attack",
-          "fallback": "Item Damage Per Attack "
+          "translate": "subtitle.i-editor.item_damage_per_attack",
+          "fallback": "Item Damage Per Attack"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.min_0",
-          "fallback": "<min: 0>",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "0",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ],
@@ -50,12 +65,26 @@
       "key": "disable_blocking_for_seconds",
       "label": [
         {
-          "translate": "text.i-editor.disable_blocking_for_seconds",
-          "fallback": "Disable Blocking For Seconds "
+          "translate": "subtitle.i-editor.disable_blocking_for_seconds",
+          "fallback": "Disable Blocking For Seconds"
+        },
+        " ",
+        {
+        "text": "<",
+        "color": "dark_gray"
         },
         {
-          "translate": "text.i-editor.min_0",
-          "fallback": "<min: 0>",
+          "translate": "subtitle.i-editor.min",
+          "fallback": "min:",
+          "color": "dark_gray"
+        },
+        " ",
+        {
+          "text": "0",
+          "color": "dark_gray"
+        },
+        {
+          "text": ">",
           "color": "dark_gray"
         }
       ]
@@ -71,7 +100,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:weapon\":{\"item_damage_per_attack\":$(item_damage_per_attack),\"disable_blocking_for_seconds\":$(disable_blocking_for_seconds)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:weapon\":{\"item_damage_per_attack\":$(item_damage_per_attack),\"disable_blocking_for_seconds\":$(disable_blocking_for_seconds)}}}]"
     }
   },
   "no": {

@@ -1,0 +1,536 @@
+{
+  "type": "minecraft:confirmation",
+  "title": {
+    "translate": "title.i-editor.set_display_tooltips",
+    "fallback": "Set Display Tooltips"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "description.i-editor.set_display_tooltips",
+      "fallback": "Configure the type display tooltips:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:single_option",
+      "key": "armor_trim",
+      "width": 200,
+      "label": {
+        "translate": "subtitle.i-editor.armor_trim",
+        "fallback": "Armor Trim"
+      },
+      "options": [
+        {
+          "id": "",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default"
+          },
+          "initial": true
+        },
+        {
+          "id": "\"minecraft:trim\":true,",
+          "display": {
+            "translate": "options.on",
+            "color": "green"
+          }
+        },
+        {
+          "id": "\"minecraft:trim\":false,",
+          "display": {
+            "translate": "options.off",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "attribute_modifiers",
+      "width": 200,
+      "label": {
+        "translate": "subtitle.i-editor.attribute_modifiers",
+        "fallback": "Attribute Modifiers"
+      },
+      "options": [
+        {
+          "id": "",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default"
+          },
+          "initial": true
+        },
+        {
+          "id": "\"minecraft:attribute_modifiers\":true,",
+          "display": {
+            "translate": "options.on",
+            "color": "green"
+          }
+        },
+        {
+          "id": "\"minecraft:attribute_modifiers\":false,",
+          "display": {
+            "translate": "options.off",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "banner_patterns",
+      "width": 200,
+      "label": {
+        "translate": "subtitle.i-editor.banner_patterns",
+        "fallback": "Banner Patterns"
+      },
+      "options": [
+        {
+          "id": "",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default"
+          },
+          "initial": true
+        },
+        {
+          "id": "\"minecraft:banner_patterns\":true,",
+          "display": {
+            "translate": "options.on",
+            "color": "green"
+          }
+        },
+        {
+          "id": "\"minecraft:banner_patterns\":false,",
+          "display": {
+            "translate": "options.off",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "can_break",
+      "width": 200,
+      "label": {
+        "translate": "subtitle.i-editor.can_break",
+        "fallback": "Can Break"
+      },
+      "options": [
+        {
+          "id": "",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default"
+          },
+          "initial": true
+        },
+        {
+          "id": "\"minecraft:can_break\":true,",
+          "display": {
+            "translate": "options.on",
+            "color": "green"
+          }
+        },
+        {
+          "id": "\"minecraft:can_break\":false,",
+          "display": {
+            "translate": "options.off",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "can_place_on",
+      "width": 200,
+      "label": {
+        "translate": "subtitle.i-editor.can_place_on",
+        "fallback": "Can Place On"
+      },
+      "options": [
+        {
+          "id": "",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default"
+          },
+          "initial": true
+        },
+        {
+          "id": "\"minecraft:can_place_on\":true,",
+          "display": {
+            "translate": "options.on",
+            "color": "green"
+          }
+        },
+        {
+          "id": "\"minecraft:can_place_on\":false,",
+          "display": {
+            "translate": "options.off",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "dyed_color",
+      "width": 200,
+      "label": {
+        "translate": "subtitle.i-editor.dyed_color",
+        "fallback": "Dyed Color"
+      },
+      "options": [
+        {
+          "id": "",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default"
+          },
+          "initial": true
+        },
+        {
+          "id": "\"minecraft:dyed_color\":true,",
+          "display": {
+            "translate": "options.on",
+            "color": "green"
+          }
+        },
+        {
+          "id": "\"minecraft:dyed_color\":false,",
+          "display": {
+            "translate": "options.off",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "effects_potion",
+      "width": 200,
+      "label": {
+        "translate": "subtitle.i-editor.effects_potion",
+        "fallback": "Effects Potion"
+      },
+      "options": [
+        {
+          "id": "",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default"
+          },
+          "initial": true
+        },
+        {
+          "id": "\"minecraft:potion_contents\":true,",
+          "display": {
+            "translate": "options.on",
+            "color": "green"
+          }
+        },
+        {
+          "id": "\"minecraft:potion_contents\":false,",
+          "display": {
+            "translate": "options.off",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "enchantments",
+      "width": 200,
+      "label": {
+        "translate": "subtitle.i-editor.enchantments",
+        "fallback": "Enchantments"
+      },
+      "options": [
+        {
+          "id": "",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default"
+          },
+          "initial": true
+        },
+        {
+          "id": "\"minecraft:enchantments\":true,\"minecraft:stored_enchantments\":true,",
+          "display": {
+            "translate": "options.on",
+            "color": "green"
+          }
+        },
+        {
+          "id": "\"minecraft:enchantments\":false,\"minecraft:stored_enchantments\":false,",
+          "display": {
+            "translate": "options.off",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "firework_data",
+      "width": 200,
+      "label": {
+        "translate": "subtitle.i-editor.firework_data",
+        "fallback": "Firework Data"
+      },
+      "options": [
+        {
+          "id": "",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default"
+          },
+          "initial": true
+        },
+        {
+          "id": "\"minecraft:fireworks\":true,",
+          "display": {
+            "translate": "options.on",
+            "color": "green"
+          }
+        },
+        {
+          "id": "\"minecraft:fireworks\":false,",
+          "display": {
+            "translate": "options.off",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "horn_sound",
+      "width": 200,
+      "label": {
+        "translate": "subtitle.i-editor.horn_sound",
+        "fallback": "Horn Sound"
+      },
+      "options": [
+        {
+          "id": "",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default"
+          },
+          "initial": true
+        },
+        {
+          "id": "\"minecraft:instrument\":true,",
+          "display": {
+            "translate": "options.on",
+            "color": "green"
+          }
+        },
+        {
+          "id": "\"minecraft:instrument\":false,",
+          "display": {
+            "translate": "options.off",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "lore",
+      "width": 200,
+      "label": {
+        "translate": "subtitle.i-editor.lore",
+        "fallback": "Lore"
+      },
+      "options": [
+        {
+          "id": "",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default"
+          },
+          "initial": true
+        },
+        {
+          "id": "\"minecraft:lore\":true,",
+          "display": {
+            "translate": "options.on",
+            "color": "green"
+          }
+        },
+        {
+          "id": "\"minecraft:lore\":false,",
+          "display": {
+            "translate": "options.off",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "map_id",
+      "width": 200,
+      "label": {
+        "translate": "subtitle.i-editor.map_id",
+        "fallback": "Map ID"
+      },
+      "options": [
+        {
+          "id": "",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default"
+          },
+          "initial": true
+        },
+        {
+          "id": "\"minecraft:map_id\":true,",
+          "display": {
+            "translate": "options.on",
+            "color": "green"
+          }
+        },
+        {
+          "id": "\"minecraft:map_id\":false,",
+          "display": {
+            "translate": "options.off",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "music_disc_data",
+      "width": 200,
+      "label": {
+        "translate": "subtitle.i-editor.music_disc_data",
+        "fallback": "Music Disc Data"
+      },
+      "options": [
+        {
+          "id": "",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default"
+          },
+          "initial": true
+        },
+        {
+          "id": "\"minecraft:jukebox_playable\":true,",
+          "display": {
+            "translate": "options.on",
+            "color": "green"
+          }
+        },
+        {
+          "id": "\"minecraft:jukebox_playable\":false,",
+          "display": {
+            "translate": "options.off",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "unbreakable",
+      "width": 200,
+      "label": {
+        "translate": "subtitle.i-editor.unbreakable",
+        "fallback": "Unbreakable"
+      },
+      "options": [
+        {
+          "id": "",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default"
+          },
+          "initial": true
+        },
+        {
+          "id": "\"minecraft:unbreakable\":true,",
+          "display": {
+            "translate": "options.on",
+            "color": "green"
+          }
+        },
+        {
+          "id": "\"minecraft:unbreakable\":false,",
+          "display": {
+            "translate": "options.off",
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "written_book_content",
+      "width": 200,
+      "label": {
+        "translate": "subtitle.i-editor.written_book_content",
+        "fallback": "Written Book Content"
+      },
+      "options": [
+        {
+          "id": "",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default"
+          },
+          "initial": true
+        },
+        {
+          "id": "\"minecraft:written_book_content\":true,",
+          "display": {
+            "translate": "options.on",
+            "color": "green"
+          }
+        },
+        {
+          "id": "\"minecraft:written_book_content\":false,",
+          "display": {
+            "translate": "options.off",
+            "color": "red"
+          }
+        }
+      ]
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:toggle_tooltips\",\"toggles\":{$(armor_trim)$(attribute_modifiers)$(banner_patterns)$(can_break)$(can_place_on)$(dyed_color)$(effects_potion)$(enchantments)$(firework_data)$(horn_sound)$(lore)$(map_id)$(music_disc_data)$(unbreakable)$(written_book_content)}}]"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:menu"
+    }
+  }
+}

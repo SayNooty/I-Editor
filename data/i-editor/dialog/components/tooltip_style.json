@@ -3,16 +3,17 @@
   "title": [
     {
       "translate": "title.i-editor.component",
-      "fallback": "Component: "
+      "fallback": "Component"
     },
+    ": ",
     {
-      "translate": "component.name.tooltip_style",
+      "translate": "component.i-editor.tooltip_style",
       "fallback": "Tooltip Style",
       "color": "yellow"
     }
   ],
   "external_title": {
-    "translate": "component.name.tooltip_style",
+    "translate": "component.i-editor.tooltip_style",
     "fallback": "Tooltip Style"
   },
   "body": {
@@ -21,7 +22,7 @@
       "id": "minecraft:painting"
     },
     "description": {
-      "translate": "text.i-editor.component_tooltip_style_info",
+      "translate": "description.i-editor.component.tooltip_style",
       "fallback": "Enter the path to the background texture file that will be displayed when the cursor hovers over the item:",
       "color": "gray"
     },
@@ -33,7 +34,7 @@
       "type": "minecraft:text",
       "key": "tooltip_style",
       "label": {
-        "translate": "text.i-editor.tooltip_style",
+        "translate": "subtitle.i-editor.tooltip_style",
         "fallback": "Tooltip Style"
       },
       "max_length": 9999
@@ -49,7 +50,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:tooltip_style\":\"$(tooltip_style)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:tooltip_style\":\"$(tooltip_style)\"}}]"
     }
   },
   "no": {
