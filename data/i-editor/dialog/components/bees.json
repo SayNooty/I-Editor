@@ -1,0 +1,91 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component"
+    },
+    ": ",
+    {
+      "translate": "component.i-editor.bees",
+      "fallback": "Bees",
+      "color": "yellow"
+    }
+  ],
+  "external_title": [
+    {
+      "atlas": "minecraft:blocks",
+      "sprite": "minecraft:block/bee_nest_front"
+    },
+    " ",
+    {
+      "translate": "component.i-editor.bees",
+      "fallback": "Bees"
+    }
+  ],
+  "body": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:bee_nest"
+    },
+    "description": {
+      "translate": "description.i-editor.component.bees",
+      "fallback": "Enter the entity ID that will be in the beehive and the duration of its stay in it:",
+      "color": "gray"
+    },
+    "show_decorations": false,
+    "show_tooltip": false
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "entity_data",
+      "label": {
+        "translate": "subtitle.i-editor.entity_id",
+        "fallback": "Entity ID"
+      },
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "min_ticks_in_hive",
+      "label": {
+        "translate": "subtitle.i-editor.min_ticks_in_hive",
+        "fallback": "Min Ticks in Hive"
+      },
+      "max_length": 9999
+    },
+    {
+      "type": "minecraft:text",
+      "key": "ticks_in_hive",
+      "label": {
+        "translate": "subtitle.i-editor.ticks_in_hive",
+        "fallback": "Ticks in Hive"
+      },
+      "max_length": 9999
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:bees\":[{\"entity_data\":{\"id\":\"$(entity_data)\"},\"min_ticks_in_hive\":$(min_ticks_in_hive),\"ticks_in_hive\":$(ticks_in_hive)}]}}"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/piglin_banner_pattern"
+    },
+    " ",
+    {
     "translate": "banner_pattern.i-editor.piglin",
     "fallback": "Piglin"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -180,7 +187,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_banner_pattern\",\"patterns\":[{\"pattern\":\"minecraft:piglin\",\"color\":\"$(color)\"}],\"append\":$(append)}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_banner_pattern\",\"patterns\":[{\"pattern\":\"minecraft:piglin\",\"color\":\"$(color)\"}],\"append\":$(append)}"
     }
   },
   "no": {

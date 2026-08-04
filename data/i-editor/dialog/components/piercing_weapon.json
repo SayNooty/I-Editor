@@ -12,17 +12,24 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/diamond_spear"
+    },
+    " ",
+    {
     "translate": "component.i-editor.piercing_weapon",
     "fallback": "Piercing Weapon"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
       "id": "minecraft:diamond_spear"
     },
     "description": {
-      "translate": "description.i-editor.component.minimum_piercing_weapon",
+      "translate": "description.i-editor.component.piercing_weapon",
       "fallback": "Setting whether an item will attack through targets and whether it will bounce:",
       "color": "gray"
     },
@@ -80,7 +87,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:piercing_weapon\":{\"deals_knockback\":$(deals_knockback),\"dismounts\":$(dismounts),\"sound\":\"$(sound)\",\"hit_sound\":\"$(hit_sound)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:piercing_weapon\":{\"deals_knockback\":$(deals_knockback),\"dismounts\":$(dismounts),\"sound\":\"$(sound)\",\"hit_sound\":\"$(hit_sound)\"}}}"
     }
   },
   "no": {

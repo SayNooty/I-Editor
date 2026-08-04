@@ -11,10 +11,17 @@
       "color": "#CD5CAB"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:gui",
+      "sprite": "minecraft:mob_effect/regeneration"
+    },
+    " ",
+    {
     "translate": "effect.minecraft.regeneration",
     "color": "#CD5CAB"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -108,7 +115,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:potion_contents\":{\"custom_effects\":[{\"id\":\"minecraft:regeneration\",\"amplifier\":$(amplifier),\"duration\":$(duration),\"ambient\":$(ambient),\"show_particles\":$(show_particles),\"show_icon\":$(show_icon)}]}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:potion_contents\":{\"custom_effects\":[{\"id\":\"minecraft:regeneration\",\"amplifier\":$(amplifier),\"duration\":$(duration),\"ambient\":$(ambient),\"show_particles\":$(show_particles),\"show_icon\":$(show_icon)}]}}}"
     }
   },
   "no": {

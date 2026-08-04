@@ -2,9 +2,9 @@
   "pack": {
     "description": "Editor Items",
     "min_format": [
-      107,
-	  1
+      115,
+	    0
     ],
-    "max_format": 107
+    "max_format": 115
   }
 }

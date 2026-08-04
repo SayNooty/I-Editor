@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/experience_bottle"
+    },
+    " ",
+    {
     "translate": "component.i-editor.repair_cost",
     "fallback": "Repair Cost"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -73,7 +80,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:repair_cost\":$(cost)}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:repair_cost\":$(cost)}}"
     }
   },
   "no": {

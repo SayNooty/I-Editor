@@ -1,0 +1,73 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component"
+    },
+    ": ",
+    {
+      "translate": "component.i-editor.compostable",
+      "fallback": "Compostable",
+      "color": "yellow"
+    }
+  ],
+  "external_title": [
+    {
+      "atlas": "minecraft:blocks",
+      "sprite": "minecraft:block/composter_side"
+    },
+    " ",
+    {
+      "translate": "component.i-editor.compostable",
+      "fallback": "Compostable"
+    }
+  ],
+  "body": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:composter"
+    },
+    "description": {
+      "translate": "description.i-editor.component.compostable",
+      "fallback": "Select the composting level of the item:",
+      "color": "gray"
+    },
+    "show_decorations": false,
+    "show_tooltip": false
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "layers",
+      "width": 100,
+      "label": {
+        "translate": "subtitle.i-editor.layers",
+        "fallback": "Layers"
+      }
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:compostable\":{\"layers\":$(layers)}}}"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

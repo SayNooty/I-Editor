@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/cooked_beef"
+    },
+    " ",
+    {
     "translate": "component.i-editor.food",
     "fallback": "Food"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -92,7 +99,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:food\":{\"nutrition\":$(nutrition),\"saturation\":$(saturation),\"can_always_eat\":$(can_always_eat)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:food\":{\"nutrition\":$(nutrition),\"saturation\":$(saturation),\"can_always_eat\":$(can_always_eat)}}}"
     }
   },
   "no": {

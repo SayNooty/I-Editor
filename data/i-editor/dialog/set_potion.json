@@ -4,6 +4,17 @@
     "translate": "title.i-editor.set_potion",
     "fallback": "Set Potion"
   },
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/potion"
+    },
+    " ",
+    {
+      "translate": "title.i-editor.set_potion",
+      "fallback": "Set Potion"
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {

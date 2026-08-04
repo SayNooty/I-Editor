@@ -1,0 +1,113 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component"
+    },
+    ": ",
+    {
+      "translate": "component.i-editor.entity_variant",
+      "fallback": "Entity Variant",
+      "color": "yellow"
+    },
+    " ",
+    {
+      "text": "|",
+      "color": "gray"
+    },
+    " ",
+    {
+      "translate": "entity.minecraft.llama",
+      "color": "gold"
+    }
+  ],
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/llama_spawn_egg"
+    },
+    " ",
+    {
+    "translate": "entity.minecraft.llama"
+    }
+  ],
+  "body": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:llama_spawn_egg"
+    },
+    "description": {
+      "translate": "description.i-editor.component.entity_variant.entity",
+      "fallback": "Select the variant that you want to apply to the spawn egg of this entity:",
+      "color": "gray"
+    },
+    "show_decorations": false,
+    "show_tooltip": false
+  },
+  "inputs": [
+    {
+      "type": "minecraft:single_option",
+      "key": "variant",
+      "label": {
+        "translate": "subtitle.i-editor.variant",
+        "fallback": "Variant"
+      },
+      "options": [
+        {
+          "id": "creamy",
+          "display": {
+            "translate": "variant.i-editor.creamy",
+            "fallback": "Creamy"
+          }
+        },
+        {
+          "id": "white",
+          "display": {
+            "translate": "variant.i-editor.white",
+            "fallback": "White"
+          }
+        },
+        {
+          "id": "brown",
+          "display": {
+            "translate": "variant.i-editor.brown",
+            "fallback": "Brown",
+            "color": "#835432"
+          }
+        },
+        {
+          "id": "gray",
+          "display": {
+            "translate": "variant.i-editor.gray",
+            "fallback": "Gray",
+            "color": "gray"
+          }
+        }
+      ]
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:llama/variant\":\"$(variant)\"}}"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:components/entity_variant"
+    }
+  }
+}

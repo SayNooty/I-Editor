@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:blocks",
+      "sprite": "minecraft:block/cobblestone"
+    },
+    " ",
+    {
     "translate": "component.i-editor.can_place_on",
     "fallback": "Can Place On"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -51,7 +58,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:can_place_on\":{\"blocks\":\"$(block_id)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:can_place_on\":{\"blocks\":\"$(block_id)\"}}}"
     }
   },
   "no": {

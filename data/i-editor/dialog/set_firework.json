@@ -4,6 +4,17 @@
     "translate": "title.i-editor.set_firework",
     "fallback": "Set Firework"
   },
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/firework_rocket"
+    },
+    " ",
+    {
+      "translate": "title.i-editor.set_firework",
+      "fallback": "Set Firework"
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -45,27 +56,55 @@
         },
         {
           "id": "large_ball",
-          "display": {
-            "translate": "item.minecraft.firework_star.shape.large_ball"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/fire_charge"
+            },
+            " ",
+            {
+              "translate": "item.minecraft.firework_star.shape.large_ball"
+            }
+          ]
         },
         {
           "id": "star",
-          "display": {
-            "translate": "item.minecraft.firework_star.shape.star"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/gold_nugget"
+            },
+            " ",
+            {
+              "translate": "item.minecraft.firework_star.shape.star"
+            }
+          ]
         },
         {
           "id": "creeper",
-          "display": {
-            "translate": "item.minecraft.firework_star.shape.creeper"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/creeper_spawn_egg"
+            },
+            " ",
+            {
+              "translate": "item.minecraft.firework_star.shape.creeper"
+            }
+          ]
         },
         {
           "id": "burst",
-          "display": {
-            "translate": "item.minecraft.firework_star.shape.burst"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/feather"
+            },
+            " ",
+            {
+              "translate": "item.minecraft.firework_star.shape.burst"
+            }
+          ]
         }
       ]
     },
@@ -132,7 +171,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{function:\"minecraft:set_fireworks\",flight_duration:$(flight_duration),explosions:{values:[{shape:\"$(shape)\",colors:[$(colors)],fade_colors:[$(fade_colors)],has_trail:$(has_trail),has_twinkle:$(has_twinkle)}],mode:\"append\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_fireworks\",flight_duration:$(flight_duration),explosions:{values:[{shape:\"$(shape)\",colors:[$(colors)],fade_colors:[$(fade_colors)],has_trail:$(has_trail),has_twinkle:$(has_twinkle)}],\"mode\":\"append\"}}"
     }
   },
   "no": {

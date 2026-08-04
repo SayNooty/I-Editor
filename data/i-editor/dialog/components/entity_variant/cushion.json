@@ -1,0 +1,307 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component"
+    },
+    ": ",
+    {
+      "translate": "component.i-editor.entity_variant",
+      "fallback": "Entity Variant",
+      "color": "yellow"
+    },
+    " ",
+    {
+      "text": "|",
+      "color": "gray"
+    },
+    " ",
+    {
+      "translate": "entity.minecraft.cushion",
+      "color": "gold"
+    }
+  ],
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/white_cushion"
+    },
+    " ",
+    {
+      "translate": "entity.minecraft.cushion"
+    }
+  ],
+  "body": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:white_cushion"
+    },
+    "description": {
+      "translate": "description.i-editor.component.entity_variant.entity",
+      "fallback": "Select the variant that you want to apply to the spawn egg of this entity:",
+      "color": "gray"
+    },
+    "show_decorations": false,
+    "show_tooltip": false
+  },
+  "inputs": [
+    {
+      "type": "minecraft:single_option",
+      "key": "color",
+      "label": {
+        "translate": "subtitle.i-editor.color",
+        "fallback": "Color"
+      },
+      "options": [
+        {
+          "id": "white",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/white_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.white",
+              "color": "#ffffff"
+            }
+          ]
+        },
+        {
+          "id": "light_gray",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/light_gray_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.light_gray",
+              "color": "#9D9D97"
+            }
+          ]
+        },
+        {
+          "id": "gray",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/gray_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.gray",
+              "color": "#555555"
+            }
+          ]
+        },
+        {
+          "id": "black",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/black_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.black",
+              "color": "#000000"
+            }
+          ]
+        },
+        {
+          "id": "brown",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/brown_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.brown",
+              "color": "#835432"
+            }
+          ]
+        },
+        {
+          "id": "red",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/red_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.red",
+              "color": "#B02E26"
+            }
+          ]
+        },
+        {
+          "id": "orange",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/orange_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.orange",
+              "color": "#F9801D"
+            }
+          ]
+        },
+        {
+          "id": "yellow",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/yellow_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.yellow",
+              "color": "#FED83D"
+            }
+          ]
+        },
+        {
+          "id": "lime",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/lime_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.lime",
+              "color": "#80C71F"
+            }
+          ]
+        },
+        {
+          "id": "green",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/green_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.green",
+              "color": "#5E7C16"
+            }
+          ]
+        },
+        {
+          "id": "cyan",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/cyan_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.cyan",
+              "color": "#169C9C"
+            }
+          ]
+        },
+        {
+          "id": "light_blue",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/light_blue_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.light_blue",
+              "color": "#3AB3DA"
+            }
+          ]
+        },
+        {
+          "id": "blue",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/blue_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.blue",
+              "color": "#3C44AA"
+            }
+          ]
+        },
+        {
+          "id": "purple",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/purple_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.purple",
+              "color": "#8932B8"
+            }
+          ]
+        },
+        {
+          "id": "magenta",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/magenta_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.magenta",
+              "color": "#C74EBD"
+            }
+          ]
+        },
+        {
+          "id": "pink",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/pink_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.pink",
+              "color": "#F38BAA"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:cushion/color\":\"$(color)\"}}"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:components/entity_variant"
+    }
+  }
+}

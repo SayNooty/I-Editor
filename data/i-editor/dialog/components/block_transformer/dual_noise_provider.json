@@ -1,0 +1,235 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component"
+    },
+    ": ",
+    {
+      "translate": "component.i-editor.block_transformer",
+      "fallback": "Block Transformer",
+      "color": "yellow"
+    },
+    " ",
+    {
+      "text": "|",
+      "color": "gray"
+    },
+    " ",
+    {
+      "translate": "component.i-editor.block_transformer.dual_noise_provider",
+      "fallback": "Dual Noise Provider",
+      "color": "gold"
+    }
+  ],
+  "external_title": {
+    "translate": "component.i-editor.block_transformer.dual_noise_provider",
+    "fallback": "Dual Noise Provider"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "description.i-editor.component.block_transformer.dual_noise_provider",
+      "fallback": "Enter the values, identifiers, and select the type of block transformation settings:",
+      "color": "gray"
+    }
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "seed",
+      "label": {
+        "translate": "subtitle.i-editor.seed",
+        "fallback": "Seed"
+      }
+    },
+    {
+      "type": "minecraft:text",
+      "key": "noise_first_octave",
+      "label": {
+        "translate": "subtitle.i-editor.noise_first_octave",
+        "fallback": "Noise First Octave"
+      }
+    },
+    {
+      "type": "minecraft:text",
+      "key": "scale",
+      "label": {
+        "translate": "subtitle.i-editor.scale",
+        "fallback": "Scale"
+      }
+    },
+    {
+      "type": "minecraft:text",
+      "key": "variety",
+      "label": {
+        "translate": "subtitle.i-editor.variety",
+        "fallback": "Variety"
+      }
+    },
+    {
+      "type": "minecraft:text",
+      "key": "slow_noise_first_octave",
+      "label": {
+        "translate": "subtitle.i-editor.slow_noise_first_octave",
+        "fallback": "Slow Noise First Octave"
+      }
+    },
+    {
+      "type": "minecraft:text",
+      "key": "slow_scale",
+      "label": {
+        "translate": "subtitle.i-editor.slow_scale",
+        "fallback": "Slow Scale"
+      }
+    },
+    {
+      "type": "minecraft:text",
+      "key": "sound_id",
+      "label": {
+        "translate": "subtitle.i-editor.sound_id",
+        "fallback": "Sound ID"
+      }
+    },
+    {
+      "type": "minecraft:text",
+      "key": "loot_id",
+      "label": {
+        "translate": "subtitle.i-editor.loot_id",
+        "fallback": "Loot ID"
+      }
+    },
+	{
+      "type": "minecraft:text",
+      "key": "item_damage_per_use",
+      "label": {
+        "translate": "subtitle.i-editor.item_damage_per_use",
+        "fallback": "Item Damage Per Use"
+      }
+    },
+	{
+      "type": "minecraft:single_option",
+      "key": "particle",
+      "label": {
+        "translate": "subtitle.i-editor.particle",
+        "fallback": "Particle"
+      },
+      "options": [
+        {
+          "id": "none",
+          "display": {
+            "translate": "gui.no"
+          }
+        },
+        {
+          "id": "scrape",
+          "display": {
+            "translate": "subtitle.i-editor.scrape",
+            "fallback": "Scrape"
+          }
+        },
+		{
+          "id": "wax_on",
+          "display": {
+            "translate": "subtitle.i-editor.wax_on",
+            "fallback": "Wax On"
+          }
+        },
+		{
+          "id": "wax_off",
+          "display": {
+            "translate": "subtitle.i-editor.wax_off",
+            "fallback": "Wax Off"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "drop_strategy",
+      "label": {
+        "translate": "subtitle.i-editor.drop_strategy",
+        "fallback": "Drop Strategy"
+      },
+      "options": [
+        {
+          "id": "clicked_face",
+          "display": {
+            "translate": "subtitle.i-editor.clicked_face",
+            "fallback": "Clicked Face"
+          }
+        },
+        {
+          "id": "from_middle",
+          "display": {
+            "translate": "subtitle.i-editor.from_middle",
+            "fallback": "From Middle"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "transform_type",
+      "label": {
+        "translate": "subtitle.i-editor.transform_type",
+        "fallback": "Transform Type"
+      },
+      "options": [
+        {
+          "id": "single_block",
+          "display": {
+            "translate": "subtitle.i-editor.single_block",
+            "fallback": "Single Block"
+          }
+        },
+        {
+          "id": "copper_chest",
+          "display": {
+            "translate": "block.minecraft.copper_chest"
+          }
+        }
+      ]
+    },
+	{
+      "type": "minecraft:boolean",
+      "key": "update_from_neighbors",
+      "label": {
+        "translate": "subtitle.i-editor.update_from_neighbors",
+        "fallback": "Update From Neighbors"
+      }
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "consume_on_use",
+      "label": {
+        "translate": "subtitle.i-editor.consume_on_use",
+        "fallback": "Consume on Use"
+      }
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:block_transformer\":[{\"block_state_provider\":{\"type\":\"minecraft:dual_noise_provider\",\"seed\":$(seed),\"noise\":{\"firstOctave\":$(noise_first_octave),\"amplitudes\":[]},\"scale\":$(scale),\"variety\":$(variety),\"slow_noise\":{\"firstOctave\":$(slow_noise_first_octave),\"amplitudes\":[]},\"slow_scale\":$(slow_scale),\"states\":[]},\"sound\":\"$(sound_id)\",\"particle\":\"$(particle)\",\"disallowed_faces\":[],\"loot\":\"$(loot_id)\",\"drop_strategy\":\"$(drop_strategy)\",\"transform_type\":\"$(transform_type)\",\"update_from_neighbors\":$(update_from_neighbors),\"consume_on_use\":$(consume_on_use),\"item_damage_per_use\":$(item_damage_per_use)}]}}"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:components/block_transformer"
+    }
+  }
+}

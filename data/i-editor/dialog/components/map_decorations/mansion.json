@@ -11,18 +11,20 @@
       "fallback": "Map Decorations",
       "color": "yellow"
     },
+    " ",
     {
-      "text": " | ",
+      "text": "|",
       "color": "gray"
     },
+	" ",
     {
-      "translate": "component.i-editor.map_decorations.mansion",
+      "translate": "map_decoration.i-editor.mansion",
       "fallback": "Mansion",
       "color": "gold"
     }
   ],
   "external_title": {
-    "translate": "component.i-editor.map_decorations.mansion",
+    "translate": "map_decoration.i-editor.mansion",
     "fallback": "Mansion"
   },
   "body": {
@@ -103,7 +105,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:map_decorations\":{\"$(name)\":{\"type\":\"minecraft:mansion\",\"x\":$(pos_x),\"z\":$(pos_z),\"rotation\":$(rotation)}}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:map_decorations\":{\"$(name)\":{\"type\":\"minecraft:mansion\",\"x\":$(pos_x),\"z\":$(pos_z),\"rotation\":$(rotation)}}}}"
     }
   },
   "no": {

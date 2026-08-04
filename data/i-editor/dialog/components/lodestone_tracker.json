@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/compass_00"
+    },
+    " ",
+    {
     "translate": "component.i-editor.lodestone_tracker",
     "fallback": "Lodestone Tracker"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -81,7 +88,7 @@
           "display": {
             "translate": "world.i-editor.end",
             "fallback": "End",
-            "color": "dark_purple"
+            "color": "light_purple"
           }
         }
       ]
@@ -106,7 +113,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:lodestone_tracker\":{target:{pos:[$(pos_xyz)],dimension:\"$(dimension)\"},tracked:$(tracked)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:lodestone_tracker\":{target:{pos:[$(pos_xyz)],dimension:\"$(dimension)\"},tracked:$(tracked)}}}"
     }
   },
   "no": {

@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
-    "translate": "component.i-editor.use_cooldown",
-    "fallback": "Use Cooldown"
-  },
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/ender_pearl"
+    },
+    " ",
+    {
+      "translate": "component.i-editor.use_cooldown",
+      "fallback": "Use Cooldown"
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -36,13 +43,18 @@
       "width": 150,
       "label": [
         {
+          "atlas": "minecraft:items",
+          "sprite": "minecraft:item/clock_00"
+        },
+        " ",
+        {
           "translate": "subtitle.i-editor.seconds",
           "fallback": "Seconds"
         },
         " ",
         {
-        "text": "<",
-        "color": "dark_gray"
+          "text": "<",
+          "color": "dark_gray"
         },
         {
           "translate": "subtitle.i-editor.min",
@@ -83,7 +95,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:use_cooldown\":{\"seconds\":$(seconds),\"cooldown_group\": \"$(cooldown_group)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:use_cooldown\":{\"seconds\":$(seconds),\"cooldown_group\": \"$(cooldown_group)\"}}}"
     }
   },
   "no": {

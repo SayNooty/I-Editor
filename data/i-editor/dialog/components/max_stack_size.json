@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/egg"
+    },
+    " ",
+    {
     "translate": "component.i-editor.max_stack_size",
     "fallback": "Max Stack Size"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -52,7 +59,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:max_stack_size\":$(count)}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:max_stack_size\":$(count)}}"
     }
   },
   "no": {

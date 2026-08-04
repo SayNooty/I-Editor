@@ -47,7 +47,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "item modify entity @s weapon.mainhand {\"function\":\"minecraft:set_enchantments\",\"enchantments\":{\"minecraft:sweeping_edge\":$(level)}}"
+      "template": "item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_enchantments\",\"enchantments\":{\"minecraft:sweeping_edge\":$(level)}}"
     }
   },
   "no": {

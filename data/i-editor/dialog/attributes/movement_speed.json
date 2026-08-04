@@ -11,9 +11,16 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:gui",
+      "sprite": "minecraft:mob_effect/speed"
+    },
+    " ",
+    {
     "translate": "attribute.name.movement_speed"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:plain_message",
     "contents": {
@@ -98,17 +105,31 @@
         },
         {
           "id": "chest",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/iron_chestplate"
+            },
+            " ",
+            {
             "translate": "slot.i-editor.chest",
             "fallback": "Chest"
-          }
+            }
+          ]
         },
         {
           "id": "feet",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/iron_boots"
+            },
+            " ",
+            {
             "translate": "slot.i-editor.feet",
             "fallback": "Feet"
-          }
+            }
+          ]
         },
         {
           "id": "hand",
@@ -119,17 +140,31 @@
         },
         {
           "id": "head",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/iron_helmet"
+            },
+            " ",
+            {
             "translate": "slot.i-editor.head",
             "fallback": "Head"
-          }
+            }
+          ]
         },
         {
           "id": "legs",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/iron_leggings"
+            },
+            " ",
+            {
             "translate": "slot.i-editor.legs",
             "fallback": "Legs"
-          }
+            }
+          ]
         },
         {
           "id": "mainhand",

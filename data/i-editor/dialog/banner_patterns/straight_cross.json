@@ -180,7 +180,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_banner_pattern\",\"patterns\":[{\"pattern\":\"minecraft:straight_cross\",\"color\":\"$(color)\"}],\"append\":$(append)}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_banner_pattern\",\"patterns\":[{\"pattern\":\"minecraft:straight_cross\",\"color\":\"$(color)\"}],\"append\":$(append)}"
     }
   },
   "no": {

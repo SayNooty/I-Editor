@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/totem_of_undying"
+    },
+    " ",
+    {
     "translate": "component.i-editor.death_protection",
     "fallback": "Death Protection"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -51,7 +58,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:death_protection\":{\"death_effects\":[{\"type\":\"minecraft:play_sound\",\"sound\":\"$(sound_id)\"}]}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:death_protection\":{\"death_effects\":[{\"type\":\"minecraft:play_sound\",\"sound\":\"$(sound_id)\"}]}}}"
     }
   },
   "no": {

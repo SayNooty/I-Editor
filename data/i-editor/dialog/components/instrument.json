@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
-    "translate": "component.i-editor.instrument",
-    "fallback": "Instrument"
-  },
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/goat_horn"
+    },
+    " ",
+    {
+      "translate": "component.i-editor.instrument",
+      "fallback": "Instrument"
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -51,8 +58,8 @@
         },
         " ",
         {
-        "text": "<",
-        "color": "dark_gray"
+          "text": "<",
+          "color": "dark_gray"
         },
         {
           "translate": "subtitle.i-editor.min",
@@ -78,13 +85,18 @@
       "width": 175,
       "label": [
         {
+          "atlas": "minecraft:items",
+          "sprite": "minecraft:item/clock_00"
+        },
+        " ",
+        {
           "translate": "subtitle.i-editor.use_duration",
           "fallback": "Use Duration"
         },
         " ",
         {
-        "text": "<",
-        "color": "dark_gray"
+          "text": "<",
+          "color": "dark_gray"
         },
         {
           "translate": "subtitle.i-editor.min",
@@ -125,7 +137,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:instrument\":{sound_event:\"$(sound_event)\",range:$(range),use_duration:$(use_duration),description:\"$(description)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:instrument\":{sound_event:\"$(sound_event)\",range:$(range),use_duration:$(use_duration),description:\"$(description)\"}}}"
     }
   },
   "no": {

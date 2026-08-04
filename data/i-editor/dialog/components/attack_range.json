@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
-    "translate": "component.i-editor.attack_range",
-    "fallback": "Attack Range"
-  },
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/copper_spear"
+    },
+    " ",
+    {
+      "translate": "component.i-editor.attack_range",
+      "fallback": "Attack Range"
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -33,6 +40,7 @@
     {
       "type": "minecraft:text",
       "key": "min_reach",
+      "width": 300,
       "label": [
         {
           "translate": "subtitle.i-editor.min_reach",
@@ -40,8 +48,8 @@
         },
         " ",
         {
-        "text": "<",
-        "color": "dark_gray"
+          "text": "<",
+          "color": "dark_gray"
         },
         {
           "translate": "subtitle.i-editor.min",
@@ -59,8 +67,8 @@
         },
         " ",
         {
-        "text": "<",
-        "color": "dark_gray"
+          "text": "<",
+          "color": "dark_gray"
         },
         {
           "translate": "subtitle.i-editor.max",
@@ -83,6 +91,7 @@
     {
       "type": "minecraft:text",
       "key": "max_reach",
+      "width": 300,
       "label": [
         {
           "translate": "subtitle.i-editor.max_reach",
@@ -90,8 +99,8 @@
         },
         " ",
         {
-        "text": "<",
-        "color": "dark_gray"
+          "text": "<",
+          "color": "dark_gray"
         },
         {
           "translate": "subtitle.i-editor.min",
@@ -109,8 +118,8 @@
         },
         " ",
         {
-        "text": "<",
-        "color": "dark_gray"
+          "text": "<",
+          "color": "dark_gray"
         },
         {
           "translate": "subtitle.i-editor.max",
@@ -133,15 +142,22 @@
     {
       "type": "minecraft:text",
       "key": "min_creative_reach",
+      "width": 300,
       "label": [
         {
-          "translate": "subtitle.i-editor.min_creative_reach",
-          "fallback": "Min Creative Reach"
+          "translate": "subtitle.i-editor.min_reach",
+          "fallback": "Min Reach"
         },
         " ",
         {
-        "text": "<",
-        "color": "dark_gray"
+          "translate": "subtitle.i-editor.in_creative",
+          "fallback": "[in creative]",
+          "color": "gray"
+        },
+        " ",
+        {
+          "text": "<",
+          "color": "dark_gray"
         },
         {
           "translate": "subtitle.i-editor.min",
@@ -159,8 +175,8 @@
         },
         " ",
         {
-        "text": "<",
-        "color": "dark_gray"
+          "text": "<",
+          "color": "dark_gray"
         },
         {
           "translate": "subtitle.i-editor.max",
@@ -183,15 +199,22 @@
     {
       "type": "minecraft:text",
       "key": "max_creative_reach",
+      "width": 300,
       "label": [
         {
-          "translate": "subtitle.i-editor.max_creative_reach",
-          "fallback": "Max Creative Reach"
+          "translate": "subtitle.i-editor.max_reach",
+          "fallback": "Max Reach"
         },
         " ",
         {
-        "text": "<",
-        "color": "dark_gray"
+          "translate": "subtitle.i-editor.in_creative",
+          "fallback": "[in creative]",
+          "color": "gray"
+        },
+        " ",
+        {
+          "text": "<",
+          "color": "dark_gray"
         },
         {
           "translate": "subtitle.i-editor.min",
@@ -209,8 +232,8 @@
         },
         " ",
         {
-        "text": "<",
-        "color": "dark_gray"
+          "text": "<",
+          "color": "dark_gray"
         },
         {
           "translate": "subtitle.i-editor.max",
@@ -233,6 +256,7 @@
     {
       "type": "minecraft:text",
       "key": "hitbox_margin",
+      "width": 300,
       "label": [
         {
           "translate": "subtitle.i-editor.hitbox_margin",
@@ -240,8 +264,8 @@
         },
         " ",
         {
-        "text": "<",
-        "color": "dark_gray"
+          "text": "<",
+          "color": "dark_gray"
         },
         {
           "translate": "subtitle.i-editor.min",
@@ -259,8 +283,8 @@
         },
         " ",
         {
-        "text": "<",
-        "color": "dark_gray"
+          "text": "<",
+          "color": "dark_gray"
         },
         {
           "translate": "subtitle.i-editor.max",
@@ -283,6 +307,7 @@
     {
       "type": "minecraft:text",
       "key": "mob_factor",
+      "width": 300,
       "label": [
         {
           "translate": "subtitle.i-editor.mob_factor",
@@ -290,8 +315,8 @@
         },
         " ",
         {
-        "text": "<",
-        "color": "dark_gray"
+          "text": "<",
+          "color": "dark_gray"
         },
         {
           "translate": "subtitle.i-editor.min",
@@ -309,8 +334,8 @@
         },
         " ",
         {
-        "text": "<",
-        "color": "dark_gray"
+          "text": "<",
+          "color": "dark_gray"
         },
         {
           "translate": "subtitle.i-editor.max",
@@ -341,7 +366,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:attack_range\":{\"min_reach\":$(min_reach),\"max_reach\":$(max_reach),\"min_creative_reach\":$(min_creative_reach),\"max_creative_reach\":$(max_creative_reach),\"hitbox_margin\":$(hitbox_margin),\"mob_factor\":$(mob_factor)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:attack_range\":{\"min_reach\":$(min_reach),\"max_reach\":$(max_reach),\"min_creative_reach\":$(min_creative_reach),\"max_creative_reach\":$(max_creative_reach),\"hitbox_margin\":$(hitbox_margin),\"mob_factor\":$(mob_factor)}}}"
     }
   },
   "no": {

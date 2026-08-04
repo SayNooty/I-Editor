@@ -1,0 +1,453 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.set_name",
+      "fallback": "Set Name"
+    },
+    ":",
+    " ",
+    {
+      "translate": "subtitle.i-editor.atlas",
+      "fallback": "Atlas",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+    "translate": "subtitle.i-editor.atlas",
+    "fallback": "Atlas"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "translate": "description.i-editor.set_name.atlas",
+      "fallback": "Enter the sprite (path to texture) displayed as the name of the item, and configure additional visualization settings:",
+      "color": "gray"
+    },
+    "width": 300
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "sprite",
+      "label": {
+        "translate": "subtitle.i-editor.sprite",
+        "fallback": "Sprite"
+      },
+      "max_length": 100
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "atlas",
+      "label": {
+        "translate": "subtitle.i-editor.atlas",
+        "fallback": "Atlas"
+      },
+      "options": [
+        {
+          "id": "minecraft:armor_trims",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/coast_armor_trim_smithing_template"
+            },
+            " ",
+            {
+              "translate": "subtitle.i-editor.armor_trims",
+              "fallback": "Armor Trims"
+            }
+          ]
+        },
+        {
+          "id": "minecraft:banner_patterns",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/mojang_banner_pattern"
+            },
+            " ",
+            {
+              "translate": "subtitle.i-editor.banner_patterns",
+              "fallback": "Banner Patterns"
+            }
+          ]
+        },
+        {
+          "id": "minecraft:beds",
+          "display": {
+            "translate": "subtitle.i-editor.beds",
+            "fallback": "Beds"
+          }
+        },
+        {
+          "id": "minecraft:blocks",
+          "display": [
+            {
+              "atlas": "minecraft:blocks",
+              "sprite": "minecraft:block/stone"
+            },
+            " ",
+            {
+              "translate": "subtitle.i-editor.blocks",
+              "fallback": "Blocks"
+            }
+          ]
+        },
+        {
+          "id": "minecraft:celestials",
+          "display": {
+            "translate": "subtitle.i-editor.celestials",
+            "fallback": "Celestials"
+          }
+        },
+        {
+          "id": "minecraft:chests",
+          "display": {
+            "translate": "subtitle.i-editor.chests",
+            "fallback": "Chests"
+          }
+        },
+        {
+          "id": "minecraft:decorated_pot",
+          "display": [
+            {
+              "atlas": "minecraft:decorated_pot",
+              "sprite": "minecraft:entity/decorated_pot/skull_pottery_pattern"
+            },
+            " ",
+            {
+              "translate": "subtitle.i-editor.decorated_pot",
+              "fallback": "Decorated Pot"
+            }
+          ]
+        },
+        {
+          "id": "minecraft:gui",
+          "display": {
+            "translate": "subtitle.i-editor.gui",
+            "fallback": "Gui"
+          }
+        },
+        {
+          "id": "minecraft:items",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/stick"
+            },
+            " ",
+            {
+              "translate": "subtitle.i-editor.items",
+              "fallback": "Items"
+            }
+          ],
+          "initial": true
+        },
+        {
+          "id": "minecraft:map_decorations",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/filled_map"
+            },
+            " ",
+            {
+            "translate": "subtitle.i-editor.map_decorations",
+            "fallback": "Map Decorations"
+            }
+          ]
+        },
+        {
+          "id": "minecraft:paintings",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/painting"
+            },
+            " ",
+            {
+            "translate": "subtitle.i-editor.paintings",
+            "fallback": "Paintings"
+            }
+          ]
+        },
+        {
+          "id": "minecraft:particles",
+          "display": {
+            "translate": "subtitle.i-editor.particles",
+            "fallback": "Particles"
+          }
+        },
+        {
+          "id": "minecraft:shulker_boxes",
+          "display": [
+            {
+              "atlas": "minecraft:blocks",
+              "sprite": "minecraft:block/shulker_box"
+            },
+            " ",
+            {
+            "translate": "subtitle.i-editor.shulker_boxes",
+            "fallback": "Shulker Boxes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "font",
+      "label": {
+        "translate": "subtitle.i-editor.font",
+        "fallback": "Font"
+      },
+      "options": [
+        {
+          "id": "default",
+          "display": {
+            "translate": "mode.i-editor.default",
+            "fallback": "Default",
+            "font": "minecraft:default"
+          },
+          "initial": true
+        },
+        {
+          "id": "include/unifont",
+          "display": {
+            "translate": "mode.i-editor.unifont",
+            "fallback": "Unifont",
+            "font": "minecraft:include/unifont"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "color",
+      "label": {
+        "translate": "subtitle.i-editor.color",
+        "fallback": "Color"
+      },
+      "options": [
+        {
+          "id": "white",
+          "display": {
+            "translate": "color.minecraft.white",
+            "color": "white"
+          }
+        },
+        {
+          "id": "gray",
+          "display": {
+            "translate": "color.minecraft.light_gray",
+            "color": "gray"
+          }
+        },
+        {
+          "id": "dark_gray",
+          "display": {
+            "translate": "color.minecraft.gray",
+            "color": "dark_gray"
+          }
+        },
+        {
+          "id": "black",
+          "display": {
+            "translate": "color.minecraft.black",
+            "color": "black"
+          }
+        },
+        {
+          "id": "dark_red",
+          "display": {
+            "translate": "color.minecraft.dark_red",
+            "fallback": "Dark Red",
+            "color": "dark_red"
+          }
+        },
+        {
+          "id": "red",
+          "display": {
+            "translate": "color.minecraft.red",
+            "color": "red"
+          }
+        },
+        {
+          "id": "gold",
+          "display": {
+            "translate": "color.minecraft.gold",
+            "fallback": "Gold",
+            "color": "gold"
+          }
+        },
+        {
+          "id": "yellow",
+          "display": {
+            "translate": "color.minecraft.yellow",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "green",
+          "display": {
+            "translate": "color.minecraft.green",
+            "color": "green"
+          }
+        },
+        {
+          "id": "dark_green",
+          "display": {
+            "translate": "color.minecraft.dark_green",
+            "fallback": "Dark Green",
+            "color": "dark_green"
+          }
+        },
+        {
+          "id": "dark_aqua",
+          "display": {
+            "translate": "color.minecraft.cyan",
+            "color": "dark_aqua"
+          }
+        },
+        {
+          "id": "aqua",
+          "display": {
+            "translate": "color.minecraft.light_blue",
+            "color": "aqua"
+          }
+        },
+        {
+          "id": "blue",
+          "display": {
+            "translate": "color.minecraft.blue",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "dark_blue",
+          "display": {
+            "translate": "color.minecraft.dark_blue",
+            "fallback": "Dark Blue",
+            "color": "dark_blue"
+          }
+        },
+        {
+          "id": "dark_purple",
+          "display": {
+            "translate": "color.minecraft.dark_purple",
+            "fallback": "Dark Purple",
+            "color": "dark_purple"
+          }
+        },
+        {
+          "id": "light_purple",
+          "display": {
+            "translate": "color.minecraft.light_purple",
+            "fallback": "Light Purple",
+            "color": "light_purple"
+          }
+        }
+      ]
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "shadow",
+      "label": {
+        "translate": "subtitle.i-editor.shadow",
+        "fallback": "Shadow",
+        "hover_event": {
+          "action": "show_text",
+          "value": {
+            "translate": "description.i-editor.shadow",
+            "fallback": "Adds a shadow to the text\nwhen there is a check mark",
+            "color": "gray"
+          }
+        }
+      },
+      "initial": true,
+      "on_true": " ",
+      "on_false": "\"shadow_color\":0,"
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "bold",
+      "label": {
+        "translate": "formatting.i-editor.bold",
+        "fallback": "Bold",
+        "bold": true
+      },
+      "initial": false
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "italic",
+      "label": {
+        "translate": "formatting.i-editor.italic",
+        "fallback": "Italic",
+        "italic": true
+      },
+      "initial": false
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "underlined",
+      "label": {
+        "translate": "formatting.i-editor.underlined",
+        "fallback": "Underlined",
+        "underlined": true
+      },
+      "initial": false
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "strikethrough",
+      "label": {
+        "translate": "formatting.i-editor.strikethrough",
+        "fallback": "Strikethrough",
+        "strikethrough": true
+      },
+      "initial": false
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "obfuscated",
+      "label": {
+        "translate": "formatting.i-editor.obfuscated",
+        "fallback": "Obfuscated",
+        "obfuscated": true,
+        "hover_event": {
+          "action": "show_text",
+          "value": {
+            "translate": "formatting.i-editor.obfuscated",
+            "fallback": "Obfuscated",
+            "color": "gray"
+          }
+        }
+      },
+      "initial": false
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_name\",\"name\":{\"atlas\":\"$(atlas)\",\"sprite\":\"$(sprite)\",\"font\":\"$(font)\",\"color\":\"$(color)\",$(shadow)\"bold\":$(bold),\"italic\":$(italic),\"underlined\":$(underlined),\"strikethrough\":$(strikethrough),\"obfuscated\":$(obfuscated)}}"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "i-editor:set_name"
+    }
+  }
+}

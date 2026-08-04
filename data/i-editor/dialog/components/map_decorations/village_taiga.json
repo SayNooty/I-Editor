@@ -11,18 +11,20 @@
       "fallback": "Map Decorations",
       "color": "yellow"
     },
+    " ",
     {
-      "text": " | ",
+      "text": "|",
       "color": "gray"
     },
+	" ",
     {
-      "translate": "component.i-editor.map_decorations.village_taiga",
+      "translate": "map_decoration.i-editor.village_taiga",
       "fallback": "Village Taiga",
       "color": "gold"
     }
   ],
   "external_title": {
-    "translate": "component.i-editor.map_decorations.village_taiga",
+    "translate": "map_decoration.i-editor.village_taiga",
     "fallback": "Village Taiga"
   },
   "body": {
@@ -103,7 +105,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:map_decorations\":{\"$(name)\":{\"type\":\"minecraft:village_taiga\",\"x\":$(pos_x),\"z\":$(pos_z),\"rotation\":$(rotation)}}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:map_decorations\":{\"$(name)\":{\"type\":\"minecraft:village_taiga\",\"x\":$(pos_x),\"z\":$(pos_z),\"rotation\":$(rotation)}}}}"
     }
   },
   "no": {

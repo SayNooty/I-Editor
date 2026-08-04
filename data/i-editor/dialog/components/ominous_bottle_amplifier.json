@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/ominous_bottle"
+    },
+    " ",
+    {
     "translate": "component.i-editor.ominous_bottle_amplifier",
     "fallback": "Ominous Bottle Amplifier"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -54,7 +61,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:ominous_bottle_amplifier\":$(amplifier)}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:ominous_bottle_amplifier\":$(amplifier)}}"
     }
   },
   "no": {

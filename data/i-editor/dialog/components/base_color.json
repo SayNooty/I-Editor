@@ -40,115 +40,227 @@
       "options": [
         {
           "id": "white",
-          "display": {
-            "translate": "color.minecraft.white",
-            "color": "#ffffff"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/white_dye"
+            },
+            " ",
+            {
+              "translate": "color.minecraft.white",
+              "color": "#ffffff"
+            }
+          ]
         },
         {
           "id": "light_gray",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/light_gray_dye"
+            },
+            " ",
+            {
             "translate": "color.minecraft.light_gray",
             "color": "#9D9D97"
-          }
+            }
+          ]
         },
         {
           "id": "gray",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/gray_dye"
+            },
+            " ",
+            {
             "translate": "color.minecraft.gray",
             "color": "#555555"
-          }
+            }
+          ]
         },
         {
           "id": "black",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/black_dye"
+            },
+            " ",
+            {
             "translate": "color.minecraft.black",
             "color": "#000000"
-          }
+            }
+          ]
         },
         {
           "id": "brown",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/brown_dye"
+            },
+            " ",
+            {
             "translate": "color.minecraft.brown",
             "color": "#835432"
-          }
+            }
+          ]
         },
         {
           "id": "red",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/red_dye"
+            },
+            " ",
+            {
             "translate": "color.minecraft.red",
             "color": "#B02E26"
-          }
+            }
+          ]
         },
         {
           "id": "orange",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/orange_dye"
+            },
+            " ",
+            {
             "translate": "color.minecraft.orange",
             "color": "#F9801D"
-          }
+            }
+          ]
         },
         {
           "id": "yellow",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/yellow_dye"
+            },
+            " ",
+            {
             "translate": "color.minecraft.yellow",
             "color": "#FED83D"
-          }
+            }
+          ]
         },
         {
           "id": "lime",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/lime_dye"
+            },
+            " ",
+            {
             "translate": "color.minecraft.lime",
             "color": "#80C71F"
-          }
+            }
+          ]
         },
         {
           "id": "green",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/green_dye"
+            },
+            " ",
+            {
             "translate": "color.minecraft.green",
             "color": "#5E7C16"
-          }
+            }
+          ]
         },
         {
           "id": "cyan",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/cyan_dye"
+            },
+            " ",
+            {
             "translate": "color.minecraft.cyan",
             "color": "#169C9C"
-          }
+            }
+          ]
         },
         {
           "id": "light_blue",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/light_blue_dye"
+            },
+            " ",
+            {
             "translate": "color.minecraft.light_blue",
             "color": "#3AB3DA"
-          }
+            }
+          ]
         },
         {
           "id": "blue",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/blue_dye"
+            },
+            " ",
+            {
             "translate": "color.minecraft.blue",
             "color": "#3C44AA"
-          }
+            }
+          ]
         },
         {
           "id": "purple",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/purple_dye"
+            },
+            " ",
+            {
             "translate": "color.minecraft.purple",
             "color": "#8932B8"
-          }
+            }
+          ]
         },
         {
           "id": "magenta",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/magenta_dye"
+            },
+            " ",
+            {
             "translate": "color.minecraft.magenta",
             "color": "#C74EBD"
-          }
+            }
+          ]
         },
         {
           "id": "pink",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/pink_dye"
+            },
+            " ",
+            {
             "translate": "color.minecraft.pink",
             "color": "#F38BAA"
-          }
+            }
+          ]
         }
       ]
     }
@@ -163,7 +275,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:base_color\":\"$(color)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:base_color\":\"$(color)\"}}"
     }
   },
   "no": {

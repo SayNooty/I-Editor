@@ -1,0 +1,72 @@
+{
+  "type": "minecraft:dialog_list",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component"
+    },
+    ": ",
+    {
+      "translate": "component.i-editor.entity_variant",
+      "fallback": "Entity Variant",
+      "color": "yellow"
+    }
+  ],
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/creeper_spawn_egg"
+    },
+    " ",
+    {
+    "translate": "component.i-editor.entity_variant",
+    "fallback": "Entity Variant"
+    }
+  ],
+  "body": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:creeper_spawn_egg"
+    },
+    "description": {
+      "translate": "description.i-editor.component.entity_variant",
+      "fallback": "Select an entity in which you can select its visual variant:",
+      "color": "gray"
+    },
+    "show_decorations": false,
+    "show_tooltip": false
+  },
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "exit_action": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "width": 200,
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  },
+  "columns": 2,
+  "dialogs": [
+    "i-editor:components/entity_variant/axolotl",
+    "i-editor:components/entity_variant/cat",
+    "i-editor:components/entity_variant/chicken",
+    "i-editor:components/entity_variant/cow",
+    "i-editor:components/entity_variant/cushion",
+    "i-editor:components/entity_variant/fox",
+    "i-editor:components/entity_variant/frog",
+    "i-editor:components/entity_variant/horse",
+    "i-editor:components/entity_variant/llama",
+    "i-editor:components/entity_variant/mooshroom",
+    "i-editor:components/entity_variant/parrot",
+    "i-editor:components/entity_variant/pig",
+    "i-editor:components/entity_variant/rabbit",
+    "i-editor:components/entity_variant/villager",
+    "i-editor:components/entity_variant/wolf",
+    "i-editor:components/entity_variant/zombie_nautilus"
+  ]
+}

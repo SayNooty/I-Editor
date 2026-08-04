@@ -11,9 +11,16 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/iron_chestplate"
+    },
+    " ",
+    {
     "translate": "attribute.name.armor"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:plain_message",
     "contents": {
@@ -60,17 +67,31 @@
         },
         {
           "id": "chest",
-          "display": {
-            "translate": "slot.i-editor.chest",
-            "fallback": "Chest"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/iron_chestplate"
+            },
+            " ",
+            {
+              "translate": "slot.i-editor.chest",
+              "fallback": "Chest"
+            }
+          ]
         },
         {
           "id": "feet",
-          "display": {
-            "translate": "slot.i-editor.feet",
-            "fallback": "Feet"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/iron_boots"
+            },
+            " ",
+            {
+              "translate": "slot.i-editor.feet",
+              "fallback": "Feet"
+            }
+          ]
         },
         {
           "id": "hand",
@@ -81,17 +102,31 @@
         },
         {
           "id": "head",
-          "display": {
-            "translate": "slot.i-editor.head",
-            "fallback": "Head"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:map_decorations",
+              "sprite": "minecraft:map/decorations/player"
+            },
+            " ",
+            {
+              "translate": "slot.i-editor.head",
+              "fallback": "Head"
+            }
+          ]
         },
         {
           "id": "legs",
-          "display": {
-            "translate": "slot.i-editor.legs",
-            "fallback": "Legs"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/iron_leggings"
+            },
+            " ",
+            {
+              "translate": "slot.i-editor.legs",
+              "fallback": "Legs"
+            }
+          ]
         },
         {
           "id": "mainhand",
@@ -151,7 +186,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{function:\"minecraft:set_attributes\",modifiers:[{attribute:\"minecraft:armor\",id:\"minecraft:\",amount:$(amount),operation:\"$(operation)\",slot:\"$(slot)\"}],replace:false}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_attributes\",\"modifiers\":[{\"attribute\":\"minecraft:armor\",id:\"minecraft:\",\"amount\":$(amount),\"operation\":\"$(operation)\",\"slot\":\"$(slot)\"}],\"replace\":false}"
     }
   },
   "no": {

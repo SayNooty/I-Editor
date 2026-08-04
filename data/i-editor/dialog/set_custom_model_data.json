@@ -284,7 +284,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_custom_model_data\",\"floats\":{\"values\":[$(floats_values)],\"mode\":\"$(mode)\"},\"flags\":{\"values\":[$(flags_values)],\"mode\":\"$(mode)\"},\"strings\":{\"values\":[\"$(strings)\"],\"mode\":\"$(mode)\"},\"colors\":{\"values\":[$(colors_values)],\"mode\":\"$(mode)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_custom_model_data\",\"floats\":{\"values\":[$(floats_values)],\"mode\":\"$(mode)\"},\"flags\":{\"values\":[$(flags_values)],\"mode\":\"$(mode)\"},\"strings\":{\"values\":[\"$(strings)\"],\"mode\":\"$(mode)\"},\"colors\":{\"values\":[$(colors_values)],\"mode\":\"$(mode)\"}}"
     }
   },
   "no": {

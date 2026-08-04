@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
-    "translate": "component.i-editor.consumable",
-    "fallback": "Consumable"
-  },
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/golden_apple"
+    },
+    " ",
+    {
+      "translate": "component.i-editor.consumable",
+      "fallback": "Consumable"
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -34,6 +41,11 @@
       "type": "minecraft:text",
       "key": "consumption_time",
       "label": [
+        {
+          "atlas": "minecraft:items",
+          "sprite": "minecraft:item/clock_00"
+        },
+        " ",
         {
           "translate": "subtitle.i-editor.consumption_time",
           "fallback": "Consumption Time"
@@ -64,17 +76,31 @@
         },
         {
           "id": "eat",
-          "display": {
-            "translate": "subtitle.i-editor.eat",
-            "fallback": "Eat"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/cooked_beef"
+            },
+            " ",
+            {
+              "translate": "subtitle.i-editor.eat",
+              "fallback": "Eat"
+            }
+          ]
         },
         {
           "id": "drink",
-          "display": {
-            "translate": "subtitle.i-editor.drink",
-            "fallback": "Drink"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/potion"
+            },
+            " ",
+            {
+              "translate": "subtitle.i-editor.drink",
+              "fallback": "Drink"
+            }
+          ]
         },
         {
           "id": "block",
@@ -85,52 +111,108 @@
         },
         {
           "id": "bow",
-          "display": {
-            "translate": "item.minecraft.bow"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/bow"
+            },
+            " ",
+            {
+              "translate": "item.minecraft.bow"
+            }
+          ]
         },
         {
           "id": "trident",
-          "display": {
-            "translate": "item.minecraft.trident"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/trident"
+            },
+            " ",
+            {
+              "translate": "item.minecraft.trident"
+            }
+          ]
         },
         {
           "id": "spear",
-          "display": {
-            "translate": "subtitle.i-editor.spear",
-            "fallback": "Spear"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/iron_spear"
+            },
+            " ",
+            {
+              "translate": "subtitle.i-editor.spear",
+              "fallback": "Spear"
+            }
+          ]
         },
         {
           "id": "crossbow",
-          "display": {
-            "translate": "item.minecraft.crossbow"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/crossbow_pulling_0"
+            },
+            " ",
+            {
+              "translate": "item.minecraft.crossbow"
+            }
+          ]
         },
         {
           "id": "spyglass",
-          "display": {
-            "translate": "item.minecraft.spyglass"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/spyglass"
+            },
+            " ",
+            {
+              "translate": "item.minecraft.spyglass"
+            }
+          ]
         },
         {
           "id": "toot_horn",
-          "display": {
-            "translate": "item.minecraft.goat_horn"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/goat_horn"
+            },
+            " ",
+            {
+              "translate": "item.minecraft.goat_horn"
+            }
+          ]
         },
         {
           "id": "brush",
-          "display": {
-            "translate": "item.minecraft.brush"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/brush"
+            },
+            " ",
+            {
+              "translate": "item.minecraft.brush"
+            }
+          ]
         },
         {
           "id": "bundle",
-          "display": {
-            "translate": "item.minecraft.bundle"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/bundle"
+            },
+            " ",
+            {
+              "translate": "item.minecraft.bundle"
+            }
+          ]
         }
       ]
     },
@@ -164,7 +246,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:consumable\":{\"consume_seconds\":$(consumption_time),\"animation\":\"$(animation)\",\"sound\":\"$(sound_id)\",\"has_consume_particles\":$(has_consume_particles)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:consumable\":{\"consume_seconds\":$(consumption_time),\"animation\":\"$(animation)\",\"sound\":\"$(sound_id)\",\"has_consume_particles\":$(has_consume_particles)}}}"
     }
   },
   "no": {

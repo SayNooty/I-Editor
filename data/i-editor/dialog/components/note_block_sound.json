@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:blocks",
+      "sprite": "minecraft:block/note_block"
+    },
+    " ",
+    {
     "translate": "component.i-editor.note_block_sound",
     "fallback": "Note Block Sound"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -34,8 +41,8 @@
       "type": "minecraft:text",
       "key": "sound",
       "label": {
-        "translate": "subtitle.i-editor.sound",
-        "fallback": "Sound"
+        "translate": "subtitle.i-editor.sound_id",
+        "fallback": "Sound ID"
       },
       "max_length": 9999
     }
@@ -50,7 +57,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:note_block_sound\":\"$(sound)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:note_block_sound\":\"$(sound)\"}}"
     }
   },
   "no": {

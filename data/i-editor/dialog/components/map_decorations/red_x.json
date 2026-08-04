@@ -11,18 +11,20 @@
       "fallback": "Map Decorations",
       "color": "yellow"
     },
+    " ",
     {
-      "text": " | ",
+      "text": "|",
       "color": "gray"
     },
+	" ",
     {
-      "translate": "component.i-editor.map_decorations.red_x",
+      "translate": "map_decoration.i-editor.red_x",
       "fallback": "Red X",
       "color": "gold"
     }
   ],
   "external_title": {
-    "translate": "component.i-editor.map_decorations.red_x",
+    "translate": "map_decoration.i-editor.red_x",
     "fallback": "Red X"
   },
   "body": {
@@ -103,7 +105,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:map_decorations\":{\"$(name)\":{\"type\":\"minecraft:red_x\",\"x\":$(pos_x),\"z\":$(pos_z),\"rotation\":$(rotation)}}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:map_decorations\":{\"$(name)\":{\"type\":\"minecraft:red_x\",\"x\":$(pos_x),\"z\":$(pos_z),\"rotation\":$(rotation)}}}}"
     }
   },
   "no": {

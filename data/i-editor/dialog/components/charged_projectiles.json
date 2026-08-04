@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/crossbow_arrow"
+    },
+    " ",
+    {
     "translate": "component.i-editor.charged_projectiles",
     "fallback": "Charged Projectiles"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -63,7 +70,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:charged_projectiles\":[{\"id\":\"$(item_id)\",\"count\":$(count)}]}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:charged_projectiles\":[{\"id\":\"$(item_id)\",\"count\":$(count)}]}}"
     }
   },
   "no": {

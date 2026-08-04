@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/writable_book"
+    },
+    " ",
+    {
     "translate": "component.i-editor.writable_book_content",
     "fallback": "Writable Book Content"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -63,7 +70,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:writable_book_content\":{\"pages\":[{\"raw\":\"$(raw)\",\"filtered\":\"$(filtered)\"}]}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:writable_book_content\":{\"pages\":[{\"raw\":\"$(raw)\",\"filtered\":\"$(filtered)\"}]}}}"
     }
   },
   "no": {

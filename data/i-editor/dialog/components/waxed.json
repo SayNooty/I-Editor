@@ -1,0 +1,63 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component"
+    },
+    ": ",
+    {
+      "translate": "component.i-editor.waxed",
+      "fallback": "Waxed",
+      "color": "yellow"
+    }
+  ],
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/honeycomb"
+    },
+    " ",
+    {
+    "translate": "component.i-editor.waxed",
+    "fallback": "Waxed"
+    }
+  ],
+  "body": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:honeycomb"
+    },
+    "description": {
+      "translate": "description.i-editor.component.waxed",
+      "fallback": "You don't need to configure anything here, just click \"Done\" to make the item wax, and if you don't want it to, click \"Back\":",
+      "color": "gray"
+    },
+    "show_decorations": false,
+    "show_tooltip": false
+  },
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:waxed\":{$(waxed)}}}"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

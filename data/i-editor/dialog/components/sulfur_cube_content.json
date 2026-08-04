@@ -12,14 +12,21 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/sulfur_cube_bucket"
+    },
+    " ",
+    {
     "translate": "component.i-editor.sulfur_cube_content",
     "fallback": "Sulfur Cube Content"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
-      "id": "minecraft:sulfur_cube_spawn_egg"
+      "id": "minecraft:sulfur_cube_bucket"
     },
     "description": {
       "translate": "description.i-editor.component.sulfur_cube_content",
@@ -51,7 +58,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:sulfur_cube_content\":\"$(block_id)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:sulfur_cube_content\":\"$(block_id)\"}}"
     }
   },
   "no": {

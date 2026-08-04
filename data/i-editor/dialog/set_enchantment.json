@@ -4,6 +4,17 @@
     "translate": "title.i-editor.set_enchantment",
     "fallback": "Set Enchantment"
   },
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/enchanted_book"
+    },
+    " ",
+    {
+      "translate": "title.i-editor.set_enchantment",
+      "fallback": "Set Enchantment"
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {

@@ -33,7 +33,7 @@
     "i-editor:set_lore",
     "i-editor:set_model",
     "i-editor:set_display_tooltips",
-    "i-editor:set_banner_pattern",
+	"i-editor:set_banner_pattern",
     "i-editor:set_trim",
     "i-editor:set_book_cover",
     "i-editor:set_firework",

@@ -4,6 +4,17 @@
     "translate": "title.i-editor.set_book_cover",
     "fallback": "Set Book Cover"
   },
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/writable_book"
+    },
+    " ",
+    {
+      "translate": "title.i-editor.set_book_cover",
+      "fallback": "Set Book Cover"
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -81,7 +92,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_book_cover\",\"title\":\"$(title)\",\"author\":\"$(author)\",\"generation\":$(type)}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_book_cover\",\"title\":\"$(title)\",\"author\":\"$(author)\",\"generation\":$(type)}"
     }
   },
   "no": {

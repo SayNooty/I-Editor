@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/golden_spear"
+    },
+    " ",
+    {
     "translate": "component.i-editor.use_effects",
     "fallback": "Use Effects"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -72,7 +79,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:use_effects\":{\"speed_multiplier\":$(speed_multiplier),\"can_sprint\":$(can_sprint),\"interact_vibrations\":$(interact_vibrations)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:use_effects\":{\"speed_multiplier\":$(speed_multiplier),\"can_sprint\":$(can_sprint),\"interact_vibrations\":$(interact_vibrations)}}}"
     }
   },
   "no": {

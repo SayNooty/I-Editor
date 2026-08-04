@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/painting"
+    },
+    " ",
+    {
     "translate": "component.i-editor.tooltip_style",
     "fallback": "Tooltip Style"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -32,10 +39,10 @@
   "inputs": [
     {
       "type": "minecraft:text",
-      "key": "tooltip_style",
+      "key": "file_path",
       "label": {
-        "translate": "subtitle.i-editor.tooltip_style",
-        "fallback": "Tooltip Style"
+        "translate": "subtitle.i-editor.file_path",
+        "fallback": "File Path"
       },
       "max_length": 9999
     }
@@ -50,7 +57,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:tooltip_style\":\"$(tooltip_style)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:tooltip_style\":\"$(file_path)\"}}"
     }
   },
   "no": {

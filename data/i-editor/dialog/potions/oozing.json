@@ -11,10 +11,17 @@
       "color": "#99FFA3"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:gui",
+      "sprite": "minecraft:mob_effect/oozing"
+    },
+    " ",
+    {
     "translate": "effect.minecraft.oozing",
     "color": "#99FFA3"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -108,7 +115,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:potion_contents\":{\"custom_effects\":[{\"id\":\"minecraft:oozing\",\"amplifier\":$(amplifier),\"duration\":$(duration),\"ambient\":$(ambient),\"show_particles\":$(show_particles),\"show_icon\":$(show_icon)}]}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:potion_contents\":{\"custom_effects\":[{\"id\":\"minecraft:oozing\",\"amplifier\":$(amplifier),\"duration\":$(duration),\"ambient\":$(ambient),\"show_particles\":$(show_particles),\"show_icon\":$(show_icon)}]}}}"
     }
   },
   "no": {

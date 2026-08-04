@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/wooden_sword"
+    },
+    " ",
+    {
     "translate": "component.i-editor.break_sound",
     "fallback": "Break Sound"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -50,7 +57,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:break_sound\":\"$(sound_id)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:break_sound\":\"$(sound_id)\"}}"
     }
   },
   "no": {

@@ -18,16 +18,24 @@
       "type": "minecraft:single_option",
       "key": "armor_trim",
       "width": 200,
-      "label": {
-        "translate": "subtitle.i-editor.armor_trim",
-        "fallback": "Armor Trim"
-      },
+      "label": [
+        {
+          "atlas": "minecraft:items",
+          "sprite": "minecraft:item/coast_armor_trim_smithing_template"
+        },
+        " ",
+        {
+          "translate": "subtitle.i-editor.armor_trim",
+          "fallback": "Armor Trim"
+        }
+      ],
       "options": [
         {
           "id": "",
           "display": {
             "translate": "mode.i-editor.default",
-            "fallback": "Default"
+            "fallback": "Default",
+            "color": "gray"
           },
           "initial": true
         },
@@ -60,7 +68,8 @@
           "id": "",
           "display": {
             "translate": "mode.i-editor.default",
-            "fallback": "Default"
+            "fallback": "Default",
+            "color": "gray"
           },
           "initial": true
         },
@@ -84,16 +93,24 @@
       "type": "minecraft:single_option",
       "key": "banner_patterns",
       "width": 200,
-      "label": {
-        "translate": "subtitle.i-editor.banner_patterns",
-        "fallback": "Banner Patterns"
-      },
+      "label": [
+        {
+          "atlas": "minecraft:items",
+          "sprite": "minecraft:item/creeper_banner_pattern"
+        },
+        " ",
+        {
+          "translate": "subtitle.i-editor.banner_patterns",
+          "fallback": "Banner Patterns"
+        }
+      ],
       "options": [
         {
           "id": "",
           "display": {
             "translate": "mode.i-editor.default",
-            "fallback": "Default"
+            "fallback": "Default",
+            "color": "gray"
           },
           "initial": true
         },
@@ -117,16 +134,24 @@
       "type": "minecraft:single_option",
       "key": "can_break",
       "width": 200,
-      "label": {
-        "translate": "subtitle.i-editor.can_break",
-        "fallback": "Can Break"
-      },
+      "label": [
+        {
+          "atlas": "minecraft:items",
+          "sprite": "minecraft:item/stone_pickaxe"
+        },
+        " ",
+        {
+          "translate": "subtitle.i-editor.can_break",
+          "fallback": "Can Break"
+        }
+      ],
       "options": [
         {
           "id": "",
           "display": {
             "translate": "mode.i-editor.default",
-            "fallback": "Default"
+            "fallback": "Default",
+            "color": "gray"
           },
           "initial": true
         },
@@ -159,7 +184,8 @@
           "id": "",
           "display": {
             "translate": "mode.i-editor.default",
-            "fallback": "Default"
+            "fallback": "Default",
+            "color": "gray"
           },
           "initial": true
         },
@@ -183,16 +209,24 @@
       "type": "minecraft:single_option",
       "key": "dyed_color",
       "width": 200,
-      "label": {
-        "translate": "subtitle.i-editor.dyed_color",
-        "fallback": "Dyed Color"
-      },
+      "label": [
+        {
+          "atlas": "minecraft:items",
+          "sprite": "minecraft:item/red_dye"
+        },
+        " ",
+        {
+          "translate": "subtitle.i-editor.dyed_color",
+          "fallback": "Dyed Color"
+        }
+      ],
       "options": [
         {
           "id": "",
           "display": {
             "translate": "mode.i-editor.default",
-            "fallback": "Default"
+            "fallback": "Default",
+            "color": "gray"
           },
           "initial": true
         },
@@ -216,16 +250,24 @@
       "type": "minecraft:single_option",
       "key": "effects_potion",
       "width": 200,
-      "label": {
-        "translate": "subtitle.i-editor.effects_potion",
-        "fallback": "Effects Potion"
-      },
+      "label": [
+        {
+          "atlas": "minecraft:items",
+          "sprite": "minecraft:item/potion"
+        },
+        " ",
+        {
+          "translate": "subtitle.i-editor.effects_potion",
+          "fallback": "Effects Potion"
+        }
+      ],
       "options": [
         {
           "id": "",
           "display": {
             "translate": "mode.i-editor.default",
-            "fallback": "Default"
+            "fallback": "Default",
+            "color": "gray"
           },
           "initial": true
         },
@@ -249,16 +291,24 @@
       "type": "minecraft:single_option",
       "key": "enchantments",
       "width": 200,
-      "label": {
-        "translate": "subtitle.i-editor.enchantments",
-        "fallback": "Enchantments"
-      },
+      "label": [
+        {
+          "atlas": "minecraft:items",
+          "sprite": "minecraft:item/enchanted_book"
+        },
+        " ",
+        {
+          "translate": "subtitle.i-editor.enchantments",
+          "fallback": "Enchantments"
+        }
+      ],
       "options": [
         {
           "id": "",
           "display": {
             "translate": "mode.i-editor.default",
-            "fallback": "Default"
+            "fallback": "Default",
+            "color": "gray"
           },
           "initial": true
         },
@@ -282,16 +332,24 @@
       "type": "minecraft:single_option",
       "key": "firework_data",
       "width": 200,
-      "label": {
-        "translate": "subtitle.i-editor.firework_data",
-        "fallback": "Firework Data"
-      },
+      "label": [
+        {
+          "atlas": "minecraft:items",
+          "sprite": "minecraft:item/firework_rocket"
+        },
+        " ",
+        {
+          "translate": "subtitle.i-editor.firework_data",
+          "fallback": "Firework Data"
+        }
+      ],
       "options": [
         {
           "id": "",
           "display": {
             "translate": "mode.i-editor.default",
-            "fallback": "Default"
+            "fallback": "Default",
+            "color": "gray"
           },
           "initial": true
         },
@@ -315,16 +373,24 @@
       "type": "minecraft:single_option",
       "key": "horn_sound",
       "width": 200,
-      "label": {
-        "translate": "subtitle.i-editor.horn_sound",
-        "fallback": "Horn Sound"
-      },
+      "label": [
+        {
+          "atlas": "minecraft:items",
+          "sprite": "minecraft:item/goat_horn"
+        },
+        " ",
+        {
+          "translate": "subtitle.i-editor.horn_sound",
+          "fallback": "Horn Sound"
+        }
+      ],
       "options": [
         {
           "id": "",
           "display": {
             "translate": "mode.i-editor.default",
-            "fallback": "Default"
+            "fallback": "Default",
+            "color": "gray"
           },
           "initial": true
         },
@@ -357,7 +423,8 @@
           "id": "",
           "display": {
             "translate": "mode.i-editor.default",
-            "fallback": "Default"
+            "fallback": "Default",
+            "color": "gray"
           },
           "initial": true
         },
@@ -381,16 +448,24 @@
       "type": "minecraft:single_option",
       "key": "map_id",
       "width": 200,
-      "label": {
-        "translate": "subtitle.i-editor.map_id",
-        "fallback": "Map ID"
-      },
+      "label": [
+        {
+          "atlas": "minecraft:items",
+          "sprite": "minecraft:item/filled_map"
+        },
+        " ",
+        {
+          "translate": "subtitle.i-editor.map_id",
+          "fallback": "Map ID"
+        }
+      ],
       "options": [
         {
           "id": "",
           "display": {
             "translate": "mode.i-editor.default",
-            "fallback": "Default"
+            "fallback": "Default",
+            "color": "gray"
           },
           "initial": true
         },
@@ -414,16 +489,24 @@
       "type": "minecraft:single_option",
       "key": "music_disc_data",
       "width": 200,
-      "label": {
-        "translate": "subtitle.i-editor.music_disc_data",
-        "fallback": "Music Disc Data"
-      },
+      "label": [
+        {
+          "atlas": "minecraft:items",
+          "sprite": "minecraft:item/music_disc_cat"
+        },
+        " ",
+        {
+          "translate": "subtitle.i-editor.music_disc_data",
+          "fallback": "Music Disc Data"
+        }
+      ],
       "options": [
         {
           "id": "",
           "display": {
             "translate": "mode.i-editor.default",
-            "fallback": "Default"
+            "fallback": "Default",
+            "color": "gray"
           },
           "initial": true
         },
@@ -447,16 +530,24 @@
       "type": "minecraft:single_option",
       "key": "unbreakable",
       "width": 200,
-      "label": {
-        "translate": "subtitle.i-editor.unbreakable",
-        "fallback": "Unbreakable"
-      },
+      "label": [
+        {
+          "atlas": "minecraft:blocks",
+          "sprite": "minecraft:block/bedrock"
+        },
+        " ",
+        {
+          "translate": "subtitle.i-editor.unbreakable",
+          "fallback": "Unbreakable"
+        }
+      ],
       "options": [
         {
           "id": "",
           "display": {
             "translate": "mode.i-editor.default",
-            "fallback": "Default"
+            "fallback": "Default",
+            "color": "gray"
           },
           "initial": true
         },
@@ -480,16 +571,24 @@
       "type": "minecraft:single_option",
       "key": "written_book_content",
       "width": 200,
-      "label": {
-        "translate": "subtitle.i-editor.written_book_content",
-        "fallback": "Written Book Content"
-      },
+      "label": [
+        {
+          "atlas": "minecraft:items",
+          "sprite": "minecraft:item/writable_book"
+        },
+        " ",
+        {
+          "translate": "subtitle.i-editor.written_book_content",
+          "fallback": "Written Book Content"
+        }
+      ],
       "options": [
         {
           "id": "",
           "display": {
             "translate": "mode.i-editor.default",
-            "fallback": "Default"
+            "fallback": "Default",
+            "color": "gray"
           },
           "initial": true
         },
@@ -520,7 +619,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:toggle_tooltips\",\"toggles\":{$(armor_trim)$(attribute_modifiers)$(banner_patterns)$(can_break)$(can_place_on)$(dyed_color)$(effects_potion)$(enchantments)$(firework_data)$(horn_sound)$(lore)$(map_id)$(music_disc_data)$(unbreakable)$(written_book_content)}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:toggle_tooltips\",\"toggles\":{$(armor_trim)$(attribute_modifiers)$(banner_patterns)$(can_break)$(can_place_on)$(dyed_color)$(effects_potion)$(enchantments)$(firework_data)$(horn_sound)$(lore)$(map_id)$(music_disc_data)$(unbreakable)$(written_book_content)}}"
     }
   },
   "no": {

@@ -11,19 +11,19 @@
       "fallback": "Map Decorations",
       "color": "yellow"
     },
+    " ",
     {
-      "text": " | ",
+      "text": "|",
       "color": "gray"
     },
+	" ",
     {
-      "translate": "component.i-editor.map_decorations.banner_light_gray",
-      "fallback": "Banner Light Gray",
+      "translate": "block.minecraft.light_gray_banner",
       "color": "gold"
     }
   ],
   "external_title": {
-    "translate": "component.i-editor.map_decorations.banner_light_gray",
-    "fallback": "Banner Light Gray"
+    "translate": "block.minecraft.light_gray_banner"
   },
   "body": {
     "type": "minecraft:item",
@@ -107,7 +107,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:map_decorations\":{\"$(name)\":{\"type\":\"minecraft:banner_light_gray\",\"x\":$(pos_x),\"z\":$(pos_z),\"rotation\":$(rotation)}}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:map_decorations\":{\"$(name)\":{\"type\":\"minecraft:banner_light_gray\",\"x\":$(pos_x),\"z\":$(pos_z),\"rotation\":$(rotation)}}}}"
     }
   },
   "no": {

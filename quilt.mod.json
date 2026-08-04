@@ -4,7 +4,7 @@
 	"intermediate_mappings": "net.fabricmc:intermediary",
     "group": "com.i-editor",
     "id": "i-editor",
-    "version": "1.4.3",
+    "version": "1.5.4",
     "metadata": {
       "name": "I Editor",
       "description": "The item editor is straight out of vanilla minecraft",
@@ -22,7 +22,7 @@
     "depends": [
       {
         "id": "minecraft",
-        "versions": "~26.2"
+        "versions": ">=26.3- <26.4-"
       },
       {
         "id": "quilt_loader",

@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/creeper_banner_pattern"
+    },
+    " ",
+    {
     "translate": "component.i-editor.provides_banner_patterns",
     "fallback": "Provides Banner Patterns"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -47,73 +54,143 @@
         },
         {
           "id": "bordure_indented",
-          "display": {
-            "translate": "banner_pattern.i-editor.bordure_indeted",
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/bordure_indented_banner_pattern"
+            },
+            " ",
+            {
+            "translate": "banner_pattern.i-editor.border",
             "fallback": "Bordure Indented"
-          }
+            }
+          ]
         },
         {
           "id": "creeper",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/creeper_banner_pattern"
+            },
+            " ",
+            {
             "translate": "banner_pattern.i-editor.creeper",
             "fallback": "Creeper"
-          }
+            }
+          ]
         },
         {
           "id": "field_masoned",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/field_masoned_banner_pattern"
+            },
+            " ",
+            {
             "translate": "banner_pattern.i-editor.fleid_masoned",
             "fallback": "Field Masoned"
-          }
+            }
+          ]
         },
         {
           "id": "flow",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/flow_banner_pattern"
+            },
+            " ",
+            {
             "translate": "banner_pattern.i-editor.flow",
             "fallback": "Flow"
-          }
+            }
+          ]
         },
         {
           "id": "flower",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/flower_banner_pattern"
+            },
+            " ",
+            {
             "translate": "banner_pattern.i-editor.flower",
             "fallback": "Flower"
-          }
+            }
+          ]
         },
         {
           "id": "globe",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/globe_banner_pattern"
+            },
+            " ",
+            {
             "translate": "banner_pattern.i-editor.globe",
             "fallback": "Globe"
-          }
+            }
+          ]
         },
         {
           "id": "guster",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/guster_banner_pattern"
+            },
+            " ",
+            {
             "translate": "banner_pattern.i-editor.guster",
             "fallback": "Guster"
-          }
+            }
+          ]
         },
         {
           "id": "mojang",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/mojang_banner_pattern"
+            },
+            " ",
+            {
             "translate": "banner_pattern.i-editor.mojang",
             "fallback": "Mojang"
-          }
+            }
+          ]
         },
         {
           "id": "piglin",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/piglin_banner_pattern"
+            },
+            " ",
+            {
             "translate": "banner_pattern.i-editor.piglin",
             "fallback": "Piglin"
-          }
+            }
+          ]
         },
         {
           "id": "skull",
-          "display": {
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/skull_banner_pattern"
+            },
+            " ",
+            {
             "translate": "banner_pattern.i-editor.skull",
             "fallback": "Skull"
-          }
+            }
+          ]
         }
       ]
     }
@@ -128,7 +205,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:provides_banner_patterns\":\"#minecraft:pattern_item/$(pattern)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:provides_banner_patterns\":\"#minecraft:pattern_item/$(pattern)\"}}"
     }
   },
   "no": {

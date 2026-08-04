@@ -33,7 +33,7 @@
     {
       "type": "minecraft:text",
       "key": "block_delay_seconds",
-      "width": 175,
+      "width": 250,
       "label": [
         {
           "translate": "subtitle.i-editor.block_delay_seconds",
@@ -65,7 +65,7 @@
     {
       "type": "minecraft:text",
       "key": "disable_cooldown_scale",
-      "width": 175,
+      "width": 250,
       "label": [
         {
           "translate": "subtitle.i-editor.disable_cooldown_scale",
@@ -97,7 +97,7 @@
     {
       "type": "minecraft:text",
       "key": "damage_reductions_base",
-      "width": 175,
+      "width": 250,
       "label": [
         {
           "translate": "subtitle.i-editor.damage_reductions",
@@ -116,7 +116,7 @@
     {
       "type": "minecraft:text",
       "key": "damage_reductions_factor",
-      "width": 175,
+      "width": 250,
       "label": [
         {
           "translate": "subtitle.i-editor.damage_reductions",
@@ -135,7 +135,7 @@
     {
       "type": "minecraft:text",
       "key": "item_damage_threshold",
-      "width": 175,
+      "width": 250,
       "label": [
         {
           "translate": "subtitle.i-editor.item_damage",
@@ -143,7 +143,7 @@
         },
         " ",
         {
-          "translate": "subtitle.i-editor.item_damage_threshold",
+          "translate": "subtitle.i-editor.threshold",
           "fallback": "(threshold)",
           "color": "gray"
         },
@@ -173,7 +173,7 @@
     {
       "type": "minecraft:text",
       "key": "item_damage_base",
-      "width": 175,
+      "width": 250,
       "label": [
         {
           "translate": "subtitle.i-editor.item_damage",
@@ -192,7 +192,7 @@
     {
       "type": "minecraft:text",
       "key": "item_damage_factor",
-      "width": 175,
+      "width": 250,
       "label": [
         {
           "translate": "subtitle.i-editor.item_damage",
@@ -219,7 +219,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:blocks_attacks\":{\"block_delay_seconds\":$(block_delay_seconds),\"disable_cooldown_scale\":$(disable_cooldown_scale),\"damage_reductions\":[{\"base\":$(damage_reductions_base),\"factor\":$(damage_reductions_factor)}],\"item_damage\":{\"threshold\":$(item_damage_threshold),\"base\":$(item_damage_base),\"factor\":$(item_damage_factor)}}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:blocks_attacks\":{\"block_delay_seconds\":$(block_delay_seconds),\"disable_cooldown_scale\":$(disable_cooldown_scale),\"damage_reductions\":[{\"base\":$(damage_reductions_base),\"factor\":$(damage_reductions_factor)}],\"item_damage\":{\"threshold\":$(item_damage_threshold),\"base\":$(item_damage_base),\"factor\":$(item_damage_factor)}}}}"
     }
   },
   "no": {

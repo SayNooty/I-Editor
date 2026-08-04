@@ -1,0 +1,82 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component"
+    },
+    ": ",
+    {
+      "translate": "component.i-editor.brewing_fuel",
+      "fallback": "Brewing Fuel",
+      "color": "yellow"
+    }
+  ],
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/blaze_powder"
+    },
+    " ",
+    {
+      "translate": "component.i-editor.brewing_fuel",
+      "fallback": "Brewing Fuel"
+    }
+  ],
+  "body": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:blaze_powder"
+    },
+    "description": {
+      "translate": "description.i-editor.component.brewing_fuel",
+      "fallback": "Enter the number of brews before consumption and the cooking time of the item:",
+      "color": "gray"
+    },
+    "show_decorations": false,
+    "show_tooltip": false
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "uses",
+      "width": 100,
+      "label": {
+          "translate": "subtitle.i-editor.uses",
+          "fallback": "Uses"
+      }
+    },
+    {
+      "type": "minecraft:text",
+      "key": "speed_multiplier",
+      "width": 100,
+      "label": {
+        "translate": "subtitle.i-editor.speed_multiplier",
+        "fallback": "Speed Multiplier"
+      }
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:brewing_fuel\":{\"uses\":$(uses),\"speed_multiplier\":$(speed_multiplier)}}}"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

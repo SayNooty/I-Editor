@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/stone_pickaxe"
+    },
+    " ",
+    {
     "translate": "component.i-editor.can_break",
     "fallback": "Can Break"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -51,7 +58,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:can_break\":{\"blocks\":\"$(block_id)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:can_break\":{\"blocks\":\"$(block_id)\"}}}"
     }
   },
   "no": {

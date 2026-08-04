@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/coast_armor_trim_smithing_template"
+    },
+    " ",
+    {
     "translate": "component.i-editor.provides_trim_material",
     "fallback": "Provides Trim Material"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -40,91 +47,168 @@
       "options": [
         {
           "id": "amethyst",
-          "display": {
-            "translate": "trim_material.i-editor.amethyst",
-            "fallback": "Amethyst",
-            "color": "#9A5CC6"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/amethyst_shard"
+            },
+            " ",
+            {
+              "translate": "material.i-editor.amethyst",
+              "fallback": "Amethyst",
+              "color": "#9A5CC6"
+            }
+          ]
         },
         {
           "id": "copper",
-          "display": {
-            "translate": "trim_material.i-editor.copper",
-            "fallback": "Copper",
-            "color": "#B4684D"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/copper_ingot"
+            },
+            " ",
+            {
+              "translate": "material.i-editor.copper",
+              "fallback": "Copper",
+              "color": "#B4684D"
+            }
+          ]
         },
         {
           "id": "diamond",
-          "display": {
-            "translate": "trim_material.i-editor.diamond",
-            "fallback": "Diamond",
-            "color": "#6EECD2"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/diamond"
+            },
+            " ",
+            {
+              "translate": "material.i-editor.diamond",
+              "fallback": "Diamond",
+              "color": "#6EECD2"
+            }
+          ]
         },
         {
           "id": "emerald",
-          "display": {
-            "translate": "trim_material.i-editor.emerald",
-            "fallback": "Emerald",
-            "color": "#11A036"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/emerald"
+            },
+            " ",
+            {
+              "translate": "material.i-editor.emerald",
+              "fallback": "Emerald",
+              "color": "#11A036"
+            }
+          ]
         },
         {
           "id": "gold",
-          "display": {
-            "translate": "trim_material.i-editor.gold",
-            "fallback": "Gold",
-            "color": "#DEB12D"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/gold_ingot"
+            },
+            " ",
+            {
+              "translate": "material.i-editor.gold",
+              "fallback": "Gold",
+              "color": "#DEB12D"
+            }
+          ]
         },
         {
           "id": "iron",
-          "display": {
-            "translate": "trim_material.i-editor.iron",
-            "fallback": "Iron",
-            "color": "#ECECEC"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/iron_ingot"
+            },
+            " ",
+            {
+              "translate": "material.i-editor.iron",
+              "fallback": "Iron",
+              "color": "#ECECEC"
+            }
+          ]
         },
         {
           "id": "lapis",
-          "display": {
-            "translate": "trim_material.i-editor.lapis",
-            "fallback": "Lapis",
-            "color": "#416E97"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/lapis_lazuli"
+            },
+            " ",
+            {
+              "translate": "material.i-editor.lapis",
+              "fallback": "Lapis",
+              "color": "#416E97"
+            }
+          ]
         },
         {
           "id": "netherite",
-          "display": {
-            "translate": "trim_material.i-editor.netherite",
-            "fallback": "Netherite",
-            "color": "#625859"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/netherite_ingot"
+            },
+            " ",
+            {
+              "translate": "material.i-editor.netherite",
+              "fallback": "Netherite",
+              "color": "#625859"
+            }
+          ]
         },
         {
           "id": "quartz",
-          "display": {
-            "translate": "trim_material.i-editor.quartz",
-            "fallback": "Quartz",
-            "color": "#E3D4C4"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/quartz"
+            },
+            " ",
+            {
+              "translate": "material.i-editor.quartz",
+              "fallback": "Quartz",
+              "color": "#E3D4C4"
+            }
+          ]
         },
         {
           "id": "redstone",
-          "display": {
-            "translate": "trim_material.i-editor.redstone",
-            "fallback": "Redstone",
-            "color": "#971607"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/redstone"
+            },
+            " ",
+            {
+              "translate": "material.i-editor.redstone",
+              "fallback": "Redstone",
+              "color": "#971607"
+            }
+          ]
         },
         {
           "id": "resin",
-          "display": {
-            "translate": "trim_material.i-editor.resin",
-            "fallback": "Resin",
-            "color": "#FC7812"
-          }
+          "display": [
+            {
+              "atlas": "minecraft:items",
+              "sprite": "minecraft:item/resin_brick"
+            },
+            " ",
+            {
+              "translate": "material.i-editor.resin",
+              "fallback": "Resin",
+              "color": "#FC7812"
+            }
+          ]
         }
       ]
     }
@@ -139,7 +223,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:provides_trim_material\":\"$(material)\"}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:provides_trim_material\":\"$(material)\"}}"
     }
   },
   "no": {

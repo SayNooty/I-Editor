@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/elytra"
+    },
+    " ",
+    {
     "translate": "component.i-editor.glider",
     "fallback": "Glider"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -23,7 +30,7 @@
     },
     "description": {
       "translate": "description.i-editor.component.glider",
-      "fallback": "There is no need to configure anything here, just click done to allow the item the opportunity to fly like an elytra, and if you don't want to, then click back:",
+      "fallback": "There is no need to configure anything here, just click \"Done\" to allow the item the opportunity to fly like an elytra, and if you don't want to, then click \"back\":",
       "color": "gray"
     },
     "show_decorations": false,
@@ -40,7 +47,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:glider\":{$(glider)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:glider\":{$(glider)}}}"
     }
   },
   "no": {

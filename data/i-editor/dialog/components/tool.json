@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/diamond_shovel"
+    },
+    " ",
+    {
     "translate": "component.i-editor.tool",
     "fallback": "Tool"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -70,7 +77,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:tool\":{\"rules\":[],\"default_mining_speed\":$(default_mining_speed),\"damage_per_block\":$(damage_per_block),\"can_destroy_blocks_in_creative\":$(can_destroy_blocks_in_creative)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:tool\":{\"rules\":[],\"default_mining_speed\":$(default_mining_speed),\"damage_per_block\":$(damage_per_block),\"can_destroy_blocks_in_creative\":$(can_destroy_blocks_in_creative)}}}"
     }
   },
   "no": {

@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/milk_bucket"
+    },
+    " ",
+    {
     "translate": "component.i-editor.use_remainder",
     "fallback": "Use Remainder"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -34,8 +41,8 @@
       "type": "minecraft:text",
       "key": "item",
       "label": {
-        "translate": "subtitle.i-editor.item",
-        "fallback": "Item"
+        "translate": "subtitle.i-editor.item_id",
+        "fallback": "Item ID"
       },
       "max_length": 9999
     },
@@ -62,7 +69,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:use_remainder\":{\"id\":\"$(item)\",\"count\":$(count)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:use_remainder\":{\"id\":\"$(item)\",\"count\":$(count)}}}"
     }
   },
   "no": {

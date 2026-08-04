@@ -4,6 +4,17 @@
     "translate": "title.i-editor.set_banner_pattern",
     "fallback": "Set Banner Pattern"
   },
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/creeper_banner_pattern"
+    },
+    " ",
+    {
+      "translate": "title.i-editor.set_banner_pattern",
+      "fallback": "Set Banner Pattern"
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {

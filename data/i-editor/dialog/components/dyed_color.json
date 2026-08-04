@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/leather_chestplate"
+    },
+    " ",
+    {
     "translate": "component.i-editor.dyed_color",
     "fallback": "Dyed Color"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -58,7 +65,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:dyed_color\":$(color_code)}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:dyed_color\":$(color_code)}}"
     }
   },
   "no": {

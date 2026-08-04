@@ -34,8 +34,8 @@
       "type": "minecraft:text",
       "key": "item",
       "label": {
-        "translate": "subtitle.i-editor.item",
-        "fallback": "Item"
+        "translate": "subtitle.i-editor.item_id",
+        "fallback": "Item ID"
       },
       "max_length": 9999
     }
@@ -50,7 +50,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:repairable\":{\"items\":\"$(item)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:repairable\":{\"items\":\"$(item)\"}}}"
     }
   },
   "no": {

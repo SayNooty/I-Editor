@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/iron_spear"
+    },
+    " ",
+    {
     "translate": "component.i-editor.kinetic_weapon",
     "fallback": "Kinetic Weapon"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -33,6 +40,7 @@
     {
       "type": "minecraft:text",
       "key": "delay_ticks",
+      "width": 300,
       "label": {
         "translate": "subtitle.i-editor.delay_ticks",
         "fallback": "Delay Ticks"
@@ -43,6 +51,7 @@
     {
       "type": "minecraft:text",
       "key": "contact_cooldown_ticks",
+      "width": 300,
       "label": {
         "translate": "subtitle.i-editor.contact_cooldown_ticks",
         "fallback": "Contact Cooldown Ticks"
@@ -53,6 +62,7 @@
     {
       "type": "minecraft:text",
       "key": "dismount_conditions_max_duration_ticks",
+      "width": 300,
       "label": [
         {
           "translate": "subtitle.i-editor.dismount_conditions",
@@ -71,6 +81,7 @@
     {
       "type": "minecraft:text",
       "key": "dismount_conditions_min_speed",
+      "width": 300,
       "label": [
         {
           "translate": "subtitle.i-editor.dismount_conditions",
@@ -89,6 +100,7 @@
     {
       "type": "minecraft:text",
       "key": "dismount_conditions_min_relative_speed",
+      "width": 300,
       "label": [
         {
           "translate": "subtitle.i-editor.dismount_conditions",
@@ -107,6 +119,7 @@
     {
       "type": "minecraft:text",
       "key": "knockback_conditions_max_duration_ticks",
+      "width": 300,
       "label": [
         {
           "translate": "subtitle.i-editor.knockback_conditions",
@@ -125,6 +138,7 @@
     {
       "type": "minecraft:text",
       "key": "knockback_conditions_min_speed",
+      "width": 300,
       "label": [
         {
           "translate": "subtitle.i-editor.knockback_conditions",
@@ -143,6 +157,7 @@
     {
       "type": "minecraft:text",
       "key": "knockback_conditions_min_relative_speed",
+      "width": 300,
       "label": [
         {
           "translate": "subtitle.i-editor.knockback_conditions",
@@ -161,6 +176,7 @@
     {
       "type": "minecraft:text",
       "key": "damage_conditions_max_duration_ticks",
+      "width": 300,
       "label": [
         {
           "translate": "subtitle.i-editor.damage_conditions",
@@ -179,6 +195,7 @@
     {
       "type": "minecraft:text",
       "key": "damage_conditions_min_speed",
+      "width": 300,
       "label": [
         {
           "translate": "subtitle.i-editor.damage_conditions",
@@ -197,6 +214,7 @@
     {
       "type": "minecraft:text",
       "key": "damage_conditions_min_relative_speed",
+      "width": 300,
       "label": [
         {
           "translate": "subtitle.i-editor.damage_conditions",
@@ -215,6 +233,7 @@
     {
       "type": "minecraft:text",
       "key": "forward_movement",
+      "width": 300,
       "label": {
         "translate": "subtitle.i-editor.forward_movement",
         "fallback": "Forward Movement"
@@ -225,6 +244,7 @@
     {
       "type": "minecraft:text",
       "key": "damage_multiplier",
+      "width": 300,
       "label": {
         "translate": "subtitle.i-editor.damage_multiplier",
         "fallback": "Damage Multiplier"
@@ -234,10 +254,11 @@
     },
     {
       "type": "minecraft:text",
-      "key": "sound",
+      "key": "sound_id",
+      "width": 300,
       "label": {
-        "translate": "subtitle.i-editor.sound",
-        "fallback": "Sound"
+        "translate": "subtitle.i-editor.sound_id",
+        "fallback": "Sound ID"
       },
       "initial": "minecraft:item.spear.use",
       "max_length": 9999
@@ -245,6 +266,7 @@
     {
       "type": "minecraft:text",
       "key": "hit_sound",
+      "width": 300,
       "label": {
         "translate": "subtitle.i-editor.hit_sound",
         "fallback": "Hit Sound"
@@ -263,7 +285,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:kinetic_weapon\":{\"delay_ticks\":$(delay_ticks),\"contact_cooldown_ticks\":$(contact_cooldown_ticks),\"dismount_conditions\":{\"max_duration_ticks\":$(dismount_conditions_max_duration_ticks),\"min_speed\":$(dismount_conditions_min_speed),\"min_relative_speed\":$(dismount_conditions_min_relative_speed)},\"knockback_conditions\":{\"max_duration_ticks\":$(knockback_conditions_max_duration_ticks),\"min_speed\":$(knockback_conditions_min_speed),\"min_relative_speed\":$(knockback_conditions_min_relative_speed)},\"damage_conditions\":{\"max_duration_ticks\":$(damage_conditions_max_duration_ticks),\"min_speed\":$(damage_conditions_min_speed),\"min_relative_speed\":$(damage_conditions_min_relative_speed)},\"forward_movement\":$(forward_movement),\"damage_multiplier\":$(damage_multiplier),\"sound\":\"$(sound)\",\"hit_sound\":\"$(hit_sound)\"}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:kinetic_weapon\":{\"delay_ticks\":$(delay_ticks),\"contact_cooldown_ticks\":$(contact_cooldown_ticks),\"dismount_conditions\":{\"max_duration_ticks\":$(dismount_conditions_max_duration_ticks),\"min_speed\":$(dismount_conditions_min_speed),\"min_relative_speed\":$(dismount_conditions_min_relative_speed)},\"knockback_conditions\":{\"max_duration_ticks\":$(knockback_conditions_max_duration_ticks),\"min_speed\":$(knockback_conditions_min_speed),\"min_relative_speed\":$(knockback_conditions_min_relative_speed)},\"damage_conditions\":{\"max_duration_ticks\":$(damage_conditions_max_duration_ticks),\"min_speed\":$(damage_conditions_min_speed),\"min_relative_speed\":$(damage_conditions_min_relative_speed)},\"forward_movement\":$(forward_movement),\"damage_multiplier\":$(damage_multiplier),\"sound\":\"$(sound_id)\",\"hit_sound\":\"$(hit_sound)\"}}}"
     }
   },
   "no": {

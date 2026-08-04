@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
-    "translate": "component.i-editor.pot_decorations",
-    "fallback": "Pot Decorations"
-  },
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/danger_pottery_sherd"
+    },
+    " ",
+    {
+      "translate": "component.i-editor.pot_decorations",
+      "fallback": "Pot Decorations"
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -23,7 +30,7 @@
     },
     "description": {
       "translate": "description.i-editor.component.pot_decorations",
-      "fallback": "Select a sherd to overlay on the shard:",
+      "fallback": "Enter the sherd ID for each side of the decorated pot that will be displayed there:",
       "color": "gray"
     },
     "show_decorations": false,
@@ -31,182 +38,36 @@
   },
   "inputs": [
     {
-      "type": "minecraft:single_option",
-      "key": "sherd",
+      "type": "minecraft:text",
+      "key": "back",
       "label": {
-        "translate": "subtitle.i-editor.sherd",
-        "fallback": "Sherd"
-      },
-      "options": [
-        {
-          "id": "angler",
-          "display": {
-            "translate": "sherd.i-editor.angler",
-            "fallback": "Angler"
-          }
-        },
-        {
-          "id": "archer",
-          "display": {
-            "translate": "sherd.i-editor.archer",
-            "fallback": "Archer"
-          }
-        },
-        {
-          "id": "arms_up",
-          "display": {
-            "translate": "sherd.i-editor.arms_up",
-            "fallback": "Arms Up"
-          }
-        },
-        {
-          "id": "blade",
-          "display": {
-            "translate": "sherd.i-editor.blade",
-            "fallback": "Blade"
-          }
-        },
-        {
-          "id": "brewer",
-          "display": {
-            "translate": "sherd.i-editor.brewer",
-            "fallback": "Brewer"
-          }
-        },
-        {
-          "id": "brick",
-          "display": {
-            "translate": "sherd.i-editor.brick",
-            "fallback": "Brick"
-          }
-        },
-        {
-          "id": "burn",
-          "display": {
-            "translate": "sherd.i-editor.burn",
-            "fallback": "Burn"
-          }
-        },
-        {
-          "id": "danger",
-          "display": {
-            "translate": "sherd.i-editor.danger",
-            "fallback": "Danger"
-          }
-        },
-        {
-          "id": "explorer",
-          "display": {
-            "translate": "sherd.i-editor.explorer",
-            "fallback": "Explorer"
-          }
-        },
-        {
-          "id": "friend",
-          "display": {
-            "translate": "sherd.i-editor.friend",
-            "fallback": "Friend"
-          }
-        },
-        {
-          "id": "heart",
-          "display": {
-            "translate": "sherd.i-editor.heart",
-            "fallback": "Heart"
-          }
-        },
-        {
-          "id": "heartbreak",
-          "display": {
-            "translate": "sherd.i-editor.heartbreak",
-            "fallback": "Heartbreak"
-          }
-        },
-        {
-          "id": "howl",
-          "display": {
-            "translate": "sherd.i-editor.howl",
-            "fallback": "Howl"
-          }
-        },
-        {
-          "id": "miner",
-          "display": {
-            "translate": "sherd.i-editor.miner",
-            "fallback": "Miner"
-          }
-        },
-        {
-          "id": "mourner",
-          "display": {
-            "translate": "sherd.i-editor.mourner",
-            "fallback": "Mourner"
-          }
-        },
-        {
-          "id": "plenty",
-          "display": {
-            "translate": "sherd.i-editor.plenty",
-            "fallback": "Plenty"
-          }
-        },
-        {
-          "id": "prize",
-          "display": {
-            "translate": "sherd.i-editor.prize",
-            "fallback": "Prize"
-          }
-        },
-        {
-          "id": "sheaf",
-          "display": {
-            "translate": "sherd.i-editor.sheaf",
-            "fallback": "Sheaf"
-          }
-        },
-        {
-          "id": "shelter",
-          "display": {
-            "translate": "sherd.i-editor.shelter",
-            "fallback": "Shelter"
-          }
-        },
-        {
-          "id": "skull",
-          "display": {
-            "translate": "sherd.i-editor.skull",
-            "fallback": "Skull"
-          }
-        },
-        {
-          "id": "snort",
-          "display": {
-            "translate": "sherd.i-editor.snort",
-            "fallback": "Snort"
-          }
-        },
-        {
-          "id": "flow",
-          "display": {
-            "translate": "sherd.i-editor.flow",
-            "fallback": "Flow"
-          }
-        },
-        {
-          "id": "guster",
-          "display": {
-            "translate": "sherd.i-editor.guster",
-            "fallback": "Guster"
-          }
-        },
-        {
-          "id": "scrape",
-          "display": {
-            "translate": "sherd.i-editor.scrape",
-            "fallback": "Scrape"
-          }
-        }
-      ]
+        "translate": "subtitle.i-editor.back",
+        "fallback": "Back"
+      }
+    },
+    {
+      "type": "minecraft:text",
+      "key": "left",
+      "label": {
+        "translate": "subtitle.i-editor.left",
+        "fallback": "Left"
+      }
+    },
+    {
+      "type": "minecraft:text",
+      "key": "right",
+      "label": {
+        "translate": "subtitle.i-editor.right",
+        "fallback": "Right"
+      }
+    },
+    {
+      "type": "minecraft:text",
+      "key": "front",
+      "label": {
+        "translate": "subtitle.i-editor.front",
+        "fallback": "Front"
+      }
     }
   ],
   "can_close_with_escape": true,
@@ -219,7 +80,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:pot_decorations\":[\"minecraft:$(sherd)_pottery_sherd\"]}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:pot_decorations\":{\"back\":\"$(back)\",\"left\":\"$(left)\",\"right\":\"$(right)\",\"front\":\"$(front)\"}}}"
     }
   },
   "no": {

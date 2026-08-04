@@ -12,10 +12,17 @@
       "color": "yellow"
     }
   ],
-  "external_title": {
+  "external_title": [
+    {
+      "atlas": "minecraft:blocks",
+      "sprite": "minecraft:block/tripwire_hook"
+    },
+    " ",
+    {
     "translate": "component.i-editor.lock",
     "fallback": "Lock"
-  },
+    }
+  ],
   "body": {
     "type": "minecraft:item",
     "item": {
@@ -36,8 +43,8 @@
       "width": 150,
       "label": [
         {
-          "translate": "subtitle.i-editor.item",
-          "fallback": "Item"
+          "translate": "subtitle.i-editor.item_id",
+          "fallback": "Item ID"
         },
         " ",
         {
@@ -71,7 +78,7 @@
     },
     "action": {
       "type": "dynamic/run_command",
-      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"function\":\"minecraft:set_components\",\"components\":{\"minecraft:lock\":{items:\"$(item)\",count:$(count)}}}]"
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand {\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:lock\":{items:\"$(item)\",count:$(count)}}}"
     }
   },
   "no": {

@@ -1,0 +1,73 @@
+{
+  "type": "minecraft:confirmation",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component"
+    },
+    ": ",
+    {
+      "translate": "component.i-editor.mob_visibility",
+      "fallback": "Mob Visibility",
+      "color": "yellow"
+    }
+  ],
+  "external_title": {
+      "translate": "component.i-editor.mob_visibility",
+      "fallback": "Mob Visibility"
+  },
+  "body": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:creeper_head"
+    },
+    "description": {
+      "translate": "description.i-editor.component.mob_visibility",
+      "fallback": "Enter the entity ID and the value of how many times the player's pursuit range will be increased:",
+      "color": "gray"
+    },
+    "show_decorations": false,
+    "show_tooltip": false
+  },
+  "inputs": [
+    {
+      "type": "minecraft:text",
+      "key": "entity_id",
+      "label": {
+          "translate": "subtitle.i-editor.entity_id",
+          "fallback": "Entity ID"
+      }
+    },
+    {
+      "type": "minecraft:text",
+      "key": "visibility",
+      "label": {
+        "translate": "subtitle.i-editor.visibility",
+        "fallback": "Visibility"
+      }
+    }
+  ],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "yes": {
+    "label": {
+      "translate": "gui.done",
+      "color": "green"
+    },
+    "action": {
+      "type": "dynamic/run_command",
+      "template": "execute if items entity @s weapon.mainhand * run item modify entity @s weapon.mainhand [{\"type\":\"minecraft:set_components\",\"components\":{\"minecraft:mob_visibility\":{\"targeting_entity_types\":\"$(entity_id)\",\"visibility\":$(visibility)}}}"
+    }
+  },
+  "no": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  }
+}

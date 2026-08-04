@@ -1,0 +1,62 @@
+{
+  "type": "minecraft:dialog_list",
+  "title": [
+    {
+      "translate": "title.i-editor.component",
+      "fallback": "Component"
+    },
+    ": ",
+    {
+      "translate": "component.i-editor.block_transformer",
+      "fallback": "Block Transformer",
+      "color": "yellow"
+    }
+  ],
+  "external_title": [
+    {
+      "atlas": "minecraft:items",
+      "sprite": "minecraft:item/wooden_hoe"
+    },
+    " ",
+    {
+      "translate": "component.i-editor.block_transformer",
+      "fallback": "Block Transformer"
+    }
+  ],
+  "body": {
+    "type": "minecraft:item",
+    "item": {
+      "id": "minecraft:wooden_hoe"
+    },
+    "description": {
+      "translate": "description.i-editor.component.block_transformer",
+      "fallback": "Select the type of interaction of the item with the block on behalf of the player:",
+      "color": "gray"
+    },
+    "show_decorations": false,
+    "show_tooltip": false
+  },
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "none",
+  "exit_action": {
+    "label": {
+      "translate": "gui.back",
+      "color": "red"
+    },
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "i-editor:set_component"
+    }
+  },
+  "columns": 1,
+  "button_width": 200,
+  "dialogs": [
+    "i-editor:components/block_transformer/dual_noise_provider",
+    "i-editor:components/block_transformer/noise_provider",
+    "i-editor:components/block_transformer/noise_threshold_provider",
+    "i-editor:components/block_transformer/simple_state_provider",
+    "i-editor:components/block_transformer/weighted_state_provider"
+  ]
+}
